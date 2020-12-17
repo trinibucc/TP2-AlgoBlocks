@@ -1,17 +1,24 @@
 package edu.fiuba.algo3.modelo;
 
+import javafx.geometry.Point2D;
+
 public class Posicion {
-    private int enumeracion;
+
+    private Point2D coordenadas;
     private Posicion siguiente;
 
-    public void Posicion(int d){
-        enumeracion = d;
+    public void Posicion(int vertical, int horizontal){
+        coordenadas = new Point2D(horizontal,vertical);
         siguiente = null;
     }
 
-    public void establecerSiguiente(){
+    public Point2D getCoordenadas(){
+        return coordenadas;
+    }
+
+    public void asignarSiguiente(){
         siguiente = new Posicion();
     }
 
-
 }
+
