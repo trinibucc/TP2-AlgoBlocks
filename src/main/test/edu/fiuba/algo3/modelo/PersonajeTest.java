@@ -45,7 +45,7 @@ public class PersonajeTest {
     public void testMoverPersonajeHaciaLaDerecha(){
         Personaje personaje = new Personaje();
         Point2D derecha = new Point2D(1, 0);
-        personaje.mover("DERECHA");
+        personaje.mover("derecha");
         assertEquals(personaje.getPosicion().distance(derecha), 0);
     }
 
@@ -53,7 +53,7 @@ public class PersonajeTest {
     public void testMoverPersonajeHaciaAbajo(){
         Personaje personaje = new Personaje();
         Point2D abajo = new Point2D(0, -1);
-        personaje.mover("ABAJO");
+        personaje.mover("abajo");
         assertEquals(personaje.getPosicion().distance(abajo), 0);
     }
 
@@ -61,7 +61,7 @@ public class PersonajeTest {
     public void testMoverPersonajeHaciaLaIzquierda(){
         Personaje personaje = new Personaje();
         Point2D izquierda = new Point2D(-1, 0);
-        personaje.mover("IZQUIERDA");
+        personaje.mover("izquierda");
         assertEquals(personaje.getPosicion().distance(izquierda), 0);
     }
 
@@ -69,7 +69,7 @@ public class PersonajeTest {
     public void testMoverPersonajeHaciaArriba(){
         Personaje personaje = new Personaje();
         Point2D arriba = new Point2D(0, 1);
-        personaje.mover("ARRIBA");
+        personaje.mover("arriba");
         assertEquals(personaje.getPosicion().distance(arriba), 0);
     }
 
@@ -77,10 +77,10 @@ public class PersonajeTest {
     public void testMoverPersonajeEnSentidoHorarioVuelveAlOrigen(){
         Personaje personaje = new Personaje();
         Point2D origen = new Point2D(0, 0);
-        personaje.mover("DERECHA");
-        personaje.mover("ABAJO");
-        personaje.mover("IZQUIERDA");
-        personaje.mover("ARRIBA");
+        personaje.mover("derecha");
+        personaje.mover("abajo");
+        personaje.mover("izquierda");
+        personaje.mover("arriba");
         assertEquals(personaje.getPosicion().distance(origen), 0);
     }
 }
