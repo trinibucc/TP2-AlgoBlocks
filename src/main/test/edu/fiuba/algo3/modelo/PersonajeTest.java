@@ -10,14 +10,14 @@ public class PersonajeTest {
     public void testSeCreaPersonajeEnLaPosicionCorrecta(){
         Personaje personaje = new Personaje();
         Point2D origen = new Point2D(0, 0);
-        assertEquals(personaje.getPosicion().distance(origen), 0);
+        assertEquals(personaje.getPosicion().getCoordenadas().distance(origen), 0);
     }
 
     @Test
     public void testSeCreaPersonajeLaPosicionNoEsLaCorrecta(){
         Personaje personaje = new Personaje();
         Point2D noOrigen = new Point2D(2, 1);
-        assertNotEquals(personaje.getPosicion().distance(noOrigen), 0);
+        assertNotEquals(personaje.getPosicion().getCoordenadas().distance(noOrigen), 0);
     }
 
     @Test
@@ -46,7 +46,7 @@ public class PersonajeTest {
         Personaje personaje = new Personaje();
         Point2D derecha = new Point2D(1, 0);
         personaje.mover("derecha");
-        assertEquals(personaje.getPosicion().distance(derecha), 0);
+        assertEquals(personaje.getPosicion().getCoordenadas().distance(derecha), 0);
     }
 
     @Test
@@ -54,7 +54,7 @@ public class PersonajeTest {
         Personaje personaje = new Personaje();
         Point2D abajo = new Point2D(0, -1);
         personaje.mover("abajo");
-        assertEquals(personaje.getPosicion().distance(abajo), 0);
+        assertEquals(personaje.getPosicion().getCoordenadas().distance(abajo), 0);
     }
 
     @Test

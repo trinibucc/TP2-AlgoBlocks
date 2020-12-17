@@ -7,7 +7,7 @@ public class Posicion {
     private Point2D coordenadas;
     private Posicion siguiente;
 
-    public void Posicion(int vertical, int horizontal){
+    public Posicion(int vertical, int horizontal){
         coordenadas = new Point2D(horizontal,vertical);
         siguiente = null;
     }
@@ -17,7 +17,7 @@ public class Posicion {
     }
 
     public void asignarSiguiente(){
-        siguiente = new Posicion();
+        siguiente = new Posicion(0, 0);
     }
 
 }
