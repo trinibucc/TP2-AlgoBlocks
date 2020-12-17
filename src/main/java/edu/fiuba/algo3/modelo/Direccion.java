@@ -1,4 +1,5 @@
 package edu.fiuba.algo3.modelo;
+import java.util.ArrayList;
 
 public class Direccion {
     private final ArrayList<Posicion> ListaMovimientos;
@@ -13,7 +14,4 @@ public class Direccion {
         return this.Lapiz;
     };
 
-    public String greet() {
-        return content;
-    };
 }
