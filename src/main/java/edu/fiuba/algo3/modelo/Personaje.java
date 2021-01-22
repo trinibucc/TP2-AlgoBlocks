@@ -2,31 +2,39 @@ package edu.fiuba.algo3.modelo;
 import javafx.geometry.Point2D;
 
 public class Personaje {
-    private Posicion posicion;
-    private Direccion direccion;
+
+    private Lapiz lapiz;
+    private int horizontal;
+    private int vertical;
 
     public Personaje(){
-        this.posicion = new Posicion(0, 0);
-        this.direccion = new Direccion();
-    }
-
-    public Posicion getPosicion() {
-        return this.posicion;
-    }
-
-    public boolean tieneLapizArriba() {
-        return this.direccion.ConLapizArriba();
-    }
-
-    public void bajarLapiz() {
-        this.direccion.bajarLapiz();
+        this.lapiz = new LapizArriba();
+        this.horizontal = 0;
+        this.vertical = 0;
     }
 
     public void subirLapiz() {
-        this.direccion.subirLapiz();
+        this.lapiz = new LapizArriba();
     }
 
-    public void mover(String direccion) {
-        this.posicion = this.direccion.mover(this.posicion, direccion);
+    public Lapiz obtenerLapiz() {
+        return this.lapiz;
+    }
+
+    public void bajarLapiz() {
+        this.lapiz = new LapizAbajo();
+    }
+
+    public void actualizarPosicion(int horizontal, int vertical) {
+        this.horizontal += horizontal;
+        this.vertical += vertical;
+    }
+
+    public int obtenerHorizontal() {
+        return this.horizontal;
+    }
+
+    public int obtenerVertical() {
+        return this.vertical;
     }
 }
