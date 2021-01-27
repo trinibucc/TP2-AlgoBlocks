@@ -3,7 +3,7 @@ import javafx.geometry.Point2D;
 
 public class Personaje {
 
-    private Lapiz lapiz;
+    private Bloque lapiz;
     private int horizontal;
     private int vertical;
 
@@ -17,7 +17,7 @@ public class Personaje {
         this.lapiz = new LapizArriba();
     }
 
-    public Lapiz obtenerLapiz() {
+    public Bloque obtenerLapiz() {
         return this.lapiz;
     }
 

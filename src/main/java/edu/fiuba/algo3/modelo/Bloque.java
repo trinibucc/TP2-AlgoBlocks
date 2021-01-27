@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.modelo;
 
-public abstract class Bloque {
+public interface Bloque {
 
-    public abstract void ejecutar(Personaje personaje);
+    void ejecutar(Personaje personaje);
 }

@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.modelo;
 
-public class BloqueArriba extends Bloque {
+public class BloqueArriba implements Bloque {
 
     @Override
     public void ejecutar(Personaje personaje) {
