@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class AlgoBlocksTest {
 
     @Test
-    public void testLevantarLapizConBloqueLevantaLapizPersonaLevantaElLapiz(){
+    public void testLevantarLapizConBloqueLevantaLapizPersonajeLevantaElLapiz(){
         AlgoBlocks algoBlocks = new AlgoBlocks();
         algoBlocks.agregarLapizArriba();
         algoBlocks.ejecutar();
@@ -15,7 +15,7 @@ public class AlgoBlocksTest {
     }
 
     @Test
-    public void testBajarLapizConBloqueBajaLazpizPersonaBajaElLapiz(){
+    public void testBajarLapizConBloqueBajaLazpizPersonajeBajaElLapiz(){
         AlgoBlocks algoBlocks = new AlgoBlocks();
         algoBlocks.agregarLapizAbajo();
         algoBlocks.ejecutar();
@@ -56,5 +56,71 @@ public class AlgoBlocksTest {
         int yAntes = algoBlocks.obtenerPersonaje().obtenerVertical();
         algoBlocks.ejecutar();
         assertEquals(algoBlocks.obtenerPersonaje().obtenerVertical(), yAntes + 1);
+    }
+
+    @Test
+    public void testMoverEnVariasDireccionesHorizontalesPersonajeSeMueveCorrectamente(){
+        AlgoBlocks algoBlocks = new AlgoBlocks();
+        int horizontal = (algoBlocks.obtenerPersonaje()).obtenerHorizontal();
+        algoBlocks.agregarBloqueIzquierda();
+        algoBlocks.agregarBloqueIzquierda();
+        algoBlocks.agregarBloqueDerecha();
+        algoBlocks.ejecutar();
+        assertEquals(algoBlocks.obtenerPersonaje().obtenerHorizontal(), horizontal -1);
+    }
+
+    @Test
+    public void testMoverEnVariasDireccionesVerticalesPersonajeSeMueveCorrectamente(){
+        AlgoBlocks algoBlocks = new AlgoBlocks();
+        int vertical = (algoBlocks.obtenerPersonaje()).obtenerVertical();
+        algoBlocks.agregarBloqueArriba();
+        algoBlocks.agregarBloqueArriba();
+        algoBlocks.agregarBloqueAbajo();
+        algoBlocks.ejecutar();
+        assertEquals(algoBlocks.obtenerPersonaje().obtenerVertical(), vertical + 1);
+    }
+
+    @Test
+    public void testMoverEnDireccionesVerticalesYhorizontalesPersonajeSeMueveCorrectamente(){
+        AlgoBlocks algoBlocks = new AlgoBlocks();
+        int vertical = (algoBlocks.obtenerPersonaje()).obtenerVertical();
+        int horizontal = (algoBlocks.obtenerPersonaje()).obtenerHorizontal();
+        algoBlocks.agregarBloqueArriba();
+        algoBlocks.agregarBloqueAbajo();
+        algoBlocks.agregarBloqueDerecha();
+        algoBlocks.agregarBloqueDerecha();
+        algoBlocks.agregarBloqueArriba();
+        algoBlocks.agregarBloqueIzquierda();
+        algoBlocks.ejecutar();
+        assertEquals(algoBlocks.obtenerPersonaje().obtenerVertical(), vertical + 1);
+        assertEquals(algoBlocks.obtenerPersonaje().obtenerHorizontal(), horizontal + 1);
+    }
+
+    @Test
+    public void testMoverEnDistintasDireccionesYsubirLaíz(){
+        AlgoBlocks algoBlocks = new AlgoBlocks();
+        int vertical = (algoBlocks.obtenerPersonaje()).obtenerVertical();
+        int horizontal = (algoBlocks.obtenerPersonaje()).obtenerHorizontal();
+        algoBlocks.agregarBloqueArriba();
+        algoBlocks.agregarBloqueAbajo();
+        algoBlocks.agregarBloqueDerecha();
+        algoBlocks.agregarBloqueIzquierda();
+        algoBlocks.agregarLapizArriba();
+        algoBlocks.ejecutar();
+        assertEquals(algoBlocks.obtenerPersonaje().obtenerVertical(), vertical);
+        assertEquals(algoBlocks.obtenerPersonaje().obtenerHorizontal(), horizontal);
+        assertTrue(algoBlocks.obtenerPersonaje().obtenerLapiz() instanceof LapizArriba);
+    }
+
+    @Test
+    public void testMoverEnDistintasDireccionesNoAfectaAlLapiz() {
+        AlgoBlocks algoBlocks = new AlgoBlocks();
+        Bloque lapiz = algoBlocks.obtenerPersonaje().obtenerLapiz();
+        algoBlocks.agregarBloqueArriba();
+        algoBlocks.agregarBloqueAbajo();
+        algoBlocks.agregarBloqueDerecha();
+        algoBlocks.agregarBloqueIzquierda();
+        algoBlocks.ejecutar();
+        assertEquals(algoBlocks.obtenerPersonaje().obtenerLapiz(), lapiz);
     }
 }

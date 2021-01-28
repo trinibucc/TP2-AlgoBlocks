@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.modelo;
 
-public abstract class Lapiz extends Bloque{
+public interface Lapiz {
 
-    public abstract void ejecutar(Personaje personaje);
+   void dibujar(int[] posicion);
 }
