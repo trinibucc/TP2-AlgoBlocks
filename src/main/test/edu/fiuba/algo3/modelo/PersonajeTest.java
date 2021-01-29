@@ -29,27 +29,18 @@ public class PersonajeTest {
     }
 
     @Test
-    public void testPersonajeSeCreaConPosicionVertical0(){
+    public void testPersonajeSeCreaEnLaPosicionDelOrigenCorrecta(){
         Personaje personaje = new Personaje();
-        assertEquals(personaje.obtenerVertical(), 0);
-    }
-
-    @Test
-    public void testPersonajeSeCreaConPosicionHorizontal0(){
-        Personaje personaje = new Personaje();
-        assertEquals(personaje.obtenerHorizontal(), 0);
+        int[] origen = {0, 0};
+        assertArrayEquals(origen, personaje.obtenerPosicion());
     }
 
     @Test
     public void testActualizarPosicionDelPersonajeCorrectamente(){
         Personaje personaje = new Personaje();
-        int posicionEsperada[] = {1, 2};
-        int[] posicionFinal = new int[2];
-        personaje.actualizarPosicion(1, 2);
-        posicionFinal[0] = personaje.obtenerHorizontal();
-        posicionFinal[1] = personaje.obtenerVertical();
-        assertArrayEquals(posicionFinal, posicionEsperada);
+        int[] movimiento = {1, 2};
+        personaje.actualizarPosicion(movimiento);
+        assertArrayEquals(movimiento, personaje.obtenerPosicion());
     }
-
 
 }

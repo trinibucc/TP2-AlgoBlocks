@@ -4,6 +4,7 @@ public class BloqueArriba implements Bloque {
 
     @Override
     public void ejecutar(Personaje personaje) {
-        personaje.actualizarPosicion(0, 1);
+        int[] movimiento = {0, 1};
+        personaje.actualizarPosicion(movimiento);
     }
 }
