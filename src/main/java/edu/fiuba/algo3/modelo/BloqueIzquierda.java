@@ -4,6 +4,7 @@ public class BloqueIzquierda implements Bloque {
 
     @Override
     public void ejecutar(Personaje personaje) {
-        personaje.actualizarPosicion(-1 ,0);
+        int[] moviento = {-1, 0};
+        personaje.actualizarPosicion(moviento);
     }
 }

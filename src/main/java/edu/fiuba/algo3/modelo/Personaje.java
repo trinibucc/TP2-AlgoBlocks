@@ -1,16 +1,20 @@
 package edu.fiuba.algo3.modelo;
-import javafx.geometry.Point2D;
 
 public class Personaje {
 
     private Bloque lapiz;
-    private int horizontal;
-    private int vertical;
+    private int[] posicion;
 
     public Personaje(){
         this.lapiz = new LapizArriba();
-        this.horizontal = 0;
-        this.vertical = 0;
+        this.posicion = new int[2];
+        this.posicion[0] = 0;
+        this.posicion[1] = 0;
+    }
+
+    private void sumarPosiciones(int[] posicion){
+        this.posicion[0] += posicion[0];
+        this.posicion[1] += posicion[1];
     }
 
     public void subirLapiz() {
@@ -25,16 +29,11 @@ public class Personaje {
         this.lapiz = new LapizAbajo();
     }
 
-    public void actualizarPosicion(int horizontal, int vertical) {
-        this.horizontal += horizontal;
-        this.vertical += vertical;
+    public void actualizarPosicion(int[] movimiento) {
+        this.sumarPosiciones(movimiento);
     }
 
-    public int obtenerHorizontal() {
-        return this.horizontal;
-    }
-
-    public int obtenerVertical() {
-        return this.vertical;
+    public int[] obtenerPosicion() {
+        return posicion;
     }
 }

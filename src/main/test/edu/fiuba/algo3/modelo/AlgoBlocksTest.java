@@ -1,8 +1,8 @@
 package edu.fiuba.algo3.modelo;
 
 import org.junit.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class AlgoBlocksTest {
 
@@ -25,66 +25,65 @@ public class AlgoBlocksTest {
     @Test
     public void testMoverDerechaConBloqueMoverDerechaPersonajeSeMueveALaDerecha(){
         AlgoBlocks algoBlocks = new AlgoBlocks();
+        int[] movimiento = {1, 0};
         algoBlocks.agregarBloqueDerecha();
-        int xantes = algoBlocks.obtenerPersonaje().obtenerHorizontal();
         algoBlocks.ejecutar();
-        assertEquals(algoBlocks.obtenerPersonaje().obtenerHorizontal(), xantes + 1);
+        assertArrayEquals(movimiento, algoBlocks.obtenerPersonaje().obtenerPosicion());
     }
 
     @Test
     public void testMoverAbajoConBloqueMoverAbajoPersonajeSeMueveAbajo(){
         AlgoBlocks algoBlocks = new AlgoBlocks();
+        int[] movimiento = {0, -1};
         algoBlocks.agregarBloqueAbajo();
-        int yAntes = algoBlocks.obtenerPersonaje().obtenerVertical();
         algoBlocks.ejecutar();
-        assertEquals(algoBlocks.obtenerPersonaje().obtenerVertical(), yAntes - 1);
+        assertArrayEquals(movimiento, algoBlocks.obtenerPersonaje().obtenerPosicion());
     }
 
     @Test
     public void testMoverIzquierdaConBloqueMoverIzquierdaPersonajeSeMueveIzquierda(){
         AlgoBlocks algoBlocks = new AlgoBlocks();
+        int[] movimiento = {-1, 0};
         algoBlocks.agregarBloqueIzquierda();
-        int xAntes = algoBlocks.obtenerPersonaje().obtenerHorizontal();
         algoBlocks.ejecutar();
-        assertEquals(algoBlocks.obtenerPersonaje().obtenerHorizontal(), xAntes - 1);
+        assertArrayEquals(movimiento, algoBlocks.obtenerPersonaje().obtenerPosicion());
     }
 
     @Test
     public void testMoverArribaConBloqueMoverArribaPersonajeSeMueveArriba(){
         AlgoBlocks algoBlocks = new AlgoBlocks();
+        int[] movimiento = {0, 1};
         algoBlocks.agregarBloqueArriba();
-        int yAntes = algoBlocks.obtenerPersonaje().obtenerVertical();
         algoBlocks.ejecutar();
-        assertEquals(algoBlocks.obtenerPersonaje().obtenerVertical(), yAntes + 1);
+        assertArrayEquals(movimiento, algoBlocks.obtenerPersonaje().obtenerPosicion());
     }
 
     @Test
     public void testMoverEnVariasDireccionesHorizontalesPersonajeSeMueveCorrectamente(){
         AlgoBlocks algoBlocks = new AlgoBlocks();
-        int horizontal = (algoBlocks.obtenerPersonaje()).obtenerHorizontal();
+        int[] movimiento = {-1, 0};
         algoBlocks.agregarBloqueIzquierda();
         algoBlocks.agregarBloqueIzquierda();
         algoBlocks.agregarBloqueDerecha();
         algoBlocks.ejecutar();
-        assertEquals(algoBlocks.obtenerPersonaje().obtenerHorizontal(), horizontal -1);
+        assertArrayEquals(movimiento, algoBlocks.obtenerPersonaje().obtenerPosicion());
     }
 
     @Test
     public void testMoverEnVariasDireccionesVerticalesPersonajeSeMueveCorrectamente(){
         AlgoBlocks algoBlocks = new AlgoBlocks();
-        int vertical = (algoBlocks.obtenerPersonaje()).obtenerVertical();
+        int[] movimiento = {0, 1};
         algoBlocks.agregarBloqueArriba();
         algoBlocks.agregarBloqueArriba();
         algoBlocks.agregarBloqueAbajo();
         algoBlocks.ejecutar();
-        assertEquals(algoBlocks.obtenerPersonaje().obtenerVertical(), vertical + 1);
+        assertArrayEquals(movimiento, algoBlocks.obtenerPersonaje().obtenerPosicion());
     }
 
     @Test
     public void testMoverEnDireccionesVerticalesYhorizontalesPersonajeSeMueveCorrectamente(){
         AlgoBlocks algoBlocks = new AlgoBlocks();
-        int vertical = (algoBlocks.obtenerPersonaje()).obtenerVertical();
-        int horizontal = (algoBlocks.obtenerPersonaje()).obtenerHorizontal();
+        int[] movimiento = {1, 1};
         algoBlocks.agregarBloqueArriba();
         algoBlocks.agregarBloqueAbajo();
         algoBlocks.agregarBloqueDerecha();
@@ -92,23 +91,20 @@ public class AlgoBlocksTest {
         algoBlocks.agregarBloqueArriba();
         algoBlocks.agregarBloqueIzquierda();
         algoBlocks.ejecutar();
-        assertEquals(algoBlocks.obtenerPersonaje().obtenerVertical(), vertical + 1);
-        assertEquals(algoBlocks.obtenerPersonaje().obtenerHorizontal(), horizontal + 1);
+        assertArrayEquals(movimiento, algoBlocks.obtenerPersonaje().obtenerPosicion());
     }
 
     @Test
-    public void testMoverEnDistintasDireccionesYsubirLaíz(){
+    public void testMoverEnDistintasDireccionesYSubirLapiz(){
         AlgoBlocks algoBlocks = new AlgoBlocks();
-        int vertical = (algoBlocks.obtenerPersonaje()).obtenerVertical();
-        int horizontal = (algoBlocks.obtenerPersonaje()).obtenerHorizontal();
+        int[] movimiento = {0, 0};
         algoBlocks.agregarBloqueArriba();
         algoBlocks.agregarBloqueAbajo();
         algoBlocks.agregarBloqueDerecha();
         algoBlocks.agregarBloqueIzquierda();
         algoBlocks.agregarLapizArriba();
         algoBlocks.ejecutar();
-        assertEquals(algoBlocks.obtenerPersonaje().obtenerVertical(), vertical);
-        assertEquals(algoBlocks.obtenerPersonaje().obtenerHorizontal(), horizontal);
+        assertArrayEquals(movimiento, algoBlocks.obtenerPersonaje().obtenerPosicion());
         assertTrue(algoBlocks.obtenerPersonaje().obtenerLapiz() instanceof LapizArriba);
     }
 
