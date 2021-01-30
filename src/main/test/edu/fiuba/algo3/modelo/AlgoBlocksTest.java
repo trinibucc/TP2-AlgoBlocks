@@ -126,12 +126,46 @@ public class AlgoBlocksTest {
     public void testMoverEnDistintasDireccionesNoAfectaAlLapiz() {
         Personaje personaje = new Personaje();
         AlgoBlocks algoBlocks = new AlgoBlocks(new RecorridoSinRepeticion(personaje), personaje);
-        Bloque lapiz = algoBlocks.obtenerPersonaje().obtenerLapiz();
+        Lapiz lapiz = algoBlocks.obtenerPersonaje().obtenerLapiz();
         algoBlocks.agregarBloqueArriba();
         algoBlocks.agregarBloqueAbajo();
         algoBlocks.agregarBloqueDerecha();
         algoBlocks.agregarBloqueIzquierda();
         algoBlocks.ejecutar();
         assertEquals(algoBlocks.obtenerPersonaje().obtenerLapiz(), lapiz);
+    }
+
+    @Test
+    public void testUsarBloqueRepetirDosVecesYPersonajeSeMueveCorrectamente(){
+        Personaje personaje = new Personaje();
+        AlgoBlocks algoBlocks = new AlgoBlocks(new RecorridoSinRepeticion(personaje), personaje);
+        algoBlocks.agregarBloqueDerecha();
+        algoBlocks.agregarBloqueArriba();
+        Recorrido recorridoIterativo = algoBlocks.agregarBloqueRepetirDosVeces();
+        AlgoBlocks algoritmoIterativo = recorridoIterativo.agregarBloque();
+        algoritmoIterativo.agregarBloqueDerecha();
+        algoritmoIterativo.agregarBloqueAbajo();
+        algoBlocks.ejecutar();
+
+        assertEquals(personaje.obtenerVertical(), -1);
+        assertEquals(personaje.obtenerHorizontal(), 3);
+
+    }
+
+    @Test
+    public void testUsarBloqueRepetirTresVecesYPersonajeSeMueveCorrectamente(){
+        Personaje personaje = new Personaje();
+        AlgoBlocks algoBlocks = new AlgoBlocks(new RecorridoSinRepeticion(personaje), personaje);
+        algoBlocks.agregarBloqueDerecha();
+        algoBlocks.agregarBloqueArriba();
+        Recorrido recorridoIterativo = algoBlocks.agregarBloqueRepetirTresVeces();
+        AlgoBlocks algoritmoIterativo = recorridoIterativo.agregarBloque();
+        algoritmoIterativo.agregarBloqueDerecha();
+        algoritmoIterativo.agregarBloqueAbajo();
+        algoBlocks.ejecutar();
+
+        assertEquals(personaje.obtenerVertical(), -2);
+        assertEquals(personaje.obtenerHorizontal(), 4);
+
     }
 }

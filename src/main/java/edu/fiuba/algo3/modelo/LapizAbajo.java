@@ -1,6 +1,10 @@
 package edu.fiuba.algo3.modelo;
 
-public class LapizAbajo implements Lapiz, Bloque{
+import java.util.ArrayList;
+import java.util.List;
+
+public class LapizAbajo implements Lapiz, Bloque {
+    private List<int[]> noDibuja = new ArrayList<>();
 
     @Override
     public void ejecutar(Personaje personaje){
@@ -9,6 +13,6 @@ public class LapizAbajo implements Lapiz, Bloque{
 
     @Override
     public void dibujar(int[] posicion){
-
+        noDibuja.add(posicion);
     }
 }
