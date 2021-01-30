@@ -2,8 +2,7 @@ package edu.fiuba.algo3.modelo;
 
 import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class SectorDibujoTest {
 
@@ -12,7 +11,7 @@ public class SectorDibujoTest {
         assertTrue(SectorDibujo.obtenerSectorDibujo() instanceof SectorDibujo);
     }
 
-   /*@Test
+   @Test
     public void testDibujaConLapizAbajoYNoDibujaConLapizArriba(){
         Personaje personaje = new Personaje();
         AlgoBlocks algoBlocks = new AlgoBlocks( new RecorridoSinRepeticion(personaje), personaje);
@@ -21,11 +20,10 @@ public class SectorDibujoTest {
         algoBlocks.agregarBloqueDerecha();
         algoBlocks.ejecutar();
 
-        int[] dibujado = {-1,0};
-        assertEquals(dibujado, (SectorDibujo.obtenerSectorDibujo()).obtenerDibujo());
+        int[] dibujado = {0,0};
+        assertArrayEquals(dibujado, (SectorDibujo.obtenerSectorDibujo()).obtenerDibujo());
 
-
-    }*/
+    }
 
 
 }
