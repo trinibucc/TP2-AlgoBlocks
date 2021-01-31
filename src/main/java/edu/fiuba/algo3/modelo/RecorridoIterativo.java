@@ -10,6 +10,9 @@ public class RecorridoIterativo implements Recorrido {
     private Personaje personaje;
 
     public RecorridoIterativo(int repeticion, Personaje personaje) {
+        if(repeticion < 2){
+            throw new NumeroDeRepeticionesInvalidoError();
+        }
         this.repeticion = repeticion;
         this.algoritmo = new ArrayList<>();
         this.personaje = personaje;
