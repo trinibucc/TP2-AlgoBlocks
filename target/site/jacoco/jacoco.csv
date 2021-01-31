@@ -1,0 +1,15 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+tp2,edu.fiuba.algo3.modelo,BloqueArriba,20,0,0,0,5,0,2,0,2,0
+tp2,edu.fiuba.algo3.modelo,BloqueDerecha,20,0,0,0,5,0,2,0,2,0
+tp2,edu.fiuba.algo3.modelo,RecorridoIterativo,49,0,4,0,14,0,6,0,4,0
+tp2,edu.fiuba.algo3.modelo,RecorridoSinRepeticion,33,0,2,0,10,0,5,0,4,0
+tp2,edu.fiuba.algo3.modelo,BloqueRepetir,10,0,0,0,5,0,2,0,2,0
+tp2,edu.fiuba.algo3.modelo,BloqueIzquierda,20,0,0,0,5,0,2,0,2,0
+tp2,edu.fiuba.algo3.modelo,SectorDibujo,60,0,6,0,17,0,10,0,7,0
+tp2,edu.fiuba.algo3.modelo,LapizAbajo,7,3,0,0,4,1,2,1,2,1
+tp2,edu.fiuba.algo3.modelo,BloqueAbajo,20,0,0,0,5,0,2,0,2,0
+tp2,edu.fiuba.algo3.modelo,Personaje,16,65,0,0,4,17,3,7,3,7
+tp2,edu.fiuba.algo3.modelo,LapizArriba,9,8,0,0,4,2,2,1,2,1
+tp2,edu.fiuba.algo3.modelo,AlgoBlocks,124,0,2,0,33,0,12,0,11,0
+tp2,edu.fiuba.algo3,SystemInfo,9,0,0,0,3,0,3,0,3,0
+tp2,edu.fiuba.algo3,App,39,0,0,0,10,0,3,0,3,0
