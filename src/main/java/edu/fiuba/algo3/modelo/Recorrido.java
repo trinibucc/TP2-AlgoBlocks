@@ -6,6 +6,5 @@ public interface Recorrido {
 
     void ejecutar();
     AlgoBlocks agregarBloque();
-
     List<Bloque> obtenerRecorrido();
 }

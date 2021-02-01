@@ -1,8 +1,8 @@
 package edu.fiuba.algo3.modelo;
 
 import org.junit.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class AlgoBlocksTest {
 
@@ -166,6 +166,21 @@ public class AlgoBlocksTest {
 
         assertEquals(personaje.obtenerVertical(), -2);
         assertEquals(personaje.obtenerHorizontal(), 4);
+    }
 
+    public void testAgregarBloquesDeMovimientoSimlesDespuesDeAgregarBloquesDeRepetirPersonajeSeMueveCorrectamente(){
+        int[] posicion = {4, 0};
+        Personaje personaje = new Personaje();
+        AlgoBlocks algoBlocks = new AlgoBlocks(new RecorridoSinRepeticion(personaje), personaje);
+        algoBlocks.agregarBloqueDerecha();
+        algoBlocks.agregarBloqueArriba();
+        Recorrido recorridoIterativo = algoBlocks.agregarBloqueRepetirTresVeces();
+        AlgoBlocks algoritmoIterativo = recorridoIterativo.agregarBloque();
+        algoritmoIterativo.agregarBloqueDerecha();
+        algoritmoIterativo.agregarBloqueAbajo();
+        algoBlocks.agregarBloqueArriba();
+        algoBlocks.agregarBloqueArriba();
+        algoBlocks.ejecutar();
+        assertArrayEquals(posicion, algoBlocks.obtenerPersonaje().obtenerPosicion());
     }
 }

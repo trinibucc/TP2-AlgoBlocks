@@ -14,15 +14,15 @@ public class RecorridoIterativo implements Recorrido {
             throw new NumeroDeRepeticionesInvalidoError();
         }
         this.repeticion = repeticion;
-        this.algoritmo = new ArrayList<>();
+        this.algoritmo = new ArrayList<Bloque>();
         this.personaje = personaje;
     }
     @Override
     public void ejecutar(){
         int repetido = 0;
-        while(repetido < repeticion){
-            for(Bloque bloque : algoritmo) {
-                bloque.ejecutar(personaje);
+        while(repetido < this.repeticion){
+            for(Bloque bloque : this.algoritmo) {
+                bloque.ejecutar(this.personaje);
             }
             repetido++;
         }

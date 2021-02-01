@@ -50,7 +50,6 @@ class RecorridoIterativo{
 }
 
 class RecorridoSinRepeticion{
-    - Personaje
 }
 
 class Personaje{
@@ -71,24 +70,29 @@ class SectorDibujo{
     + obtenerSectorDibujo()
 }
 
-
-AlgoBlocks "0"-->"*" Bloque
-AlgoBlocks o-- Personaje
-Personaje o-- Lapiz
-RecorridoInverso ..|> Recorrido
-RecorricoInverso "0"-->"*" Bloque
-RecorridoIterativo ..|> Recorrido
-RecorridoIterativo "0"-->"*" Bloque
-RecorridoSinRepeticion ..|> Recorrido
-RecorridoSinRepetecion --> Personaje
-RecorridoSinRepetecion "0"-->"*" Bloque
-Bloque ..> Personaje
-Lapiz ..|> Bloque
-BloqueDerecha ..|> Bloque
-BloqueAbajo ..|> Bloque
-BloqueIzquierda ..|> Bloque
-BloqueArriba ..|> Bloque
-BloqueRepetir ..|> Bloque
-LapizAbajo ..|> Lapiz
-LapizArriba ..|> Lapiz
+AlgoBlocks ---> Personaje
+AlgoBlocks ---> "*" Bloque
+AlgoBlocks ...> RecorridoIterativo
+BloqueDerecha ...|> Bloque
+BloqueAbajo ...|> Bloque
+BloqueIzquierda ...|> Bloque
+BloqueArriba ...|> Bloque
+BloqueRepetir ...|> Bloque
+BloqueRepetir ---> RecorridoIterativo
+BloqueRepetir ...> Personaje
+Bloque ...> Personaje
+LapizAbajo ...|> Lapiz
+LapizAbajo ...|> Bloque
+LapizAbajo ...> Personaje
+LapizAbajo ...> SectorDibujo
+LapizArriba ...|> Lapiz
+LapizArriba ...|> Bloque
+LapizArriba ...> Personaje
+Personaje ---> Lapiz
+Recorrido ...> AlgoBlocks
+Recorrido ...> Bloque
+RecorridoIterativo ---> Bloque
+RecorridoIterativo ---> Personaje
+RecorridoSinRepeticion ---> Bloque
+RecorridoSinRepeticion ---> Personaje
 @enduml

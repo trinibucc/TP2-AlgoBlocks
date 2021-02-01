@@ -10,25 +10,24 @@ public class RecorridoSinRepeticion implements Recorrido{
 
 
     public RecorridoSinRepeticion(Personaje personaje){
-        this.recorrido = new ArrayList<>();
+        this.recorrido = new ArrayList<Bloque>();
         this.personaje = personaje;
 
     }
 
     @Override
     public void ejecutar(){
-        for(Bloque bloque : recorrido){
-            bloque.ejecutar(personaje);
+        for(Bloque bloque : this.recorrido){
+            bloque.ejecutar(this.personaje);
         }
     }
 
     @Override
     public AlgoBlocks agregarBloque() {
-
         return null;
     }
     @Override
     public List<Bloque> obtenerRecorrido(){
-        return recorrido;
+        return this.recorrido;
     }
 }
