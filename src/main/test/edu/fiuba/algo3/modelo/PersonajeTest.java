@@ -38,9 +38,10 @@ public class PersonajeTest {
     @Test
     public void testActualizarPosicionDelPersonajeCorrectamente(){
         Personaje personaje = new Personaje();
-        int[] movimiento = {1, 2};
+        int[] movimiento = {1, 0};
         personaje.actualizarPosicion(movimiento);
         assertArrayEquals(movimiento, personaje.obtenerPosicion());
     }
+
 
 }

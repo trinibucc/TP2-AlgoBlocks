@@ -1,0 +1,98 @@
+@startuml
+class AlgoBlocks{
+    + AlgoBlocks(Recorrido)
+    + agregarBloqueDrecha()
+    + agregarBloqueAbajo()
+    + agregarBloqueIzquierda()
+    + agregarBloqueArriba()
+    + agregarLapizArriba()
+    + agregarLapizAbajo()
+    + agregarBloqueRepetirDosVeces(): Recorrido
+    + agregarBloqueRepetirTresVeces(): Recorrido
+    + ejecutar()
+}
+
+interface Bloque{
+    + ejecutar(Personaje)
+}
+
+interface Lapiz{
+    + dibujar(int[2])
+}
+
+interface Recorrido{
+    + ejecutar()
+    + agregarBloque(): AlgoBlocks
+    + obtenerRecorrdio(): List<Bloque>
+}
+
+class BloqueDerecha{}
+
+class BloqueAbajo{}
+
+class BloqueIzquierda{}
+
+class BloqueArriba{}
+
+class LapizAbajo{}
+
+class LapizArriba{}
+
+class BloqueRepetir{
+    + BloqueRepetir(Recorrido)
+}
+
+class RecorridoInverso{
+}
+
+class RecorridoIterativo{
+    + RecorridoIterativo(int)
+}
+
+class RecorridoSinRepeticion{
+}
+
+class Personaje{
+    - int[2]
+    + mover(int[2])
+    + dibujar()
+    + subirLapiz()
+    + bajarLapzi()
+    + actualizarPosicion(int[2])
+}
+
+class SectorDibujo{
+    - List<int[2]>
+    - SectorDibujo
+    - crearInstancia()
+    + trazar()
+    + agregarALista(int[2])
+    + obtenerSectorDibujo()
+}
+
+AlgoBlocks ---> Personaje
+AlgoBlocks ---> "*" Bloque
+AlgoBlocks ...> RecorridoIterativo
+BloqueDerecha ...|> Bloque
+BloqueAbajo ...|> Bloque
+BloqueIzquierda ...|> Bloque
+BloqueArriba ...|> Bloque
+BloqueRepetir ...|> Bloque
+BloqueRepetir ---> RecorridoIterativo
+BloqueRepetir ...> Personaje
+Bloque ...> Personaje
+LapizAbajo ...|> Lapiz
+LapizAbajo ...|> Bloque
+LapizAbajo ...> Personaje
+LapizAbajo ...> SectorDibujo
+LapizArriba ...|> Lapiz
+LapizArriba ...|> Bloque
+LapizArriba ...> Personaje
+Personaje ---> Lapiz
+Recorrido ...> AlgoBlocks
+Recorrido ...> Bloque
+RecorridoIterativo ---> Bloque
+RecorridoIterativo ---> Personaje
+RecorridoSinRepeticion ---> Bloque
+RecorridoSinRepeticion ---> Personaje
+@enduml
