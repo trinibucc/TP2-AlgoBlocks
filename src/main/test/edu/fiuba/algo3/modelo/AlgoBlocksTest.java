@@ -106,7 +106,7 @@ public class AlgoBlocksTest {
     }
 
     @Test
-    public void testMoverEnDistintasDireccionesYsubirLaíz(){
+    public void testMoverEnDistintasDireccionesYsubirLapiz(){
         Personaje personaje = new Personaje();
         AlgoBlocks algoBlocks = new AlgoBlocks(new RecorridoSinRepeticion(personaje), personaje);
         int vertical = (algoBlocks.obtenerPersonaje()).obtenerVertical();
@@ -168,6 +168,7 @@ public class AlgoBlocksTest {
         assertEquals(personaje.obtenerHorizontal(), 4);
     }
 
+    @Test
     public void testAgregarBloquesDeMovimientoSimlesDespuesDeAgregarBloquesDeRepetirPersonajeSeMueveCorrectamente(){
         int[] posicion = {4, 0};
         Personaje personaje = new Personaje();
