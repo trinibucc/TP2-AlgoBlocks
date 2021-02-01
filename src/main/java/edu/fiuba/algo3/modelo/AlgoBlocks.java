@@ -64,4 +64,10 @@ public class AlgoBlocks {
         this.algoritmo.add(new BloqueRepetir(recorridoIterativo));
         return recorridoIterativo;
     }
+
+    public Recorrido agregarBloqueInverso(){
+        RecorridoInverso inverso = new RecorridoInverso(personaje);
+        this.algoritmo.add(new BloqueInverso(inverso));
+        return inverso;
+    }
 }

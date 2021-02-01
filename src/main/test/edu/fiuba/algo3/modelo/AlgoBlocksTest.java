@@ -168,4 +168,21 @@ public class AlgoBlocksTest {
         assertEquals(personaje.obtenerHorizontal(), 4);
 
     }
+
+    @Test
+    public void testUsarBloqueInversoYPersonajeRealizaMovimientosAlReves(){
+        Personaje personaje = new Personaje();
+        AlgoBlocks algoBlocks = new AlgoBlocks(new RecorridoSinRepeticion(personaje), personaje);
+        algoBlocks.agregarBloqueDerecha();
+        algoBlocks.agregarBloqueArriba();
+        Recorrido inverso = algoBlocks.agregarBloqueInverso();
+        AlgoBlocks algoritmoIterativo = inverso.agregarBloque();
+        algoritmoIterativo.agregarBloqueDerecha();
+        algoritmoIterativo.agregarBloqueAbajo();
+        algoBlocks.ejecutar();
+
+        assertEquals(personaje.obtenerVertical(), 0);
+        assertEquals(personaje.obtenerHorizontal(), 2);
+
+    }
 }
