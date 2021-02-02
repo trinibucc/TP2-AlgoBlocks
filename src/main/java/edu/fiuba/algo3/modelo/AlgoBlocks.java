@@ -1,13 +1,13 @@
 package edu.fiuba.algo3.modelo;
 
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 public class AlgoBlocks {
 
-    private Personaje personaje;
-    private List<Bloque> algoritmo;
+    private final Personaje personaje;
+    private final List<Bloque> algoritmo;
 
     public AlgoBlocks(Recorrido recorrido, Personaje personaje){
         this.personaje = personaje;
