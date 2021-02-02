@@ -1,8 +1,11 @@
 package edu.fiuba.algo3.modelo;
 
+import static java.lang.Math.pow;
+import static java.lang.Math.sqrt;
+
 public class Personaje {
 
-    private Bloque lapiz;
+    private Lapiz lapiz;
     private int[] posicion;
 
     public Personaje(){
@@ -21,7 +24,7 @@ public class Personaje {
         this.lapiz = new LapizArriba();
     }
 
-    public Bloque obtenerLapiz() {
+    public Lapiz obtenerLapiz() {
         return this.lapiz;
     }
 
@@ -30,10 +33,26 @@ public class Personaje {
     }
 
     public void actualizarPosicion(int[] movimiento) {
+        double modulo = sqrt(pow(movimiento[0], 2) + pow(movimiento[1], 2));
+        if(1 < modulo || modulo == 0){
+            throw new MovimientoInvalidoError();
+        }
         this.sumarPosiciones(movimiento);
     }
 
     public int[] obtenerPosicion() {
         return posicion;
+    }
+
+    public int obtenerHorizontal(){
+        return posicion[0];
+    }
+
+    public int obtenerVertical(){
+        return posicion[1];
+    }
+
+    public void dibujar(){
+        lapiz.dibujar(posicion);
     }
 }

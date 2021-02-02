@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.modelo;
 
-public class LapizAbajo implements Lapiz, Bloque{
+
+public class LapizAbajo implements Lapiz, Bloque {
 
     @Override
     public void ejecutar(Personaje personaje){
@@ -10,5 +11,6 @@ public class LapizAbajo implements Lapiz, Bloque{
     @Override
     public void dibujar(int[] posicion){
 
+        SectorDibujo.obtenerSectorDibujo().agregarADibujo(posicion);
     }
 }

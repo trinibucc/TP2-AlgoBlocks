@@ -6,5 +6,6 @@ public class BloqueArriba implements Bloque {
     public void ejecutar(Personaje personaje) {
         int[] movimiento = {0, 1};
         personaje.actualizarPosicion(movimiento);
+        personaje.dibujar();
     }
 }
