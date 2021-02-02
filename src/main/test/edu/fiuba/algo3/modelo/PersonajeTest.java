@@ -1,13 +1,12 @@
 package edu.fiuba.algo3.modelo;
 
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 
 public class PersonajeTest {
 
-    @Test // Prueba propuesta por la catedra.
+    @Test
     public void testSeCreaPersonajeConElLapizArriba() {
         Personaje personaje = new Personaje();
         assertTrue(personaje.obtenerLapiz() instanceof LapizArriba);
@@ -30,18 +29,17 @@ public class PersonajeTest {
 
     @Test
     public void testPersonajeSeCreaEnLaPosicionDelOrigenCorrecta(){
-        Personaje personaje = new Personaje();
         int[] origen = {0, 0};
+        Personaje personaje = new Personaje();
         assertArrayEquals(origen, personaje.obtenerPosicion());
     }
 
     @Test
     public void testActualizarPosicionDelPersonajeCorrectamente(){
+        int[] posicion = {1, 0};
         Personaje personaje = new Personaje();
-        int[] movimiento = {1, 0};
-        personaje.actualizarPosicion(movimiento);
-        assertArrayEquals(movimiento, personaje.obtenerPosicion());
+        personaje.actualizarPosicion(posicion);
+        assertArrayEquals(posicion, personaje.obtenerPosicion());
     }
-
 
 }

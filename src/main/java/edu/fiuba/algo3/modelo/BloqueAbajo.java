@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.modelo;
 
+
 public class BloqueAbajo implements Bloque {
 
     public void ejecutar(Personaje personaje){
@@ -7,4 +8,5 @@ public class BloqueAbajo implements Bloque {
         personaje.actualizarPosicion(movimiento);
         personaje.dibujar();
     }
+
 }

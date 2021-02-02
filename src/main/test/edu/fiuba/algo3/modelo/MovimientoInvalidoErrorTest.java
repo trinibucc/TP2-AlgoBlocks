@@ -2,23 +2,21 @@ package edu.fiuba.algo3.modelo;
 
 import org.junit.Test;
 
-import java.lang.reflect.Executable;
 
 public class MovimientoInvalidoErrorTest {
 
     @Test (expected = MovimientoInvalidoError.class)
     public void testActualizarPosicionDelPersonajeConModuloMayorAUnoLanzaExcepcion(){
+        int[] posicion = {1, 3};
         Personaje personaje = new Personaje();
-        int[] movimiento = {1, 3};
-        personaje.actualizarPosicion(movimiento);
+        personaje.actualizarPosicion(posicion);
     }
 
     @Test (expected = MovimientoInvalidoError.class)
     public void testActualizrPosicionDelPersonajeConModuloCeroLanzaExcepcion(){
+        int[] posicion = {0, 0};
         Personaje personaje = new Personaje();
-        int[] movimiento = {0, 0};
-        personaje.actualizarPosicion(movimiento);
+        personaje.actualizarPosicion(posicion);
     }
-
 
 }

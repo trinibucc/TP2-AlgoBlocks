@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.modelo;
 
+
 public class BloqueInverso implements Bloque {
 
     RecorridoInverso recorridoInverso;
@@ -11,4 +12,5 @@ public class BloqueInverso implements Bloque {
     public void ejecutar(Personaje personaje) {
         recorridoInverso.ejecutar();
     }
+
 }

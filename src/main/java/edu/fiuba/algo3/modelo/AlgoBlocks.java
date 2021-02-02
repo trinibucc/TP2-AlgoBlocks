@@ -1,8 +1,7 @@
 package edu.fiuba.algo3.modelo;
 
-
-
 import java.util.List;
+
 
 public class AlgoBlocks {
 
@@ -71,4 +70,5 @@ public class AlgoBlocks {
         this.algoritmo.add(new BloqueInverso(inverso));
         return inverso;
     }
+
 }

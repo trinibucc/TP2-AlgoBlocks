@@ -3,6 +3,7 @@ package edu.fiuba.algo3.modelo;
 import static java.lang.Math.pow;
 import static java.lang.Math.sqrt;
 
+
 public class Personaje {
 
     private Lapiz lapiz;
@@ -44,15 +45,8 @@ public class Personaje {
         return posicion;
     }
 
-    public int obtenerHorizontal(){
-        return posicion[0];
-    }
-
-    public int obtenerVertical(){
-        return posicion[1];
-    }
-
     public void dibujar(){
         lapiz.dibujar(posicion);
     }
+
 }

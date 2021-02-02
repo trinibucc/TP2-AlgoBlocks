@@ -3,6 +3,7 @@ package edu.fiuba.algo3.modelo;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class SectorDibujo {
 
     private static SectorDibujo instancia = null;
@@ -37,6 +38,5 @@ public class SectorDibujo {
     public int[] obtenerDibujo(){
         return (dibujo.get(0));
     }
-
 
 }

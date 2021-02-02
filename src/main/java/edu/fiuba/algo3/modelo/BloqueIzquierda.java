@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.modelo;
 
+
 public class BloqueIzquierda implements Bloque {
 
     @Override
@@ -8,4 +9,5 @@ public class BloqueIzquierda implements Bloque {
         personaje.actualizarPosicion(movimiento);
         personaje.dibujar();
     }
+
 }

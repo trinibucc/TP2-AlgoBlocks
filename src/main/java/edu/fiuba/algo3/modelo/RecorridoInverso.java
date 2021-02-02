@@ -4,9 +4,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class RecorridoInverso implements Recorrido{
-    private List<Bloque> algoritmo;
 
+public class RecorridoInverso implements Recorrido{
+
+    private List<Bloque> algoritmo;
     private Personaje personaje;
 
     public RecorridoInverso(Personaje personaje) {
@@ -22,12 +23,13 @@ public class RecorridoInverso implements Recorrido{
         }
     }
 
-
     public AlgoBlocks agregarBloque(){
         return (new AlgoBlocks(this, personaje));
     }
+
     @Override
     public List<Bloque> obtenerRecorrido(){
         return algoritmo;
     }
+
 }

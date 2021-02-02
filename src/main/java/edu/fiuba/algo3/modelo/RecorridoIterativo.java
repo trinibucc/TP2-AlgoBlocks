@@ -3,6 +3,7 @@ package edu.fiuba.algo3.modelo;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class RecorridoIterativo implements Recorrido {
 
     private List<Bloque> algoritmo;
@@ -14,9 +15,10 @@ public class RecorridoIterativo implements Recorrido {
             throw new NumeroDeRepeticionesInvalidoError();
         }
         this.repeticion = repeticion;
-        this.algoritmo = new ArrayList<Bloque>();
+        this.algoritmo = new ArrayList<>();
         this.personaje = personaje;
     }
+
     @Override
     public void ejecutar(){
         int repetido = 0;
@@ -27,12 +29,15 @@ public class RecorridoIterativo implements Recorrido {
             repetido++;
         }
     }
+
     @Override
     public AlgoBlocks agregarBloque(){
         return (new AlgoBlocks(this, personaje));
     }
+
     @Override
     public List<Bloque> obtenerRecorrido(){
         return algoritmo;
     }
+
 }

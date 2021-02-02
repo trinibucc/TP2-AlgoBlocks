@@ -10,7 +10,7 @@ public class LapizAbajo implements Lapiz, Bloque {
 
     @Override
     public void dibujar(int[] posicion){
-
         SectorDibujo.obtenerSectorDibujo().agregarADibujo(posicion);
     }
+
 }
