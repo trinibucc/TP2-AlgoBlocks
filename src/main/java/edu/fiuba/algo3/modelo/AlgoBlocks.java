@@ -8,9 +8,9 @@ public class AlgoBlocks {
     private final Personaje personaje;
     private final List<Bloque> algoritmo;
 
-    public AlgoBlocks(Recorrido recorrido, Personaje personaje){
+    public AlgoBlocks(List<Bloque> recorrido, Personaje personaje){
         this.personaje = personaje;
-        this.algoritmo = recorrido.obtenerRecorrido();
+        this.algoritmo = recorrido;
     }
 
     public void agregarLapizArriba() {
@@ -53,22 +53,25 @@ public class AlgoBlocks {
         this.algoritmo.add(bloqueArriba);
     }
 
-    protected Recorrido agregarBloqueRepetirDosVeces(){
-        RecorridoIterativo recorridoIterativo = new RecorridoIterativo(2, personaje);
-        this.algoritmo.add(new BloqueRepetir(recorridoIterativo));
-        return recorridoIterativo;
+    protected BloqueRepetir agregarBloqueRepetirDosVeces(){
+       // RecorridoIterativo recorridoIterativo = new RecorridoIterativo(2, personaje);
+        BloqueRepetir bloqueRepetir = new BloqueRepetir(2, personaje);
+        this.algoritmo.add(bloqueRepetir);
+        return bloqueRepetir;
     }
 
-    public Recorrido agregarBloqueRepetirTresVeces(){
-        RecorridoIterativo recorridoIterativo = new RecorridoIterativo(3, personaje);
-        this.algoritmo.add(new BloqueRepetir(recorridoIterativo));
-        return recorridoIterativo;
+    public BloqueRepetir agregarBloqueRepetirTresVeces(){
+        //RecorridoIterativo recorridoIterativo = new RecorridoIterativo(3, personaje);
+        BloqueRepetir bloqueRepetir = new BloqueRepetir(3, personaje);
+        this.algoritmo.add(bloqueRepetir);
+        return bloqueRepetir;
     }
 
-    public Recorrido agregarBloqueInverso(){
-        RecorridoInverso inverso = new RecorridoInverso(personaje);
-        this.algoritmo.add(new BloqueInverso(inverso));
-        return inverso;
+    public BloqueInverso agregarBloqueInverso(){
+        //RecorridoInverso inverso = new RecorridoInverso(personaje);
+        BloqueInverso bloqueInverso = new BloqueInverso(personaje);
+        this.algoritmo.add(bloqueInverso);
+        return bloqueInverso;
     }
 
 }

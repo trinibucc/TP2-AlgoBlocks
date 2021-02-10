@@ -6,68 +6,68 @@ import static org.junit.jupiter.api.Assertions.*;
 public class AlgoBlocksTest {
 
     @Test
-    public void testLevantarLapizConBloqueLevantaLapizPersonajeLevantaElLapiz(){
+    public void test01LevantarLapizConBloqueLevantaLapizPersonajeLevantaElLapiz(){
         Personaje personaje = new Personaje();
-        AlgoBlocks algoBlocks = new AlgoBlocks(new RecorridoSinRepeticion(personaje), personaje);
+        AlgoBlocks algoBlocks = new AlgoBlocks(new Recorrido(personaje).obtenerRecorrido(), personaje);
         algoBlocks.agregarLapizArriba();
         algoBlocks.ejecutar();
         assertTrue(algoBlocks.obtenerPersonaje().obtenerLapiz() instanceof LapizArriba);
     }
 
     @Test
-    public void testBajarLapizConBloqueBajaLazpizPersonajeBajaElLapiz(){
+    public void test02BajarLapizConBloqueBajaLazpizPersonajeBajaElLapiz(){
         Personaje personaje = new Personaje();
-        AlgoBlocks algoBlocks = new AlgoBlocks(new RecorridoSinRepeticion(personaje), personaje);
+        AlgoBlocks algoBlocks = new AlgoBlocks(new Recorrido(personaje).obtenerRecorrido(), personaje);
         algoBlocks.agregarLapizAbajo();
         algoBlocks.ejecutar();
         assertTrue(algoBlocks.obtenerPersonaje().obtenerLapiz() instanceof LapizAbajo);
     }
 
     @Test
-    public void testMoverDerechaConBloqueMoverDerechaPersonajeSeMueveALaDerecha(){
+    public void test03MoverDerechaConBloqueMoverDerechaPersonajeSeMueveALaDerecha(){
         int[] posicion = {1, 0};
         Personaje personaje = new Personaje();
-        AlgoBlocks algoBlocks = new AlgoBlocks(new RecorridoSinRepeticion(personaje), personaje);
+        AlgoBlocks algoBlocks = new AlgoBlocks(new Recorrido(personaje).obtenerRecorrido(), personaje);
         algoBlocks.agregarBloqueDerecha();
         algoBlocks.ejecutar();
         assertArrayEquals(posicion, personaje.obtenerPosicion());
     }
 
     @Test
-    public void testMoverAbajoConBloqueMoverAbajoPersonajeSeMueveAbajo(){
+    public void test04MoverAbajoConBloqueMoverAbajoPersonajeSeMueveAbajo(){
         int[] posicion = {0, -1};
         Personaje personaje = new Personaje();
-        AlgoBlocks algoBlocks = new AlgoBlocks(new RecorridoSinRepeticion(personaje), personaje);
+        AlgoBlocks algoBlocks = new AlgoBlocks(new Recorrido(personaje).obtenerRecorrido(), personaje);
         algoBlocks.agregarBloqueAbajo();
         algoBlocks.ejecutar();
         assertArrayEquals(posicion, personaje.obtenerPosicion());
     }
 
     @Test
-    public void testMoverIzquierdaConBloqueMoverIzquierdaPersonajeSeMueveIzquierda(){
+    public void test05MoverIzquierdaConBloqueMoverIzquierdaPersonajeSeMueveIzquierda(){
         int[] posicion = {-1, 0};
         Personaje personaje = new Personaje();
-        AlgoBlocks algoBlocks = new AlgoBlocks(new RecorridoSinRepeticion(personaje), personaje);
+        AlgoBlocks algoBlocks = new AlgoBlocks(new Recorrido(personaje).obtenerRecorrido(), personaje);
         algoBlocks.agregarBloqueIzquierda();
         algoBlocks.ejecutar();
         assertArrayEquals(posicion, personaje.obtenerPosicion());
     }
 
     @Test
-    public void testMoverArribaConBloqueMoverArribaPersonajeSeMueveArriba(){
+    public void test06MoverArribaConBloqueMoverArribaPersonajeSeMueveArriba(){
         int[] posicion = {0, 1};
         Personaje personaje = new Personaje();
-        AlgoBlocks algoBlocks = new AlgoBlocks(new RecorridoSinRepeticion(personaje), personaje);
+        AlgoBlocks algoBlocks = new AlgoBlocks(new Recorrido(personaje).obtenerRecorrido(), personaje);
         algoBlocks.agregarBloqueArriba();
         algoBlocks.ejecutar();
         assertArrayEquals(posicion, personaje.obtenerPosicion());
     }
 
     @Test
-    public void testMoverEnVariasDireccionesHorizontalesPersonajeSeMueveCorrectamente(){
+    public void test07MoverEnVariasDireccionesHorizontalesPersonajeSeMueveCorrectamente(){
         int[] posicion = {-1, 0};
         Personaje personaje = new Personaje();
-        AlgoBlocks algoBlocks = new AlgoBlocks(new RecorridoSinRepeticion(personaje), personaje);
+        AlgoBlocks algoBlocks = new AlgoBlocks(new Recorrido(personaje).obtenerRecorrido(), personaje);
         algoBlocks.agregarBloqueIzquierda();
         algoBlocks.agregarBloqueIzquierda();
         algoBlocks.agregarBloqueDerecha();
@@ -76,10 +76,10 @@ public class AlgoBlocksTest {
     }
 
     @Test
-    public void testMoverEnVariasDireccionesVerticalesPersonajeSeMueveCorrectamente(){
+    public void test08MoverEnVariasDireccionesVerticalesPersonajeSeMueveCorrectamente(){
         int[] posicion = {0, 1};
         Personaje personaje = new Personaje();
-        AlgoBlocks algoBlocks = new AlgoBlocks(new RecorridoSinRepeticion(personaje), personaje);
+        AlgoBlocks algoBlocks = new AlgoBlocks(new Recorrido(personaje).obtenerRecorrido(), personaje);
         algoBlocks.agregarBloqueArriba();
         algoBlocks.agregarBloqueArriba();
         algoBlocks.agregarBloqueAbajo();
@@ -88,10 +88,10 @@ public class AlgoBlocksTest {
     }
 
     @Test
-    public void testMoverEnDireccionesVerticalesYhorizontalesPersonajeSeMueveCorrectamente(){
+    public void test09MoverEnDireccionesVerticalesYhorizontalesPersonajeSeMueveCorrectamente(){
         int[] posicion = {1, 1};
         Personaje personaje = new Personaje();
-        AlgoBlocks algoBlocks = new AlgoBlocks(new RecorridoSinRepeticion(personaje), personaje);
+        AlgoBlocks algoBlocks = new AlgoBlocks(new Recorrido(personaje).obtenerRecorrido(), personaje);
         algoBlocks.agregarBloqueArriba();
         algoBlocks.agregarBloqueAbajo();
         algoBlocks.agregarBloqueDerecha();
@@ -103,10 +103,10 @@ public class AlgoBlocksTest {
     }
 
     @Test
-    public void testMoverEnDistintasDireccionesYsubirLapiz(){
+    public void test10MoverEnDistintasDireccionesYsubirLapiz(){
         int[] posicion = {0, 0};
         Personaje personaje = new Personaje();
-        AlgoBlocks algoBlocks = new AlgoBlocks(new RecorridoSinRepeticion(personaje), personaje);
+        AlgoBlocks algoBlocks = new AlgoBlocks(new Recorrido(personaje).obtenerRecorrido(), personaje);
         algoBlocks.agregarBloqueArriba();
         algoBlocks.agregarBloqueAbajo();
         algoBlocks.agregarBloqueDerecha();
@@ -118,10 +118,10 @@ public class AlgoBlocksTest {
     }
 
     @Test
-    public void testMoverEnDistintasDireccionesNoAfectaAlLapiz() {
+    public void test11MoverEnDistintasDireccionesNoAfectaAlLapiz() {
         int[] posicion = {0, 0};
         Personaje personaje = new Personaje();
-        AlgoBlocks algoBlocks = new AlgoBlocks(new RecorridoSinRepeticion(personaje), personaje);
+        AlgoBlocks algoBlocks = new AlgoBlocks(new Recorrido(personaje).obtenerRecorrido(), personaje);
         Lapiz lapiz = algoBlocks.obtenerPersonaje().obtenerLapiz();
         algoBlocks.agregarBloqueArriba();
         algoBlocks.agregarBloqueAbajo();
@@ -132,14 +132,14 @@ public class AlgoBlocksTest {
     }
 
     @Test
-    public void testUsarBloqueRepetirDosVecesYPersonajeSeMueveCorrectamente(){
+    public void test12UsarBloqueRepetirDosVecesYPersonajeSeMueveCorrectamente(){
         int[] posicion = {3, -1};
         Personaje personaje = new Personaje();
-        AlgoBlocks algoBlocks = new AlgoBlocks(new RecorridoSinRepeticion(personaje), personaje);
+        AlgoBlocks algoBlocks = new AlgoBlocks(new Recorrido(personaje).obtenerRecorrido(), personaje);
         algoBlocks.agregarBloqueDerecha();
         algoBlocks.agregarBloqueArriba();
-        Recorrido recorridoIterativo = algoBlocks.agregarBloqueRepetirDosVeces();
-        AlgoBlocks algoritmoIterativo = recorridoIterativo.agregarBloque();
+        BloqueRepetir bloqueRepetirDosVeces = algoBlocks.agregarBloqueRepetirDosVeces();
+        AlgoBlocks algoritmoIterativo = bloqueRepetirDosVeces.agregarBloque();
         algoritmoIterativo.agregarBloqueDerecha();
         algoritmoIterativo.agregarBloqueAbajo();
         algoBlocks.ejecutar();
@@ -147,14 +147,14 @@ public class AlgoBlocksTest {
     }
 
     @Test
-    public void testUsarBloqueRepetirTresVecesYPersonajeSeMueveCorrectamente(){
+    public void test13UsarBloqueRepetirTresVecesYPersonajeSeMueveCorrectamente(){
         int[] posicion = {4, -2};
         Personaje personaje = new Personaje();
-        AlgoBlocks algoBlocks = new AlgoBlocks(new RecorridoSinRepeticion(personaje), personaje);
+        AlgoBlocks algoBlocks = new AlgoBlocks(new Recorrido(personaje).obtenerRecorrido(), personaje);
         algoBlocks.agregarBloqueDerecha();
         algoBlocks.agregarBloqueArriba();
-        Recorrido recorridoIterativo = algoBlocks.agregarBloqueRepetirTresVeces();
-        AlgoBlocks algoritmoIterativo = recorridoIterativo.agregarBloque();
+        BloqueRepetir bloqueRepetirTresVeces = algoBlocks.agregarBloqueRepetirTresVeces();
+        AlgoBlocks algoritmoIterativo = bloqueRepetirTresVeces.agregarBloque();
         algoritmoIterativo.agregarBloqueDerecha();
         algoritmoIterativo.agregarBloqueAbajo();
         algoBlocks.ejecutar();
@@ -162,14 +162,14 @@ public class AlgoBlocksTest {
     }
 
     @Test
-    public void testAgregarBloquesDeMovimientoSimlesDespuesDeAgregarBloquesDeRepetirPersonajeSeMueveCorrectamente(){
+    public void test14AgregarBloquesDeMovimientoSimlesDespuesDeAgregarBloquesDeRepetirPersonajeSeMueveCorrectamente(){
         int[] posicion = {4, 0};
         Personaje personaje = new Personaje();
-        AlgoBlocks algoBlocks = new AlgoBlocks(new RecorridoSinRepeticion(personaje), personaje);
+        AlgoBlocks algoBlocks = new AlgoBlocks(new Recorrido(personaje).obtenerRecorrido(), personaje);
         algoBlocks.agregarBloqueDerecha();
         algoBlocks.agregarBloqueArriba();
-        Recorrido recorridoIterativo = algoBlocks.agregarBloqueRepetirTresVeces();
-        AlgoBlocks algoritmoIterativo = recorridoIterativo.agregarBloque();
+        BloqueRepetir bloqueRepetirTresVeces = algoBlocks.agregarBloqueRepetirTresVeces();
+        AlgoBlocks algoritmoIterativo = bloqueRepetirTresVeces.agregarBloque();
         algoritmoIterativo.agregarBloqueDerecha();
         algoritmoIterativo.agregarBloqueAbajo();
         algoBlocks.agregarBloqueArriba();
@@ -179,14 +179,14 @@ public class AlgoBlocksTest {
     }
 
     @Test
-    public void testUsarBloqueInversoYPersonajeRealizaMovimientosAlReves(){
+    public void test15UsarBloqueInversoYPersonajeRealizaMovimientosAlReves(){
         int[] posicion = {2, 0};
         Personaje personaje = new Personaje();
-        AlgoBlocks algoBlocks = new AlgoBlocks(new RecorridoSinRepeticion(personaje), personaje);
+        AlgoBlocks algoBlocks = new AlgoBlocks(new Recorrido(personaje).obtenerRecorrido(), personaje);
         algoBlocks.agregarBloqueDerecha();
         algoBlocks.agregarBloqueArriba();
-        Recorrido inverso = algoBlocks.agregarBloqueInverso();
-        AlgoBlocks algoritmoIterativo = inverso.agregarBloque();
+        BloqueInverso bloqueInverso = algoBlocks.agregarBloqueInverso();
+        AlgoBlocks algoritmoIterativo = bloqueInverso.agregarBloque();
         algoritmoIterativo.agregarBloqueDerecha();
         algoritmoIterativo.agregarBloqueAbajo();
         algoBlocks.ejecutar();
