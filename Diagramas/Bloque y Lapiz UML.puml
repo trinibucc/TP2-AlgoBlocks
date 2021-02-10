@@ -1,0 +1,47 @@
+@startuml
+
+interface Bloque{
+     ejecutar(Personaje)
+}
+
+class BloqueDerecha implements Bloque{
+}
+
+class BloqueAbajo implements Bloque{
+}
+
+class BloqueIzquierda implements Bloque{
+}
+
+class BloqueArriba implements Bloque{
+}
+
+class BloqueIterativo implements Bloque{
+    # List<Bloque>
+    + recorrer(Personaje)
+    + agregarBloque(): AlgoBlocks
+}
+BloqueIterativo o---> Personaje
+BloqueIterativo ...> AlgoBlocks
+
+class BloqueInverso extends BloqueIterativo{
+    + BloqueInverso(Personaje)
+}
+
+class BloqueRepetir extends BloqueIterativo{
+    - int
+    + BloqueRepetir(int, Personaje)
+}
+
+interface Lapiz{
+    dibujar(int[2])
+}
+
+class LapizAbajo implements Lapiz, Bloque{
+}
+
+class LapizArriba implements Lapiz, Bloque{
+    - List<int[2]>
+}
+
+@enduml

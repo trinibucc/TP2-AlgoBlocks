@@ -1,0 +1,32 @@
+@startuml
+
+header page header
+title test05MoverIzquierdaConBloqueMoverIzquierdaPersonajeSeMueveIzquierda
+actor test05
+
+create Personaje
+test05 -> Personaje: new Personaje()
+create LapizArriba
+Personaje -> LapizArriba: new LapizArriba()
+LapizArriba --> Personaje: lapiz = Lapiz
+Personaje --> test05: personaje = Personaje
+create AlgoBlocks
+test05 -> AlgoBlocks: new AlgoBlocks(new Recorrido(personaje).obtenerRecorrido(), personaje)
+create Recorrido
+AlgoBlocks -> Recorrido: new Recorrido(personaje).obtenerRecorrido()
+Recorrido --> Recorrido: personaje = Personaje
+Recorrido --> AlgoBlocks: algoritmo = List<Bloque>
+AlgoBlocks --> AlgoBlocks: personaje = Personje
+test05 -> AlgoBlocks: agregarBloqueIzquierda()
+create BloqueIzquierda
+AlgoBlocks -> BloqueIzquierda: new BloqueIzquierda()
+BloqueIzquierda --> AlgoBlocks: algoritmo.add(BloqueIzquierda)
+test05 -> AlgoBlocks: ejecutar()
+AlgoBlocks -> BloqueIzquierda: ejecutar(personaje)
+BloqueIzquierda -> Personaje: actualizarPosicion(-1, 0)
+Personaje --> Personaje: posicion = (-1, 0)
+BloqueIzquierda -> Personaje: dibujar()
+Personaje -> LapizArriba: dibujar(-1 ,0)
+LapizArriba --> LapizArriba: noDibuja.add(-1, 0)
+
+@enduml
