@@ -6,11 +6,11 @@ public class NumeroDeRepeticionesInvalidoErrorTest {
 
     @Test (expected = NumeroDeRepeticionesInvalidoError.class)
     public void testLlamarAlConstructorRecorridoIterativoConRepeticionesNegativasLanzaExcepcion(){
-        RecorridoIterativo recorridoIterativo = new RecorridoIterativo(-2, new Personaje());
+        BloqueRepetir bloqueRepetir = new BloqueRepetir(-2, new Personaje());
     }
 
     @Test (expected = NumeroDeRepeticionesInvalidoError.class)
     public void testLlamarAlConstructorRecorridoIterativoConRepeticionesPositivasMenorADosLanzaExcepcion(){
-        RecorridoIterativo recorridoIterativo = new RecorridoIterativo(1, new Personaje());
+        BloqueRepetir bloqueRepetir = new BloqueRepetir(1, new Personaje());
     }
 }

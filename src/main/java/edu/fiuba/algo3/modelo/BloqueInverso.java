@@ -1,16 +1,18 @@
 package edu.fiuba.algo3.modelo;
 
 
-public class BloqueInverso implements Bloque {
+import java.util.Collections;
 
-    RecorridoInverso recorridoInverso;
-    public BloqueInverso(RecorridoInverso  recorridoInverso) {
-        this.recorridoInverso = recorridoInverso;
+public class BloqueInverso extends BloqueIterativo {
+
+    public BloqueInverso(Personaje personaje) {
+        this.personaje = personaje;
     }
 
-    @Override
-    public void ejecutar(Personaje personaje) {
-        recorridoInverso.ejecutar();
+    public void ejecutar(Personaje personaje){
+        Collections.reverse(algoritmo);
+        this.recorrer(personaje);
     }
+
 
 }
