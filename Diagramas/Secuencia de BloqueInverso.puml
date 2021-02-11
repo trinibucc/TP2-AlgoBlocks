@@ -1,0 +1,42 @@
+@startuml
+
+header page header
+title test15UsarBloqueInversoYPersonajeRealizaMovimientosAlReves
+actor Test15
+
+Test15 -> AlgoBlocks: agregarBloqueDerecha()
+create Bloque
+AlgoBlocks -> Bloque: new Bloque()
+Bloque --> AlgoBlocks: algoritmo.add(Bloque)
+Test13 -> AlgoBlocks: agregarBloqueArriba()
+create Bloque
+AlgoBlocks -> Bloque: new Bloque()
+Bloque --> AlgoBlocks: algoritmo.add(Bloque)
+Test15 -> AlgoBlocks: agregarBloqueInverso()
+create BloqueInverso
+AlgoBlocks -> BloqueInverso: new BloqueInverso(personaje)
+BloqueInverso --> BloqueInverso: personaje = Personaje
+BloqueInverso --> AlgoBlocks: agregarBloqueInverso = BloqueInverso
+Test15 -> AlgoBlocks: bloqueInverso.agregarBloque()
+AlgoBlocks -> BloqueInverso: agregarBloque()
+BloqueInverso -> AlgoBlocks: new AlgoBlocks(algoritmo, personaje)
+AlgoBlocks --> BloqueInverso: AlgoBlocks
+BloqueInverso --> test15: algoritmoIterativo = AlgoBlocks
+Test15 -> AlgoBlocks: algoritmoIterativo.agregarBloqueDerecha()
+create Bloque
+AlgoBlocks -> Bloque: new Bloque()
+Bloque --> AlgoBlocks: algoritmo.add(Bloque)
+Test15 -> AlgoBlocks: algoritmoIterativo.agregarBloqueAbajo()
+create Bloque
+AlgoBlocks -> Bloque: new Bloque()
+Bloque --> AlgoBlocks: algoritmo.add(Bloque)
+test15 -> AlgoBlocks: ejecutar()
+loop algoritmo.size()
+    AlgoBlocks -> Bloque: ejecutar(Personaje)
+    BloqueInverso -> BloqueInverso: Collections.reverser(algoritmo)
+    BloqueInverso -> BloqueInverso: recorrer(personaje)
+    loop algoritmoiterativo.size()
+        BloqueIterativo -> Bloque: ejecutar(personaje)
+    end
+end
+@enduml

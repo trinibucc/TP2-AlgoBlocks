@@ -122,7 +122,6 @@ public class AlgoBlocksTest {
         int[] posicion = {0, 0};
         Personaje personaje = new Personaje();
         AlgoBlocks algoBlocks = new AlgoBlocks(new Recorrido(personaje).obtenerRecorrido(), personaje);
-        Lapiz lapiz = algoBlocks.obtenerPersonaje().obtenerLapiz();
         algoBlocks.agregarBloqueArriba();
         algoBlocks.agregarBloqueAbajo();
         algoBlocks.agregarBloqueDerecha();
