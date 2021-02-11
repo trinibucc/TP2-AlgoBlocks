@@ -1,0 +1,23 @@
+@startuml
+
+interface Bloque{
+    ejecutar(Personaje)
+}
+class BloqueIterativo implements Bloque{
+    # List<Bloque>
+    + recorrer(Personaje)
+    + agregarBloque(): AlgoBlocks
+}
+BloqueIterativo o---> Personaje
+BloqueIterativo ...> AlgoBlocks
+
+class BloqueInverso extends BloqueIterativo{
+    + BloqueInverso(Personaje)
+}
+
+class BloqueRepetir extends BloqueIterativo{
+    - int
+    + BloqueRepetir(int, Personaje)
+}
+
+@enduml
