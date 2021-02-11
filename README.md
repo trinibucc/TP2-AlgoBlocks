@@ -19,27 +19,26 @@ Corrector: **Tomás Bustamante**
 Listado de software/herramientas necesarias para el proyecto
 
 
-java 11
-maven 3.6.0
-//agregar herramienta de integracion
+Java 11
+JUnit: Framework de pruebas unitarias para Java.
+Maven 3.6.0: El archivo "pom.xml" posee las dependencias necesarias
+Herramienta de integración continua utilizada: GitHub Actions
 
 
 
 ## Ejecutando las pruebas
-bash
+
 mvn test
 
 Este comando crea el reporte de cobertura para CI y el reporte HTML que pueden abrir de la siguiente manera:
 
-bash
-    <browser> ./target/site/jacoco/index.html
+
+<broswer> ./target/site/jacoco/index.html
 
 
 ## Ejecutando la aplicación
 
-1 - Crear una instancia de AlgoBlocks
-2 - Usar los metodos que ofrece la instancia de AlgoBlocks
-3 - Ejecutar AlgoBlocks.
+
 
 ## Licencia
 
