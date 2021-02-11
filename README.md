@@ -18,23 +18,25 @@ Corrector: **Tomás Bustamante**
 
 Listado de software/herramientas necesarias para el proyecto
 
-
+```
 Java 11
 JUnit: Framework de pruebas unitarias para Java.
 Maven 3.6.0: El archivo "pom.xml" posee las dependencias necesarias
 Herramienta de integración continua utilizada: GitHub Actions
-
-
+...
+```
 
 ## Ejecutando las pruebas
 
-mvn test
+```bash
+    mvn test
+```
 
 Este comando crea el reporte de cobertura para CI y el reporte HTML que pueden abrir de la siguiente manera:
 
-
-<broswer> ./target/site/jacoco/index.html
-
+```bash
+    <browser> ./target/site/jacoco/index.html
+```
 
 ## Ejecutando la aplicación
 
