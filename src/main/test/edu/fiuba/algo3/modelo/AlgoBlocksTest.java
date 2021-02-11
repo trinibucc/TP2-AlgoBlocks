@@ -1,6 +1,10 @@
 package edu.fiuba.algo3.modelo;
 
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class AlgoBlocksTest {
@@ -179,16 +183,23 @@ public class AlgoBlocksTest {
 
     @Test
     public void test15UsarBloqueInversoYPersonajeRealizaMovimientosAlReves(){
-        int[] posicion = {2, 0};
         Personaje personaje = new Personaje();
         AlgoBlocks algoBlocks = new AlgoBlocks(new Recorrido(personaje).obtenerRecorrido(), personaje);
-        algoBlocks.agregarBloqueDerecha();
-        algoBlocks.agregarBloqueArriba();
         BloqueInverso bloqueInverso = algoBlocks.agregarBloqueInverso();
-        AlgoBlocks algoritmoIterativo = bloqueInverso.agregarBloque();
-        algoritmoIterativo.agregarBloqueDerecha();
-        algoritmoIterativo.agregarBloqueAbajo();
-        algoBlocks.ejecutar();
-        assertArrayEquals(posicion, personaje.obtenerPosicion());
+        AlgoBlocks inverso = bloqueInverso.agregarBloque();
+        inverso.agregarBloqueDerecha();
+        inverso.agregarBloqueAbajo();
+        List<Bloque> listaInvertida = new ArrayList<>();
+        listaInvertida.add(new BloqueAbajo());
+        listaInvertida.add(new BloqueDerecha());
+        inverso.ejecutar();
+        for(Bloque bloque : listaInvertida){
+            for(Bloque invertidos: bloqueInverso.obtenerLista()){
+                if(listaInvertida.size() != bloqueInverso.obtenerLista().size() || bloque != invertidos)
+                    assertFalse(false);
+                else
+                    assertFalse(true);
+            }
+        }
     }
 }
