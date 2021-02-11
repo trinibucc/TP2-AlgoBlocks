@@ -54,21 +54,18 @@ public class AlgoBlocks {
     }
 
     protected BloqueRepetir agregarBloqueRepetirDosVeces(){
-       // RecorridoIterativo recorridoIterativo = new RecorridoIterativo(2, personaje);
         BloqueRepetir bloqueRepetir = new BloqueRepetir(2, personaje);
         this.algoritmo.add(bloqueRepetir);
         return bloqueRepetir;
     }
 
     public BloqueRepetir agregarBloqueRepetirTresVeces(){
-        //RecorridoIterativo recorridoIterativo = new RecorridoIterativo(3, personaje);
         BloqueRepetir bloqueRepetir = new BloqueRepetir(3, personaje);
         this.algoritmo.add(bloqueRepetir);
         return bloqueRepetir;
     }
 
     public BloqueInverso agregarBloqueInverso(){
-        //RecorridoInverso inverso = new RecorridoInverso(personaje);
         BloqueInverso bloqueInverso = new BloqueInverso(personaje);
         this.algoritmo.add(bloqueInverso);
         return bloqueInverso;
