@@ -18,7 +18,4 @@ public abstract class BloqueIterativo implements Bloque{
         return (new AlgoBlocks(this.algoritmo, personaje));
     }
 
-
-
-
 }

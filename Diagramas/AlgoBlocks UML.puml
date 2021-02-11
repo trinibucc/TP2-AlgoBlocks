@@ -22,11 +22,8 @@ interface Bloque{
 }
 Bloque ...> Personaje
 
-interface Lapiz{
-    dibujar(int[2])
-}
-
 class Personaje{
+    - Lapiz
     - int[2]
     - sumarPosiciones(int[2])
     + subirLapiz()
@@ -35,6 +32,5 @@ class Personaje{
     + obtenerPosicion(): int[2]
     + dibujar()
 }
-Personaje *--- Lapiz
-
+Personaje *---> Lapiz
 @enduml

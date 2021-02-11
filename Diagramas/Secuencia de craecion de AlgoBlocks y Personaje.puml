@@ -1,0 +1,19 @@
+@startuml
+header page header
+title Creacion de AlgoBlocks y Personaje
+actor Usuario
+
+create Personaje
+Usuario -> Personaje: new Personaje()
+create LapizArriba
+Personaje -> LapizArriba: new LapizArriba()
+LapizArriba --> Personaje: lapiz = Lapiz
+Personaje --> Usuario: personaje = Personaje
+create AlgoBlocks
+test13 -> AlgoBlocks: new AlgoBlocks(new Recorrido(personaje).obtenerRecorrido(), personaje)
+create Recorrido
+AlgoBlocks -> Recorrido: new Recorrido(personaje).obtenerRecorrido()
+Recorrido --> Recorrido: personaje = Personaje
+Recorrido --> AlgoBlocks: algoritmo = List<Bloque>
+AlgoBlocks --> AlgoBlocks: personaje = Personje
+@enduml

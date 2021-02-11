@@ -1,5 +1,16 @@
 @startuml
 
+interface Lapiz{
+    dibujar(int[2])
+}
+class LapizAbajo implements Lapiz, Bloque{
+}
+LapizAbajo ...> SectorDibujo
+
+class LapizArriba implements Lapiz, Bloque{
+    - List<int[2]>
+}
+
 class SectorDibujo{
     - {static} SectorDibujo
     - List<int[2]>
@@ -9,5 +20,6 @@ class SectorDibujo{
     + agregarDibujo(int[2])
     + obtenerDibujo(): int[2]
 }
+
 
 @enduml
