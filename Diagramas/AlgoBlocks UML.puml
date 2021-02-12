@@ -33,4 +33,13 @@ class Personaje{
     + dibujar()
 }
 Personaje *---> Lapiz
+
+class Recorrido{
+     + Recorrido(Personaje)
+     + ejecutar()
+     + obtenerRecorrido(): List<Bloque>
+
+}
+Recorrido *---> "*" Bloque
+Recorrido o--- Personaje
 @enduml
