@@ -7,38 +7,38 @@ public class BloqueTest {
 
     @Test
     public void testBloqueDerechaSeEjecutaYmueveAPersonaje(){
-        int[] posicion = {1, 0};
+        Posicion posicion = new Posicion(1, 0);
         BloqueDerecha bloqueDerecha = new BloqueDerecha();
         Personaje personaje = new Personaje();
         bloqueDerecha.ejecutar(personaje);
-        assertArrayEquals(posicion, personaje.obtenerPosicion());
+        assertTrue(personaje.obtenerPosicion().esIgualA(posicion));
     }
 
     @Test
     public void testBloqueIzquierdaSeEjecutaYmueveAPersonaje(){
-        int[] posicion = {-1, 0};
+        Posicion posicion = new Posicion(-1, 0);
         BloqueIzquierda bloqueIzquierda = new BloqueIzquierda();
         Personaje personaje = new Personaje();
         bloqueIzquierda.ejecutar(personaje);
-        assertArrayEquals(posicion, personaje.obtenerPosicion());
+        assertTrue(personaje.obtenerPosicion().esIgualA(posicion));
     }
 
     @Test
     public void testBloqueArribaSeEjecutaYmueveAPersonaje(){
-        int[] posicion = {0, 1};
+        Posicion posicion = new Posicion(0, 1);
         BloqueArriba bloqueArriba = new BloqueArriba();
         Personaje personaje = new Personaje();
         bloqueArriba.ejecutar(personaje);
-        assertArrayEquals(posicion, personaje.obtenerPosicion());
+        assertTrue(personaje.obtenerPosicion().esIgualA(posicion));
     }
 
     @Test
     public void testBloqueAbajoSeEjecutaYmueveAPersonaje(){
-        int[] posicion = {0, -1};
+        Posicion posicion = new Posicion(0, -1);
         BloqueAbajo bloqueAbajo = new BloqueAbajo();
         Personaje personaje = new Personaje();
         bloqueAbajo.ejecutar(personaje);
-        assertArrayEquals(posicion, personaje.obtenerPosicion());
+        assertTrue(personaje.obtenerPosicion().esIgualA(posicion));
     }
 
     @Test

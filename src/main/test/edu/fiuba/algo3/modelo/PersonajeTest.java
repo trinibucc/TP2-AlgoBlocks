@@ -29,17 +29,9 @@ public class PersonajeTest {
 
     @Test
     public void testPersonajeSeCreaEnLaPosicionDelOrigenCorrecta(){
-        int[] origen = {0, 0};
+        Posicion posicion = new Posicion(0, 0);
         Personaje personaje = new Personaje();
-        assertArrayEquals(origen, personaje.obtenerPosicion());
-    }
-
-    @Test
-    public void testActualizarPosicionDelPersonajeCorrectamente(){
-        int[] posicion = {1, 0};
-        Personaje personaje = new Personaje();
-        personaje.actualizarPosicion(posicion);
-        assertArrayEquals(posicion, personaje.obtenerPosicion());
+        assertTrue(personaje.obtenerPosicion().esIgualA(posicion));
     }
 
 }

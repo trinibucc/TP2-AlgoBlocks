@@ -6,7 +6,7 @@ import java.util.List;
 
 public class LapizArriba implements Lapiz, Bloque{
 
-    List<int[]> noDibuja = new ArrayList<>();
+    List<Posicion> noDibuja = new ArrayList<>();
 
     @Override
     public void ejecutar(Personaje personaje) {
@@ -14,7 +14,7 @@ public class LapizArriba implements Lapiz, Bloque{
     }
 
     @Override
-    public void dibujar(int[] posicion) {
+    public void dibujar(Posicion posicion) {
         noDibuja.add(posicion);
     }
 

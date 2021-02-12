@@ -13,14 +13,14 @@ public class SectorDibujoTest {
 
    @Test
     public void testDibujaConLapizAbajoYNoDibujaConLapizArriba(){
-       int[] dibujado = {0,0};
+        Posicion posicion = new Posicion(0, 0);
         Personaje personaje = new Personaje();
         AlgoBlocks algoBlocks = new AlgoBlocks( new Recorrido(personaje).obtenerRecorrido(), personaje);
         algoBlocks.agregarBloqueIzquierda();
         algoBlocks.agregarLapizAbajo();
         algoBlocks.agregarBloqueDerecha();
         algoBlocks.ejecutar();
-        assertArrayEquals(dibujado, (SectorDibujo.obtenerSectorDibujo()).obtenerDibujo());
+        assertTrue((SectorDibujo.obtenerSectorDibujo()).obtenerDibujo().esIgualA(posicion));
     }
 
 }
