@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Recorrido {
+public class Algoritmo {
 
     private List<Bloque> recorrido;
     private Personaje personaje;
 
-    public Recorrido(Personaje personaje){
+    public Algoritmo(Personaje personaje){
         this.recorrido = new ArrayList<Bloque>();
         this.personaje = personaje;
     }

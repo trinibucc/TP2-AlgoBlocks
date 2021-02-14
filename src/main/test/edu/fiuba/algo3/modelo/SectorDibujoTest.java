@@ -15,7 +15,7 @@ public class SectorDibujoTest {
     public void testDibujaConLapizAbajoYNoDibujaConLapizArriba(){
         Posicion posicion = new Posicion(0, 0);
         Personaje personaje = new Personaje();
-        AlgoBlocks algoBlocks = new AlgoBlocks( new Recorrido(personaje).obtenerRecorrido(), personaje);
+        AlgoBlocks algoBlocks = new AlgoBlocks( new Algoritmo(personaje).obtenerRecorrido(), personaje);
         algoBlocks.agregarBloqueIzquierda();
         algoBlocks.agregarLapizAbajo();
         algoBlocks.agregarBloqueDerecha();
