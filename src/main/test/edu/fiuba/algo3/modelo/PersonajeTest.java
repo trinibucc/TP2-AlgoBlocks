@@ -34,4 +34,14 @@ public class PersonajeTest {
         assertTrue(personaje.obtenerPosicion().esIgualA(posicion));
     }
 
+    @Test
+    public void testActualizarPosicionDelPersonajeLaPosicionInicialYFinalSonCorrectas(){
+        Personaje personaje = new Personaje();
+        AlgoBlocks algoBlocks = new AlgoBlocks(new Recorrido(personaje).obtenerRecorrido(), personaje);
+        algoBlocks.agregarLapizAbajo();
+        algoBlocks.agregarBloqueDerecha();
+        algoBlocks.ejecutar();
+        assertTrue(personaje.obtenerPosicion().esIgualA(new Posicion(1, 0)));
+    }
+
 }

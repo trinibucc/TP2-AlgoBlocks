@@ -25,4 +25,9 @@ public class Posicion {
         this.x += posicion.obtenerX();
         this.y += posicion.obtenerY();
     }
+
+    public void copiarPosicion(Posicion posicion) {
+        this.x = posicion.obtenerX();
+        this.y = posicion.obtenerY();
+    }
 }

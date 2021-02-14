@@ -1,6 +1,5 @@
 package edu.fiuba.algo3.modelo;
 
-import javafx.geometry.Pos;
 import org.junit.Test;
 import static org.junit.jupiter.api.Assertions.*;
 

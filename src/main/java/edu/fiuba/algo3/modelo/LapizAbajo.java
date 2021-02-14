@@ -9,8 +9,9 @@ public class LapizAbajo implements Lapiz, Bloque {
     }
 
     @Override
-    public void dibujar(Posicion posicion){
-        SectorDibujo.obtenerSectorDibujo().agregarADibujo(posicion);
-    }
 
+    public void trazar(Posicion posicionInicial, Posicion posicionFinal){
+        SectorDibujo sectorDibujo = SectorDibujo.obtenerSectorDibujo();
+        sectorDibujo.aplicarTrazo(posicionInicial, posicionFinal);
+    }
 }

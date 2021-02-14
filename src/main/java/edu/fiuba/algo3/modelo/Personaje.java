@@ -3,11 +3,13 @@ package edu.fiuba.algo3.modelo;
 
 public class Personaje {
 
-    private Posicion posicion;
+    private Posicion posicionInicial;
+    private Posicion posicionFinal;
     private Lapiz lapiz;
 
     public Personaje(){
-        this.posicion = new Posicion(0, 0);
+        this.posicionInicial = new Posicion(0, 0);
+        this.posicionFinal = new Posicion(0, 0);
         this.lapiz = new LapizArriba();
     }
 
@@ -23,16 +25,18 @@ public class Personaje {
         this.lapiz = new LapizAbajo();
     }
 
-    public void actualizarPosicion(Posicion posicion) {
-        this.posicion.sumarse(posicion);
+    public void actualizarPosicionFinal(Posicion posicion) {
+        this.posicionInicial.copiarPosicion(this.posicionFinal);
+        this.posicionFinal.sumarse(posicion);
+
     }
 
     public Posicion obtenerPosicion() {
-        return this.posicion;
+        return this.posicionFinal;
     }
 
     public void dibujar(){
-        lapiz.dibujar(this.posicion);
+        lapiz.trazar(this.posicionInicial, this.posicionFinal);
     }
 
 }

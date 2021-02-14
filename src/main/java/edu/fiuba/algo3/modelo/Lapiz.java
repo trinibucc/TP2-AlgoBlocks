@@ -3,6 +3,5 @@ package edu.fiuba.algo3.modelo;
 
 interface Lapiz {
 
-   void dibujar(Posicion posicion);
-
+    void trazar(Posicion posicionInicial, Posicion posicionFinal);
 }
