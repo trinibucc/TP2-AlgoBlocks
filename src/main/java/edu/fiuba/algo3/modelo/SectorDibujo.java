@@ -7,7 +7,7 @@ import java.util.List;
 public class SectorDibujo {
 
     private static SectorDibujo instancia = null;
-    private List<int[]> dibujo = new ArrayList<>();
+    private List<Posicion> dibujo = new ArrayList<>();
 
     private SectorDibujo(){ }
 
@@ -24,18 +24,18 @@ public class SectorDibujo {
         return instancia;
     }
 
-    public void agregarADibujo(int[] dibuja){
-        dibujo.add(dibuja);
+    public void agregarADibujo(Posicion posicion){
+        this.dibujo.add(posicion);
     }
 
     public void trazar(){
-        for(int[] posiciones : dibujo){
-            System.out.println("Posicion horizontal: " + posiciones[0]);
-            System.out.println("Posicion vertical: " + posiciones[1]);
+        for(Posicion posicion : dibujo){
+            System.out.println("Posicion horizontal: " + posicion.obtenerX());
+            System.out.println("Posicion vertical: " + posicion.obtenerY());
         }
     }
 
-    public int[] obtenerDibujo(){
+    public Posicion obtenerDibujo(){
         return (dibujo.get(0));
     }
 
