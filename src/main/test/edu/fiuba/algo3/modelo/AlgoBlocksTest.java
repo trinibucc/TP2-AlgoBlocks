@@ -1,10 +1,8 @@
 package edu.fiuba.algo3.modelo;
 
-import javafx.geometry.Pos;
-import org.junit.Test;
 
+import org.junit.Test;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -233,7 +231,8 @@ public class AlgoBlocksTest {
     public void test16TrazarVariasVecesSinLevantarElLapiz(){
         SectorDibujo.obtenerSectorDibujo().resetear();
         Personaje personaje = new Personaje();
-        AlgoBlocks algoBlocks = new AlgoBlocks(new Recorrido(personaje).obtenerRecorrido(), personaje);
+        Algoritmo algoritmo = new Algoritmo(personaje);
+        AlgoBlocks algoBlocks = new AlgoBlocks(algoritmo.obtenerRecorrido(), personaje);
         List<Segmento> trazos = new ArrayList<>();
         List<Segmento> dibujo = SectorDibujo.obtenerSectorDibujo().obtenerDibujo();
         trazos.add(new Segmento(new Posicion(0, 0), new Posicion(1, 0)));
@@ -243,7 +242,7 @@ public class AlgoBlocksTest {
         algoBlocks.agregarBloqueDerecha();
         algoBlocks.agregarBloqueAbajo();
         algoBlocks.agregarBloqueIzquierda();
-        algoBlocks.ejecutar();
+        algoritmo.ejecutar();
         assertTrue(this.compararDibujos(trazos, dibujo));
     }
 
@@ -251,7 +250,8 @@ public class AlgoBlocksTest {
     public void test17TrazarLevantadoElLapizAlFinal(){
         SectorDibujo.obtenerSectorDibujo().resetear();
         Personaje personaje = new Personaje();
-        AlgoBlocks algoBlocks = new AlgoBlocks(new Recorrido(personaje).obtenerRecorrido(), personaje);
+        Algoritmo algoritmo = new Algoritmo(personaje);
+        AlgoBlocks algoBlocks = new AlgoBlocks(algoritmo.obtenerRecorrido(), personaje);
         List<Segmento> trazos = new ArrayList<>();
         List<Segmento> dibujo = SectorDibujo.obtenerSectorDibujo().obtenerDibujo();
         trazos.add(new Segmento(new Posicion(0, 0), new Posicion(1, 0)));
@@ -262,7 +262,7 @@ public class AlgoBlocksTest {
         algoBlocks.agregarBloqueAbajo();
         algoBlocks.agregarBloqueIzquierda();
         algoBlocks.agregarLapizArriba();
-        algoBlocks.ejecutar();
+        algoritmo.ejecutar();
         assertTrue(this.compararDibujos(trazos, dibujo));
     }
 
@@ -270,7 +270,8 @@ public class AlgoBlocksTest {
     public void test18TrazarLevantarElLapizBajarloYVolverATrazar(){
         SectorDibujo.obtenerSectorDibujo().resetear();
         Personaje personaje = new Personaje();
-        AlgoBlocks algoBlocks = new AlgoBlocks(new Recorrido(personaje).obtenerRecorrido(), personaje);
+        Algoritmo algoritmo = new Algoritmo(personaje);
+        AlgoBlocks algoBlocks = new AlgoBlocks(algoritmo.obtenerRecorrido(), personaje);
         List<Segmento> trazos = new ArrayList<>();
         List<Segmento> dibujo = SectorDibujo.obtenerSectorDibujo().obtenerDibujo();
         trazos.add(new Segmento(new Posicion(0, 0), new Posicion(1, 0)));
@@ -286,7 +287,7 @@ public class AlgoBlocksTest {
         algoBlocks.agregarLapizAbajo();
         algoBlocks.agregarBloqueArriba();
         algoBlocks.agregarBloqueIzquierda();
-        algoBlocks.ejecutar();
+        algoritmo.ejecutar();
         assertTrue(this.compararDibujos(trazos, dibujo));
     }
 
@@ -294,7 +295,8 @@ public class AlgoBlocksTest {
     public void test19TrazarLevantarElLapizMoverBajarLapzizSeTrazoDosVeces(){
         SectorDibujo.obtenerSectorDibujo().resetear();
         Personaje personaje = new Personaje();
-        AlgoBlocks algoBlocks = new AlgoBlocks(new Recorrido(personaje).obtenerRecorrido(), personaje);
+        Algoritmo algoritmo = new Algoritmo(personaje);
+        AlgoBlocks algoBlocks = new AlgoBlocks(algoritmo.obtenerRecorrido(), personaje);
         List<Segmento> trazos = new ArrayList<>();
         List<Segmento> dibujo = SectorDibujo.obtenerSectorDibujo().obtenerDibujo();
         trazos.add(new Segmento(new Posicion(0, 0), new Posicion(1, 0)));
@@ -310,7 +312,7 @@ public class AlgoBlocksTest {
         algoBlocks.agregarLapizAbajo();
         algoBlocks.agregarBloqueAbajo();
         algoBlocks.agregarBloqueDerecha();
-        algoBlocks.ejecutar();
+        algoritmo.ejecutar();
         assertTrue(this.compararDibujos(trazos, dibujo));
     }
 
@@ -318,7 +320,8 @@ public class AlgoBlocksTest {
     public void test20LevantarYBajarElLapizMuchasVecesEnDiferenteOrdenYTrazarConLapizBajo(){
         SectorDibujo.obtenerSectorDibujo().resetear();
         Personaje personaje = new Personaje();
-        AlgoBlocks algoBlocks = new AlgoBlocks(new Recorrido(personaje).obtenerRecorrido(), personaje);
+        Algoritmo algoritmo = new Algoritmo(personaje);
+        AlgoBlocks algoBlocks = new AlgoBlocks(algoritmo.obtenerRecorrido(), personaje);
         List<Segmento> trazos = new ArrayList<>();
         List<Segmento> dibujo = SectorDibujo.obtenerSectorDibujo().obtenerDibujo();
         trazos.add(new Segmento(new Posicion(0, 0), new Posicion(-1, 0)));
@@ -332,7 +335,7 @@ public class AlgoBlocksTest {
         algoBlocks.agregarBloqueIzquierda();
         algoBlocks.agregarBloqueIzquierda();
         algoBlocks.agregarBloqueAbajo();
-        algoBlocks.ejecutar();
+        algoritmo.ejecutar();
         assertTrue(this.compararDibujos(trazos, dibujo));
     }
 
@@ -340,7 +343,8 @@ public class AlgoBlocksTest {
     public void test21AgregarBloquesDeMovimientoSinBajarLapizDespuesBajarloYAgregarMas(){
         SectorDibujo.obtenerSectorDibujo().resetear();
         Personaje personaje = new Personaje();
-        AlgoBlocks algoBlocks = new AlgoBlocks(new Recorrido(personaje).obtenerRecorrido(), personaje);
+        Algoritmo algoritmo = new Algoritmo(personaje);
+        AlgoBlocks algoBlocks = new AlgoBlocks(algoritmo.obtenerRecorrido(), personaje);
         List<Segmento> trazos = new ArrayList<>();
         List<Segmento> dibujo = SectorDibujo.obtenerSectorDibujo().obtenerDibujo();
         trazos.add(new Segmento(new Posicion(1, 2), new Posicion(0, 2)));
@@ -350,15 +354,16 @@ public class AlgoBlocksTest {
         algoBlocks.agregarBloqueArriba();
         algoBlocks.agregarLapizAbajo();
         algoBlocks.agregarBloqueIzquierda();
-        algoBlocks.agregarLapizAbajo();
-        algoBlocks.ejecutar();
+        algoBlocks.agregarBloqueAbajo();
+        algoritmo.ejecutar();
         assertTrue(this.compararDibujos(trazos, dibujo));
     }
     @Test
     public void test22AgregarLapizAbajoYRepetirDosVecesElTrazoConBloquesDeMovimiento(){
         SectorDibujo.obtenerSectorDibujo().resetear();
         Personaje personaje = new Personaje();
-        AlgoBlocks algoBlocks = new AlgoBlocks(new Recorrido(personaje).obtenerRecorrido(), personaje);
+        Algoritmo algoritmo = new Algoritmo(personaje);
+        AlgoBlocks algoBlocks = new AlgoBlocks(algoritmo.obtenerRecorrido(), personaje);
         List<Segmento> trazos = new ArrayList<>();
         List<Segmento> dibujo = SectorDibujo.obtenerSectorDibujo().obtenerDibujo();
         trazos.add(new Segmento(new Posicion(0, 0), new Posicion(1, 0)));
@@ -370,7 +375,7 @@ public class AlgoBlocksTest {
         AlgoBlocks algoritmoIterativo = bloqueRepetirDosVeces.agregarBloque();
         algoritmoIterativo.agregarBloqueDerecha();
         algoritmoIterativo.agregarBloqueAbajo();
-        algoBlocks.ejecutar();
+        algoritmo.ejecutar();
         assertTrue(this.compararDibujos(trazos, dibujo));
     }
 
@@ -378,7 +383,8 @@ public class AlgoBlocksTest {
     public void test23AgregarLapizAbajoYRepetirTresVecesElTrazoConBloquesDeMovimiento(){
         SectorDibujo.obtenerSectorDibujo().resetear();
         Personaje personaje = new Personaje();
-        AlgoBlocks algoBlocks = new AlgoBlocks(new Recorrido(personaje).obtenerRecorrido(), personaje);
+        Algoritmo algoritmo = new Algoritmo(personaje);
+        AlgoBlocks algoBlocks = new AlgoBlocks(algoritmo.obtenerRecorrido(), personaje);
         List<Segmento> trazos = new ArrayList<>();
         List<Segmento> dibujo = SectorDibujo.obtenerSectorDibujo().obtenerDibujo();
         trazos.add(new Segmento(new Posicion(0, 0), new Posicion(1, 0)));
@@ -392,14 +398,16 @@ public class AlgoBlocksTest {
         AlgoBlocks algoritmoIterativo = bloqueRepetirTresVeces.agregarBloque();
         algoritmoIterativo.agregarBloqueDerecha();
         algoritmoIterativo.agregarBloqueAbajo();
-        algoBlocks.ejecutar();
+        algoritmo.ejecutar();
         assertTrue(this.compararDibujos(trazos, dibujo));
     }
 
     @Test
     public void test24AgregarLapizAbajoAgregarBloqueInversoElOrdenDelTrarzoEsElCorrecto(){
+        SectorDibujo.obtenerSectorDibujo().resetear();
         Personaje personaje = new Personaje();
-        AlgoBlocks algoBlocks = new AlgoBlocks(new Recorrido(personaje).obtenerRecorrido(), personaje);
+        Algoritmo algoritmo = new Algoritmo(personaje);
+        AlgoBlocks algoBlocks = new AlgoBlocks(algoritmo.obtenerRecorrido(), personaje);
         List<Segmento> trazos = new ArrayList<>();
         List<Segmento> dibujo = SectorDibujo.obtenerSectorDibujo().obtenerDibujo();
         trazos.add(new Segmento(new Posicion(0, 0), new Posicion(0, -1)));
@@ -409,7 +417,7 @@ public class AlgoBlocksTest {
         AlgoBlocks algoritmoIterativo = bloqueInverso.agregarBloque();
         algoritmoIterativo.agregarBloqueDerecha();
         algoritmoIterativo.agregarBloqueAbajo();
-        algoBlocks.ejecutar();
+        algoritmo.ejecutar();
         assertTrue(this.compararDibujos(trazos, dibujo));
     }
 }

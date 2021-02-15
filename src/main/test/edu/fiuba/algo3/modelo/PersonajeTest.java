@@ -37,10 +37,11 @@ public class PersonajeTest {
     @Test
     public void testActualizarPosicionDelPersonajeLaPosicionInicialYFinalSonCorrectas(){
         Personaje personaje = new Personaje();
-        AlgoBlocks algoBlocks = new AlgoBlocks(new Recorrido(personaje).obtenerRecorrido(), personaje);
+        Algoritmo algoritmo = new Algoritmo(personaje);
+        AlgoBlocks algoBlocks = new AlgoBlocks(algoritmo.obtenerRecorrido(), personaje);
         algoBlocks.agregarLapizAbajo();
         algoBlocks.agregarBloqueDerecha();
-        algoBlocks.ejecutar();
+        algoritmo.ejecutar();
         assertTrue(personaje.obtenerPosicion().esIgualA(new Posicion(1, 0)));
     }
 
