@@ -13,20 +13,15 @@ public class AlgoBlocks {
         this.algoritmo = recorrido;
     }
 
+    public Personaje obtenerPersonaje(){
+        return this.personaje;
+    }
+
     public void agregarLapizArriba() {
         LapizArriba lapizArriba = new LapizArriba();
         this.algoritmo.add(lapizArriba);
     }
 
-    public void ejecutar() {
-        for(Bloque bloque : this.algoritmo){
-            bloque.ejecutar(this.personaje);
-        }
-    }
-
-    public Personaje obtenerPersonaje() {
-        return this.personaje;
-    }
 
     public void agregarLapizAbajo() {
         LapizAbajo lapizAbajo = new LapizAbajo();

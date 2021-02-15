@@ -34,4 +34,13 @@ public class PersonajeTest {
         assertTrue(personaje.obtenerPosicion().esIgualA(posicion));
     }
 
+    @Test
+    public void testActualizarPosicionCambiaPosicionActualDePersonaje(){
+        Posicion posicion = new Posicion(2,3);
+        Personaje personaje = new Personaje();
+        personaje.actualizarPosicion(posicion);
+
+        assertTrue(personaje.obtenerPosicion().esIgualA(posicion));
+    }
+
 }

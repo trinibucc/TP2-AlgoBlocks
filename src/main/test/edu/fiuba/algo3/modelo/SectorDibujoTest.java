@@ -15,11 +15,12 @@ public class SectorDibujoTest {
     public void testDibujaConLapizAbajoYNoDibujaConLapizArriba(){
         Posicion posicion = new Posicion(0, 0);
         Personaje personaje = new Personaje();
-        AlgoBlocks algoBlocks = new AlgoBlocks( new Algoritmo(personaje).obtenerRecorrido(), personaje);
+        Algoritmo algoritmo = new Algoritmo(personaje);
+        AlgoBlocks algoBlocks = new AlgoBlocks( algoritmo.obtenerRecorrido(), personaje);
         algoBlocks.agregarBloqueIzquierda();
         algoBlocks.agregarLapizAbajo();
         algoBlocks.agregarBloqueDerecha();
-        algoBlocks.ejecutar();
+        algoritmo.ejecutar();
         assertTrue((SectorDibujo.obtenerSectorDibujo()).obtenerDibujo().esIgualA(posicion));
     }
 
