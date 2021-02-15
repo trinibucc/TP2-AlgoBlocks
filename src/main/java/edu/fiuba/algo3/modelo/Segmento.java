@@ -1,16 +1,16 @@
 package edu.fiuba.algo3.modelo;
 
-public class Trazo {
+public class Segmento {
 
     private Posicion inicio;
     private Posicion fin;
 
-    public Trazo(Posicion inicio, Posicion fin){
+    public Segmento(Posicion inicio, Posicion fin){
         this.inicio = new Posicion(inicio.obtenerX(), inicio.obtenerY());
         this.fin = new Posicion(fin.obtenerX(), fin.obtenerY());
     }
 
-    public boolean esIgualA(Trazo trazo){
+    public boolean esIgualA(Segmento trazo){
         return trazo.obtenerInicio().esIgualA(this.inicio) && trazo.obtenerFin().esIgualA(this.fin);
     }
 
