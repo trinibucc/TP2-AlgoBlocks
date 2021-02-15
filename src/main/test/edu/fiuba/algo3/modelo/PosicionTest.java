@@ -1,11 +1,11 @@
 package edu.fiuba.algo3.modelo;
 
+
 import org.junit.jupiter.api.Test;
 
-import javax.swing.*;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class PosicionTest {
 
@@ -29,6 +29,18 @@ public class PosicionTest {
         assertTrue(new Posicion(27, 12).esIgualA(new Posicion(27, 12)));
     }
 
+    @Test
+    public void testEsIgualAComparaDosPosicionesDiferentesDevuelveFalse(){
+        assertFalse(new Posicion(1,0).esIgualA(new Posicion(0,1)));
+    }
+
+    @Test
+    public void testSumarPosicionSumaValoresDePosicionConOtrsoValores(){
+        Posicion posicion = new Posicion(1,1);
+        Posicion otraPosicion = new Posicion(0,1);
+        posicion.sumarse(otraPosicion);
+        assertTrue(posicion.esIgualA(new Posicion(1,2)));
+    }
 
 
 }

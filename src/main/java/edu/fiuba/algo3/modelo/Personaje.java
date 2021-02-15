@@ -11,12 +11,12 @@ public class Personaje {
         this.lapiz = new LapizArriba();
     }
 
-    public void subirLapiz() {
-        this.lapiz = new LapizArriba();
-    }
-
     public Lapiz obtenerLapiz() {
         return this.lapiz;
+    }
+
+    public void subirLapiz() {
+        this.lapiz = new LapizArriba();
     }
 
     public void bajarLapiz() {
