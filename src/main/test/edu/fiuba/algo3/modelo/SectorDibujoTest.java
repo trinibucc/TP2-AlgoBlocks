@@ -21,5 +21,4 @@ public class SectorDibujoTest {
         assertEquals(0, sectorDibujo.obtenerDibujo().size());
     }
 
-
 }
