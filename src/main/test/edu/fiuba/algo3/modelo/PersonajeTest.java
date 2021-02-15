@@ -35,12 +35,13 @@ public class PersonajeTest {
     }
 
     @Test
-    public void testActualizarPosicionCambiaPosicionActualDePersonaje(){
-        Posicion posicion = new Posicion(2,3);
+    public void testActualizarPosicionDelPersonajeLaPosicionInicialYFinalSonCorrectas(){
         Personaje personaje = new Personaje();
-        personaje.actualizarPosicion(posicion);
-
-        assertTrue(personaje.obtenerPosicion().esIgualA(posicion));
+        AlgoBlocks algoBlocks = new AlgoBlocks(new Recorrido(personaje).obtenerRecorrido(), personaje);
+        algoBlocks.agregarLapizAbajo();
+        algoBlocks.agregarBloqueDerecha();
+        algoBlocks.ejecutar();
+        assertTrue(personaje.obtenerPosicion().esIgualA(new Posicion(1, 0)));
     }
 
 }
