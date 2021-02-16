@@ -137,4 +137,17 @@ public class BloqueTest {
 
         assertTrue(bloqueRepetir.agregarBloque() instanceof AlgoBlocks);
     }
+
+    @Test
+    public void testBloqueAlgoritmoPersonalizado() {
+        Personaje personaje = new Personaje();
+        List<Bloque> bloques = new ArrayList<>();
+        bloques.add(new BloqueArriba());
+        bloques.add(new BloqueIzquierda());
+        BloquePersonalizado personalizado = new BloquePersonalizado(bloques);
+        personalizado.ejecutar(personaje);
+        Posicion posicion = new Posicion(-1,1);
+
+        assertTrue(personaje.obtenerPosicion().esIgualA(posicion));
+    }
 }

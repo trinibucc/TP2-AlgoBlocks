@@ -9,7 +9,7 @@ public class AlgoBlocks {
 
     private final Personaje personaje;
     private final List<Bloque> algoritmo;
-    Map<String, AlgoritmoPersonalizado> bloquesPersonalizado = new HashMap<>();
+    Map<String, BloquePersonalizado> bloquesPersonalizado = new HashMap<>();
 
     public AlgoBlocks(List<Bloque> recorrido, Personaje personaje){
         this.personaje = personaje;
@@ -70,13 +70,13 @@ public class AlgoBlocks {
     }
 
     public void guardarAlgoritmo(String nombre) {
-        AlgoritmoPersonalizado algoritmoPersonalizado = new AlgoritmoPersonalizado(algoritmo, nombre);
-        bloquesPersonalizado.put(nombre, algoritmoPersonalizado);
+        BloquePersonalizado bloquePersonalizado = new BloquePersonalizado(algoritmo);
+        bloquesPersonalizado.put(nombre, bloquePersonalizado);
     }
 
     public void agregarAlgoritmoPersonalizado(String nombre){
-        AlgoritmoPersonalizado algoritmoPersonalizado = bloquesPersonalizado.get(nombre);
-        algoritmo.add(algoritmoPersonalizado);
+        BloquePersonalizado bloquePersonalizado = bloquesPersonalizado.get(nombre);
+        algoritmo.add(bloquePersonalizado);
     }
 
 }
