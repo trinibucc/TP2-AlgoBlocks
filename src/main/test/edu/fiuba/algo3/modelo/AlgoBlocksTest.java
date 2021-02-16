@@ -420,4 +420,18 @@ public class AlgoBlocksTest {
         algoritmo.ejecutar();
         assertTrue(this.compararDibujos(trazos, dibujo));
     }
+
+    @Test
+    public void test25GuardarAlgoritmoPersonalizadoYCrearSuBloque(){
+        Personaje personaje = new Personaje();
+        Algoritmo algoritmo = new Algoritmo(personaje);
+        AlgoBlocks algoBlocks = new AlgoBlocks(algoritmo.obtenerRecorrido(), personaje);
+        algoBlocks.agregarBloqueDerecha();
+        algoBlocks.agregarBloqueArriba();
+        algoBlocks.guardarAlgoritmo("nombre");
+        algoBlocks.agregarAlgoritmoPersonalizado("nombre");
+        algoritmo.ejecutar();
+        Posicion posicion = new Posicion(2,2);
+        assertTrue(personaje.obtenerPosicion().esIgualA(posicion));
+    }
 }
