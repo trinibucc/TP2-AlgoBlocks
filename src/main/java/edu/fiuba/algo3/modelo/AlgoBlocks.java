@@ -1,12 +1,15 @@
 package edu.fiuba.algo3.modelo;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 public class AlgoBlocks {
 
     private final Personaje personaje;
     private final List<Bloque> algoritmo;
+    Map<String, BloquePersonalizado> bloquesPersonalizado = new HashMap<>();
 
     public AlgoBlocks(List<Bloque> recorrido, Personaje personaje){
         this.personaje = personaje;
@@ -64,6 +67,16 @@ public class AlgoBlocks {
         BloqueInverso bloqueInverso = new BloqueInverso(personaje);
         this.algoritmo.add(bloqueInverso);
         return bloqueInverso;
+    }
+
+    public void guardarAlgoritmo(String nombre) {
+        BloquePersonalizado bloquePersonalizado = new BloquePersonalizado(algoritmo);
+        bloquesPersonalizado.put(nombre, bloquePersonalizado);
+    }
+
+    public void agregarAlgoritmoPersonalizado(String nombre){
+        BloquePersonalizado bloquePersonalizado = bloquesPersonalizado.get(nombre);
+        algoritmo.add(bloquePersonalizado);
     }
 
 }
