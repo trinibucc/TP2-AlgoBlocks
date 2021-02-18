@@ -12,12 +12,10 @@ import javafx.scene.chart.NumberAxis;
 import javafx.scene.control.Button;;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
-
-
 
 
 
@@ -36,7 +34,8 @@ public class Main extends Application {
         stage.setWidth(750);
         stage.setResizable(false);
 
-        /*Image imagen = new Image("file:/home/trinidad/Escritorio/flechas2.jpg");
+        /*
+        Image imagen = new Image("file:/home/trinidad/Escritorio/flechas3.jpg");
         ImageView fondo = new ImageView(imagen);
         fondo.setImage(imagen);
         fondo.setFitHeight(600);
@@ -44,8 +43,11 @@ public class Main extends Application {
 
         Label titulo = new Label();
         titulo.setText("ALGOBLOCKS");
-        titulo.setPadding(new Insets(20));
-
+        titulo.setPadding(new Insets(10));
+        titulo.setBackground(new Background(new BackgroundFill(Color.web("#C0C0C0"), CornerRadii.EMPTY, Insets.EMPTY)));
+        titulo.setTextFill(Color.web("#FFFFFF"));
+        Font auxFont = titulo.getFont();
+        titulo.setFont(new Font(auxFont.getStyle(), 20));
         TextField nombre = new TextField();
         nombre.setPromptText("Ingrese el nombre");
 
@@ -81,11 +83,10 @@ public class Main extends Application {
         VBox contenedorVertical = new VBox(contenedorSuperior, contenedorCentral);
 
         StackPane contenedorPrincipal = new StackPane();
-        //contenedorPrincipal.getChildren().add(fondo);
+       // contenedorPrincipal.getChildren().add(fondo);
         contenedorPrincipal.getChildren().add(contenedorVertical);
         contenedorPrincipal.setAlignment(ejecutar, Pos.BOTTOM_CENTER);
         contenedorPrincipal.getChildren().add(ejecutar);
-
 
         Personaje personaje = new Personaje();
         Algoritmo algoritmo = new Algoritmo(personaje);
@@ -96,6 +97,9 @@ public class Main extends Application {
 
         RepetirDosVeces iterar2veces = new RepetirDosVeces(algoBlocks);
         repetir2veces.setOnAction(iterar2veces);
+
+        Ejecutar ejecutarAlgoritmo = new Ejecutar(algoritmo);
+        ejecutar.setOnAction(ejecutarAlgoritmo);
 
         Scene scene = new Scene(contenedorPrincipal, 750, 600);
         stage.setScene(scene);

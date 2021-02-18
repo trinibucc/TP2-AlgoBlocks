@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class AlgoBlocksTest {
 
-    private boolean compararDibujos(List<Segmento> dibujoEsperado, List<Segmento> dibujoSectorDibujo){
+    private boolean compararDibujos(List< Segmento> dibujoEsperado, List<Segmento> dibujoSectorDibujo){
         for(int i = 0; i < dibujoEsperado.size(); i++)
             if (!dibujoEsperado.get(i).esIgualA(dibujoSectorDibujo.get(i))) {
                 return false;
