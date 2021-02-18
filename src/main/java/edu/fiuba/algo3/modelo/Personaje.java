@@ -26,7 +26,7 @@ public class Personaje {
     }
 
     public void actualizarPosicionFinal(Posicion posicion) {
-        this.posicionInicial.copiarPosicion(this.posicionFinal);
+        this.posicionInicial.copiarXY(this.posicionFinal);
         this.posicionFinal.sumarse(posicion);
 
     }

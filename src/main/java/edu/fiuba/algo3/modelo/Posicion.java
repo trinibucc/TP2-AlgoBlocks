@@ -26,7 +26,7 @@ public class Posicion {
         this.y += posicion.obtenerY();
     }
 
-    public void copiarPosicion(Posicion posicion) {
+    public void copiarXY(Posicion posicion) {
         this.x = posicion.obtenerX();
         this.y = posicion.obtenerY();
     }
