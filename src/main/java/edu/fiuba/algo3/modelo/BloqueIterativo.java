@@ -14,8 +14,8 @@ public abstract class BloqueIterativo implements Bloque{
         }
     }
 
-    public AlgoBlocks agregarBloque(){
-        return (new AlgoBlocks(this.algoritmo, personaje));
+    public void agregarBloque(AlgoBlocks algoBlocks){
+        algoBlocks.agregarLista(algoritmo);
     }
 
     public List<Bloque> obtenerLista(){

@@ -5,19 +5,18 @@ import edu.fiuba.algo3.modelo.BloqueRepetir;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
-
-public class RepetirDosVeces implements EventHandler<ActionEvent> {
+public class RepetirTresVeces implements EventHandler<ActionEvent> {
 
     private AlgoBlocks algoBlocks;
 
-    public RepetirDosVeces(AlgoBlocks algoBlocks){
+    public RepetirTresVeces(AlgoBlocks algoBlocks){
         this.algoBlocks = algoBlocks;
     }
 
 
     @Override
     public void handle(ActionEvent actionEvent) {
-        BloqueRepetir repetir = algoBlocks.agregarBloqueRepetirDosVeces();
+        BloqueRepetir repetir = algoBlocks.agregarBloqueRepetirTresVeces();
         repetir.agregarBloque(algoBlocks);
 
     }

@@ -6,19 +6,19 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
 
-public class RepetirDosVeces implements EventHandler<ActionEvent> {
+public class Invertir implements EventHandler<ActionEvent>{
 
     private AlgoBlocks algoBlocks;
 
-    public RepetirDosVeces(AlgoBlocks algoBlocks){
-        this.algoBlocks = algoBlocks;
+    public Invertir(AlgoBlocks algoBlocks){
+            this.algoBlocks = algoBlocks;
     }
 
 
     @Override
     public void handle(ActionEvent actionEvent) {
-        BloqueRepetir repetir = algoBlocks.agregarBloqueRepetirDosVeces();
+        BloqueRepetir repetir = algoBlocks.agregarBloqueRepetirTresVeces();
         repetir.agregarBloque(algoBlocks);
-
     }
+
 }

@@ -5,8 +5,8 @@ import java.util.Collections;
 
 public class BloqueInverso extends BloqueIterativo {
 
-    public BloqueInverso(Personaje personaje) {
-        this.personaje = personaje;
+    public BloqueInverso() {
+
     }
 
     public void ejecutar(Personaje personaje){
