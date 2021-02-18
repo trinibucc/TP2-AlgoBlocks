@@ -52,31 +52,37 @@ public class AlgoBlocks {
     }
 
     public BloqueRepetir agregarBloqueRepetirDosVeces(){
-        BloqueRepetir bloqueRepetir = new BloqueRepetir(2, personaje);
+        BloqueRepetir bloqueRepetir = new BloqueRepetir(2, this.personaje);
         this.algoritmo.add(bloqueRepetir);
         return bloqueRepetir;
     }
 
     public BloqueRepetir agregarBloqueRepetirTresVeces(){
-        BloqueRepetir bloqueRepetir = new BloqueRepetir(3, personaje);
+        BloqueRepetir bloqueRepetir = new BloqueRepetir(3, this.personaje);
         this.algoritmo.add(bloqueRepetir);
         return bloqueRepetir;
     }
 
     public BloqueInverso agregarBloqueInverso(){
-        BloqueInverso bloqueInverso = new BloqueInverso(personaje);
+        BloqueInverso bloqueInverso = new BloqueInverso(this.personaje);
         this.algoritmo.add(bloqueInverso);
         return bloqueInverso;
     }
 
     public void guardarAlgoritmo(String nombre) {
-        BloquePersonalizado bloquePersonalizado = new BloquePersonalizado(algoritmo);
-        bloquesPersonalizado.put(nombre, bloquePersonalizado);
+        if(this.algoritmo.size() < 1){
+            throw new CantidadInsuficienteDeBloquesError();
+        }
+        if(this.bloquesPersonalizado.containsKey(nombre)){
+            throw new NombreInvalidoError();
+        }
+        BloquePersonalizado bloquePersonalizado = new BloquePersonalizado(this.algoritmo);
+        this.bloquesPersonalizado.put(nombre, bloquePersonalizado);
     }
 
     public void agregarAlgoritmoPersonalizado(String nombre){
-        BloquePersonalizado bloquePersonalizado = bloquesPersonalizado.get(nombre);
-        algoritmo.add(bloquePersonalizado);
+        BloquePersonalizado bloquePersonalizado = this.bloquesPersonalizado.get(nombre);
+        this.algoritmo.add(bloquePersonalizado);
     }
 
 }
