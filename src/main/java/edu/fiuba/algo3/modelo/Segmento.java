@@ -14,11 +14,11 @@ public class Segmento {
         return trazo.obtenerInicio().esIgualA(this.inicio) && trazo.obtenerFin().esIgualA(this.fin);
     }
 
-    private Posicion obtenerInicio() {
+    public Posicion obtenerInicio() {
         return this.inicio;
     }
 
-    private Posicion obtenerFin(){
+    public Posicion obtenerFin(){
         return this.fin;
     }
 

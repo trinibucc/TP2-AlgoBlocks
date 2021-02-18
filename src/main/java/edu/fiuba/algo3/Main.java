@@ -1,21 +1,23 @@
 package edu.fiuba.algo3;
 
-import edu.fiuba.algo3.modelo.AlgoBlocks;
-import edu.fiuba.algo3.modelo.Algoritmo;
-import edu.fiuba.algo3.modelo.Personaje;
+import edu.fiuba.algo3.modelo.*;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+
 
 
 
@@ -27,15 +29,17 @@ public class Main extends Application {
         final NumberAxis xAxis = new NumberAxis();
         final NumberAxis yAxis = new NumberAxis();
 
-        LineChart<Number, Number> lineChart = new LineChart<Number, Number>(xAxis, yAxis);
+        LineChart<Number, Number> tablero = new LineChart<Number, Number>(xAxis, yAxis);
+
+
 
         stage.setTitle("AlgoBlocks");
         stage.setHeight(600);
         stage.setWidth(750);
         stage.setResizable(false);
 
-        /*
-        Image imagen = new Image("file:/home/trinidad/Escritorio/flechas3.jpg");
+
+       /* Image imagen = new Image("fondo.jpg");
         ImageView fondo = new ImageView(imagen);
         fondo.setImage(imagen);
         fondo.setFitHeight(600);
@@ -78,7 +82,7 @@ public class Main extends Application {
         vbox.setSpacing (10);
         vbox.setPadding(new Insets(20));
 
-        HBox contenedorCentral = new HBox(vbox, lineChart);
+        HBox contenedorCentral = new HBox(vbox, tablero);
 
         VBox contenedorVertical = new VBox(contenedorSuperior, contenedorCentral);
 
@@ -98,7 +102,10 @@ public class Main extends Application {
         RepetirDosVeces iterar2veces = new RepetirDosVeces(algoBlocks);
         repetir2veces.setOnAction(iterar2veces);
 
-        Ejecutar ejecutarAlgoritmo = new Ejecutar(algoritmo);
+        MoverIzquieda moverIzquieda = new MoverIzquieda(algoBlocks);
+        izquierda.setOnAction(moverIzquieda);
+
+        Ejecutar ejecutarAlgoritmo = new Ejecutar(algoritmo, tablero);
         ejecutar.setOnAction(ejecutarAlgoritmo);
 
         Scene scene = new Scene(contenedorPrincipal, 750, 600);
