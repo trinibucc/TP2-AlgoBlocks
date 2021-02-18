@@ -10,11 +10,14 @@ public class Algoritmo {
     private Personaje personaje;
 
     public Algoritmo(Personaje personaje){
-        this.recorrido = new ArrayList<Bloque>();
+        this.recorrido = new ArrayList<>();
         this.personaje = personaje;
     }
 
     public void ejecutar(){
+        if(recorrido.size() < 1){
+            throw new CantidadInsuficienteDeBloquesError();
+        }
         for(Bloque bloque : this.recorrido){
             bloque.ejecutar(this.personaje);
         }
