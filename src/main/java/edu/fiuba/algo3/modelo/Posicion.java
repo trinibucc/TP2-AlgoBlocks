@@ -1,19 +1,19 @@
 package edu.fiuba.algo3.modelo;
 
 public class Posicion {
-    int x;
-    int y;
+    double x;
+    double y;
 
-    public Posicion(int x, int y){
+    public Posicion(double x, double y){
         this.x = x;
         this.y = y;
     }
 
-    public int obtenerX() {
+    public double obtenerX() {
         return this.x;
     }
 
-    public int obtenerY() {
+    public double obtenerY() {
         return this.y;
     }
 

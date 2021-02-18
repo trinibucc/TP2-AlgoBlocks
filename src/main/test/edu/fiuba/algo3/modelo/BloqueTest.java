@@ -64,8 +64,9 @@ public class BloqueTest {
     @Test
     public void testBloqueRepetirRepiteDosVecesYmueveAlPersonaje(){
         Personaje personaje = new Personaje();
-        BloqueRepetir bloqueRepetir = new BloqueRepetir(2, personaje);
-        AlgoBlocks algoBlocks = bloqueRepetir.agregarBloque();
+        BloqueRepetir bloqueRepetir = new BloqueRepetir(2);
+        AlgoBlocks algoBlocks = new AlgoBlocks();
+        bloqueRepetir.agregarBloque(algoBlocks);
         algoBlocks.agregarBloqueIzquierda();
         algoBlocks.agregarBloqueArriba();
         bloqueRepetir.ejecutar(personaje);
@@ -77,8 +78,9 @@ public class BloqueTest {
     @Test
     public void testBloqueRepetirRepiteTresVecesYmueveAlPersonaje(){
         Personaje personaje = new Personaje();
-        BloqueRepetir bloqueRepetir = new BloqueRepetir(3, personaje);
-        AlgoBlocks algoBlocks = bloqueRepetir.agregarBloque();
+        BloqueRepetir bloqueRepetir = new BloqueRepetir(3);
+        AlgoBlocks algoBlocks = new AlgoBlocks();
+        bloqueRepetir.agregarBloque(algoBlocks);
         algoBlocks.agregarBloqueIzquierda();
         algoBlocks.agregarBloqueIzquierda();
         bloqueRepetir.ejecutar(personaje);
@@ -90,8 +92,9 @@ public class BloqueTest {
     @Test
     public void testBloqueInversoInvierteAlgoritmo(){
         Personaje personaje = new Personaje();
-        BloqueInverso bloqueInverso = new BloqueInverso(personaje);
-        AlgoBlocks algoBlocks = bloqueInverso.agregarBloque();
+        BloqueInverso bloqueInverso = new BloqueInverso();
+        AlgoBlocks algoBlocks = new AlgoBlocks();
+        bloqueInverso.agregarBloque(algoBlocks);
         algoBlocks.agregarBloqueArriba();
         algoBlocks.agregarBloqueDerecha();
         bloqueInverso.ejecutar(personaje);
@@ -113,8 +116,9 @@ public class BloqueTest {
     @Test
     public void testBloqueRepetirTieneSuPropioAlogoBlocksQueAñadeAListaDeBloqueRepetir(){
         Personaje personaje = new Personaje();
-        BloqueRepetir bloqueRepetir = new BloqueRepetir(2, personaje);
-        AlgoBlocks algoBlocks = bloqueRepetir.agregarBloque();
+        BloqueRepetir bloqueRepetir = new BloqueRepetir(2);
+        AlgoBlocks algoBlocks = new AlgoBlocks();
+        bloqueRepetir.agregarBloque(algoBlocks);
         algoBlocks.agregarBloqueDerecha();
         List<Bloque> listaBloqueRepeitr = new ArrayList<>();
         listaBloqueRepeitr.add(new BloqueDerecha());
@@ -130,13 +134,6 @@ public class BloqueTest {
         assertFalse(sonDiferentes);
     }
 
-    @Test
-    public void testBloqueIterativoCreaSuAlgoBlocks(){
-        Personaje personaje = new Personaje();
-        BloqueIterativo bloqueRepetir = new BloqueRepetir(2, personaje);
-
-        assertTrue(bloqueRepetir.agregarBloque() instanceof AlgoBlocks);
-    }
 
     @Test
     public void testBloqueAlgoritmoPersonalizado() {

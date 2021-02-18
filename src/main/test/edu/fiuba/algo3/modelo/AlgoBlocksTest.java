@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class AlgoBlocksTest {
 
-    private boolean compararDibujos(List<Segmento> dibujoEsperado, List<Segmento> dibujoSectorDibujo){
+    private boolean compararDibujos(List< Segmento> dibujoEsperado, List<Segmento> dibujoSectorDibujo){
         for(int i = 0; i < dibujoEsperado.size(); i++)
             if (!dibujoEsperado.get(i).esIgualA(dibujoSectorDibujo.get(i))) {
                 return false;
@@ -21,20 +21,22 @@ public class AlgoBlocksTest {
     public void test01LevantarLapizConBloqueLevantaLapizPersonajeLevantaElLapiz(){
         Personaje personaje = new Personaje();
         Algoritmo algoritmo = new Algoritmo(personaje);
-        AlgoBlocks algoBlocks = new AlgoBlocks(algoritmo.obtenerRecorrido(), personaje);
+        AlgoBlocks algoBlocks = new AlgoBlocks();
+        algoritmo.agregarLista(algoBlocks);
         algoBlocks.agregarLapizArriba();
         algoritmo.ejecutar();
-        assertTrue(algoBlocks.obtenerPersonaje().obtenerLapiz() instanceof LapizArriba);
+        assertTrue(personaje.obtenerLapiz() instanceof LapizArriba);
     }
 
     @Test
     public void test02BajarLapizConBloqueBajaLazpizPersonajeBajaElLapiz(){
         Personaje personaje = new Personaje();
         Algoritmo algoritmo = new Algoritmo(personaje);
-        AlgoBlocks algoBlocks = new AlgoBlocks(algoritmo.obtenerRecorrido(), personaje);
+        AlgoBlocks algoBlocks = new AlgoBlocks();
+        algoritmo.agregarLista(algoBlocks);
         algoBlocks.agregarLapizAbajo();
         algoritmo.ejecutar();
-        assertTrue(algoBlocks.obtenerPersonaje().obtenerLapiz() instanceof LapizAbajo);
+        assertTrue(personaje.obtenerLapiz() instanceof LapizAbajo);
     }
 
     @Test
@@ -42,7 +44,8 @@ public class AlgoBlocksTest {
         Posicion posicion = new Posicion(1, 0);
         Personaje personaje = new Personaje();
         Algoritmo algoritmo = new Algoritmo(personaje);
-        AlgoBlocks algoBlocks = new AlgoBlocks(algoritmo.obtenerRecorrido(), personaje);
+        AlgoBlocks algoBlocks = new AlgoBlocks();
+        algoritmo.agregarLista(algoBlocks);
         algoBlocks.agregarBloqueDerecha();
         algoritmo.ejecutar();
         assertTrue(personaje.obtenerPosicion().esIgualA(posicion));
@@ -53,7 +56,8 @@ public class AlgoBlocksTest {
         Posicion posicion = new Posicion(0, -1);
         Personaje personaje = new Personaje();
         Algoritmo algoritmo = new Algoritmo(personaje);
-        AlgoBlocks algoBlocks = new AlgoBlocks(algoritmo.obtenerRecorrido(), personaje);;
+        AlgoBlocks algoBlocks = new AlgoBlocks();
+        algoritmo.agregarLista(algoBlocks);
         algoBlocks.agregarBloqueAbajo();
         algoritmo.ejecutar();
         assertTrue(personaje.obtenerPosicion().esIgualA(posicion));
@@ -64,7 +68,8 @@ public class AlgoBlocksTest {
         Posicion posicion = new Posicion(-1 , 0);
         Personaje personaje = new Personaje();
         Algoritmo algoritmo = new Algoritmo(personaje);
-        AlgoBlocks algoBlocks = new AlgoBlocks(algoritmo.obtenerRecorrido(), personaje);;
+        AlgoBlocks algoBlocks = new AlgoBlocks();
+        algoritmo.agregarLista(algoBlocks);
         algoBlocks.agregarBloqueIzquierda();
         algoritmo.ejecutar();
         assertTrue(personaje.obtenerPosicion().esIgualA(posicion));
@@ -75,7 +80,8 @@ public class AlgoBlocksTest {
         Posicion posicion = new Posicion(0, 1);
         Personaje personaje = new Personaje();
         Algoritmo algoritmo = new Algoritmo(personaje);
-        AlgoBlocks algoBlocks = new AlgoBlocks(algoritmo.obtenerRecorrido(), personaje);
+        AlgoBlocks algoBlocks = new AlgoBlocks();
+        algoritmo.agregarLista(algoBlocks);
         algoBlocks.agregarBloqueArriba();
         algoritmo.ejecutar();
         assertTrue(personaje.obtenerPosicion().esIgualA(posicion));
@@ -86,7 +92,8 @@ public class AlgoBlocksTest {
         Posicion posicion = new Posicion(-1, 0);
         Personaje personaje = new Personaje();
         Algoritmo algoritmo = new Algoritmo(personaje);
-        AlgoBlocks algoBlocks = new AlgoBlocks(algoritmo.obtenerRecorrido(), personaje);;
+        AlgoBlocks algoBlocks = new AlgoBlocks();
+        algoritmo.agregarLista(algoBlocks);
         algoBlocks.agregarBloqueIzquierda();
         algoBlocks.agregarBloqueIzquierda();
         algoBlocks.agregarBloqueDerecha();
@@ -99,7 +106,8 @@ public class AlgoBlocksTest {
         Posicion posicion = new Posicion(0, 1);
         Personaje personaje = new Personaje();
         Algoritmo algoritmo = new Algoritmo(personaje);
-        AlgoBlocks algoBlocks = new AlgoBlocks(algoritmo.obtenerRecorrido(), personaje);
+        AlgoBlocks algoBlocks = new AlgoBlocks();
+        algoritmo.agregarLista(algoBlocks);
         algoBlocks.agregarBloqueArriba();
         algoBlocks.agregarBloqueArriba();
         algoBlocks.agregarBloqueAbajo();
@@ -112,7 +120,8 @@ public class AlgoBlocksTest {
         Posicion posicion = new Posicion(1, 1);
         Personaje personaje = new Personaje();
         Algoritmo algoritmo = new Algoritmo(personaje);
-        AlgoBlocks algoBlocks = new AlgoBlocks(algoritmo.obtenerRecorrido(), personaje);
+        AlgoBlocks algoBlocks = new AlgoBlocks();
+        algoritmo.agregarLista(algoBlocks);
         algoBlocks.agregarBloqueArriba();
         algoBlocks.agregarBloqueAbajo();
         algoBlocks.agregarBloqueDerecha();
@@ -128,7 +137,8 @@ public class AlgoBlocksTest {
         Posicion posicion = new Posicion(0, 0);
         Personaje personaje = new Personaje();
         Algoritmo algoritmo = new Algoritmo(personaje);
-        AlgoBlocks algoBlocks = new AlgoBlocks(algoritmo.obtenerRecorrido(), personaje);
+        AlgoBlocks algoBlocks = new AlgoBlocks();
+        algoritmo.agregarLista(algoBlocks);
         algoBlocks.agregarBloqueArriba();
         algoBlocks.agregarBloqueAbajo();
         algoBlocks.agregarBloqueDerecha();
@@ -136,7 +146,7 @@ public class AlgoBlocksTest {
         algoBlocks.agregarLapizArriba();
         algoritmo.ejecutar();
         assertTrue(personaje.obtenerPosicion().esIgualA(posicion));
-        assertTrue(algoBlocks.obtenerPersonaje().obtenerLapiz() instanceof LapizArriba);
+        assertTrue(personaje.obtenerLapiz() instanceof LapizArriba);
     }
 
     @Test
@@ -144,7 +154,8 @@ public class AlgoBlocksTest {
         Posicion posicion = new Posicion(0,  0);
         Personaje personaje = new Personaje();
         Algoritmo algoritmo = new Algoritmo(personaje);
-        AlgoBlocks algoBlocks = new AlgoBlocks(algoritmo.obtenerRecorrido(), personaje);
+        AlgoBlocks algoBlocks = new AlgoBlocks();
+        algoritmo.agregarLista(algoBlocks);
         algoBlocks.agregarBloqueArriba();
         algoBlocks.agregarBloqueAbajo();
         algoBlocks.agregarBloqueDerecha();
@@ -158,13 +169,14 @@ public class AlgoBlocksTest {
         Posicion posicion = new Posicion(3, -1);
         Personaje personaje = new Personaje();
         Algoritmo algoritmo = new Algoritmo(personaje);
-        AlgoBlocks algoBlocks = new AlgoBlocks(algoritmo.obtenerRecorrido(), personaje);
+        AlgoBlocks algoBlocks = new AlgoBlocks();
+        algoritmo.agregarLista(algoBlocks);
         algoBlocks.agregarBloqueDerecha();
         algoBlocks.agregarBloqueArriba();
         BloqueRepetir bloqueRepetirDosVeces = algoBlocks.agregarBloqueRepetirDosVeces();
-        AlgoBlocks algoritmoIterativo = bloqueRepetirDosVeces.agregarBloque();
-        algoritmoIterativo.agregarBloqueDerecha();
-        algoritmoIterativo.agregarBloqueAbajo();
+        bloqueRepetirDosVeces.agregarBloque(algoBlocks);
+        algoBlocks.agregarBloqueDerecha();
+        algoBlocks.agregarBloqueAbajo();
         algoritmo.ejecutar();
         assertTrue(personaje.obtenerPosicion().esIgualA(posicion));
     }
@@ -174,13 +186,14 @@ public class AlgoBlocksTest {
         Posicion posicion = new Posicion(4, -2);
         Personaje personaje = new Personaje();
         Algoritmo algoritmo = new Algoritmo(personaje);
-        AlgoBlocks algoBlocks = new AlgoBlocks(algoritmo.obtenerRecorrido(), personaje);
+        AlgoBlocks algoBlocks = new AlgoBlocks();
+        algoritmo.agregarLista(algoBlocks);
         algoBlocks.agregarBloqueDerecha();
         algoBlocks.agregarBloqueArriba();
         BloqueRepetir bloqueRepetirTresVeces = algoBlocks.agregarBloqueRepetirTresVeces();
-        AlgoBlocks algoritmoIterativo = bloqueRepetirTresVeces.agregarBloque();
-        algoritmoIterativo.agregarBloqueDerecha();
-        algoritmoIterativo.agregarBloqueAbajo();
+        bloqueRepetirTresVeces.agregarBloque(algoBlocks);
+        algoBlocks.agregarBloqueDerecha();
+        algoBlocks.agregarBloqueAbajo();
         algoritmo.ejecutar();
         assertTrue(personaje.obtenerPosicion().esIgualA(posicion));
     }
@@ -190,27 +203,31 @@ public class AlgoBlocksTest {
         Posicion posicion = new Posicion(4, 0);
         Personaje personaje = new Personaje();
         Algoritmo algoritmo = new Algoritmo(personaje);
-        AlgoBlocks algoBlocks = new AlgoBlocks(algoritmo.obtenerRecorrido(), personaje);
+        AlgoBlocks algoBlocks = new AlgoBlocks();
+        algoritmo.agregarLista(algoBlocks);
         algoBlocks.agregarBloqueDerecha();
         algoBlocks.agregarBloqueArriba();
         BloqueRepetir bloqueRepetirTresVeces = algoBlocks.agregarBloqueRepetirTresVeces();
-        AlgoBlocks algoritmoIterativo = bloqueRepetirTresVeces.agregarBloque();
-        algoritmoIterativo.agregarBloqueDerecha();
-        algoritmoIterativo.agregarBloqueAbajo();
+        bloqueRepetirTresVeces.agregarBloque(algoBlocks);
+        algoBlocks.agregarBloqueDerecha();
+        algoBlocks.agregarBloqueAbajo();
+        algoritmo.agregarLista(algoBlocks);
         algoBlocks.agregarBloqueArriba();
         algoBlocks.agregarBloqueArriba();
         algoritmo.ejecutar();
-        assertTrue(algoBlocks.obtenerPersonaje().obtenerPosicion().esIgualA(posicion));
+        assertTrue(personaje.obtenerPosicion().esIgualA(posicion));
     }
 
     @Test
     public void test15UsarBloqueInversoYPersonajeRealizaMovimientosAlReves(){
         Personaje personaje = new Personaje();
-        AlgoBlocks algoBlocks = new AlgoBlocks( (new Algoritmo(personaje)).obtenerRecorrido(), personaje);
+        AlgoBlocks algoBlocks = new AlgoBlocks();
+        Algoritmo algoritmo = new Algoritmo(personaje);
+        algoritmo.agregarLista(algoBlocks);
         BloqueInverso bloqueInverso = algoBlocks.agregarBloqueInverso();
-        AlgoBlocks inverso = bloqueInverso.agregarBloque();
-        inverso.agregarBloqueDerecha();
-        inverso.agregarBloqueAbajo();
+        bloqueInverso.agregarBloque(algoBlocks);
+        algoBlocks.agregarBloqueDerecha();
+        algoBlocks.agregarBloqueAbajo();
         List<Bloque> listaInvertida = new ArrayList<>();
         listaInvertida.add(new BloqueAbajo());
         listaInvertida.add(new BloqueDerecha());
@@ -232,7 +249,8 @@ public class AlgoBlocksTest {
         SectorDibujo.obtenerSectorDibujo().resetear();
         Personaje personaje = new Personaje();
         Algoritmo algoritmo = new Algoritmo(personaje);
-        AlgoBlocks algoBlocks = new AlgoBlocks(algoritmo.obtenerRecorrido(), personaje);
+        AlgoBlocks algoBlocks = new AlgoBlocks();
+        algoritmo.agregarLista(algoBlocks);
         List<Segmento> trazos = new ArrayList<>();
         List<Segmento> dibujo = SectorDibujo.obtenerSectorDibujo().obtenerDibujo();
         trazos.add(new Segmento(new Posicion(0, 0), new Posicion(1, 0)));
@@ -251,7 +269,8 @@ public class AlgoBlocksTest {
         SectorDibujo.obtenerSectorDibujo().resetear();
         Personaje personaje = new Personaje();
         Algoritmo algoritmo = new Algoritmo(personaje);
-        AlgoBlocks algoBlocks = new AlgoBlocks(algoritmo.obtenerRecorrido(), personaje);
+        AlgoBlocks algoBlocks = new AlgoBlocks();
+        algoritmo.agregarLista(algoBlocks);
         List<Segmento> trazos = new ArrayList<>();
         List<Segmento> dibujo = SectorDibujo.obtenerSectorDibujo().obtenerDibujo();
         trazos.add(new Segmento(new Posicion(0, 0), new Posicion(1, 0)));
@@ -271,7 +290,8 @@ public class AlgoBlocksTest {
         SectorDibujo.obtenerSectorDibujo().resetear();
         Personaje personaje = new Personaje();
         Algoritmo algoritmo = new Algoritmo(personaje);
-        AlgoBlocks algoBlocks = new AlgoBlocks(algoritmo.obtenerRecorrido(), personaje);
+        AlgoBlocks algoBlocks = new AlgoBlocks();
+        algoritmo.agregarLista(algoBlocks);
         List<Segmento> trazos = new ArrayList<>();
         List<Segmento> dibujo = SectorDibujo.obtenerSectorDibujo().obtenerDibujo();
         trazos.add(new Segmento(new Posicion(0, 0), new Posicion(1, 0)));
@@ -296,7 +316,8 @@ public class AlgoBlocksTest {
         SectorDibujo.obtenerSectorDibujo().resetear();
         Personaje personaje = new Personaje();
         Algoritmo algoritmo = new Algoritmo(personaje);
-        AlgoBlocks algoBlocks = new AlgoBlocks(algoritmo.obtenerRecorrido(), personaje);
+        AlgoBlocks algoBlocks = new AlgoBlocks();
+        algoritmo.agregarLista(algoBlocks);
         List<Segmento> trazos = new ArrayList<>();
         List<Segmento> dibujo = SectorDibujo.obtenerSectorDibujo().obtenerDibujo();
         trazos.add(new Segmento(new Posicion(0, 0), new Posicion(1, 0)));
@@ -321,7 +342,8 @@ public class AlgoBlocksTest {
         SectorDibujo.obtenerSectorDibujo().resetear();
         Personaje personaje = new Personaje();
         Algoritmo algoritmo = new Algoritmo(personaje);
-        AlgoBlocks algoBlocks = new AlgoBlocks(algoritmo.obtenerRecorrido(), personaje);
+        AlgoBlocks algoBlocks = new AlgoBlocks();
+        algoritmo.agregarLista(algoBlocks);
         List<Segmento> trazos = new ArrayList<>();
         List<Segmento> dibujo = SectorDibujo.obtenerSectorDibujo().obtenerDibujo();
         trazos.add(new Segmento(new Posicion(0, 0), new Posicion(-1, 0)));
@@ -344,7 +366,8 @@ public class AlgoBlocksTest {
         SectorDibujo.obtenerSectorDibujo().resetear();
         Personaje personaje = new Personaje();
         Algoritmo algoritmo = new Algoritmo(personaje);
-        AlgoBlocks algoBlocks = new AlgoBlocks(algoritmo.obtenerRecorrido(), personaje);
+        AlgoBlocks algoBlocks = new AlgoBlocks();
+        algoritmo.agregarLista(algoBlocks);
         List<Segmento> trazos = new ArrayList<>();
         List<Segmento> dibujo = SectorDibujo.obtenerSectorDibujo().obtenerDibujo();
         trazos.add(new Segmento(new Posicion(1, 2), new Posicion(0, 2)));
@@ -363,7 +386,8 @@ public class AlgoBlocksTest {
         SectorDibujo.obtenerSectorDibujo().resetear();
         Personaje personaje = new Personaje();
         Algoritmo algoritmo = new Algoritmo(personaje);
-        AlgoBlocks algoBlocks = new AlgoBlocks(algoritmo.obtenerRecorrido(), personaje);
+        AlgoBlocks algoBlocks = new AlgoBlocks();
+        algoritmo.agregarLista(algoBlocks);
         List<Segmento> trazos = new ArrayList<>();
         List<Segmento> dibujo = SectorDibujo.obtenerSectorDibujo().obtenerDibujo();
         trazos.add(new Segmento(new Posicion(0, 0), new Posicion(1, 0)));
@@ -372,9 +396,9 @@ public class AlgoBlocksTest {
         trazos.add(new Segmento(new Posicion(2, -1), new Posicion(2, -2)));
         algoBlocks.agregarLapizAbajo();
         BloqueRepetir bloqueRepetirDosVeces = algoBlocks.agregarBloqueRepetirDosVeces();
-        AlgoBlocks algoritmoIterativo = bloqueRepetirDosVeces.agregarBloque();
-        algoritmoIterativo.agregarBloqueDerecha();
-        algoritmoIterativo.agregarBloqueAbajo();
+        bloqueRepetirDosVeces.agregarBloque(algoBlocks);
+        algoBlocks.agregarBloqueDerecha();
+        algoBlocks.agregarBloqueAbajo();
         algoritmo.ejecutar();
         assertTrue(this.compararDibujos(trazos, dibujo));
     }
@@ -384,7 +408,8 @@ public class AlgoBlocksTest {
         SectorDibujo.obtenerSectorDibujo().resetear();
         Personaje personaje = new Personaje();
         Algoritmo algoritmo = new Algoritmo(personaje);
-        AlgoBlocks algoBlocks = new AlgoBlocks(algoritmo.obtenerRecorrido(), personaje);
+        AlgoBlocks algoBlocks = new AlgoBlocks();
+        algoritmo.agregarLista(algoBlocks);
         List<Segmento> trazos = new ArrayList<>();
         List<Segmento> dibujo = SectorDibujo.obtenerSectorDibujo().obtenerDibujo();
         trazos.add(new Segmento(new Posicion(0, 0), new Posicion(1, 0)));
@@ -395,9 +420,9 @@ public class AlgoBlocksTest {
         trazos.add(new Segmento(new Posicion(3, -2), new Posicion(3, -3)));
         algoBlocks.agregarLapizAbajo();
         BloqueRepetir bloqueRepetirTresVeces = algoBlocks.agregarBloqueRepetirTresVeces();
-        AlgoBlocks algoritmoIterativo = bloqueRepetirTresVeces.agregarBloque();
-        algoritmoIterativo.agregarBloqueDerecha();
-        algoritmoIterativo.agregarBloqueAbajo();
+        bloqueRepetirTresVeces.agregarBloque(algoBlocks);
+        algoBlocks.agregarBloqueDerecha();
+        algoBlocks.agregarBloqueAbajo();
         algoritmo.ejecutar();
         assertTrue(this.compararDibujos(trazos, dibujo));
     }
@@ -407,16 +432,17 @@ public class AlgoBlocksTest {
         SectorDibujo.obtenerSectorDibujo().resetear();
         Personaje personaje = new Personaje();
         Algoritmo algoritmo = new Algoritmo(personaje);
-        AlgoBlocks algoBlocks = new AlgoBlocks(algoritmo.obtenerRecorrido(), personaje);
+        AlgoBlocks algoBlocks = new AlgoBlocks();
+        algoritmo.agregarLista(algoBlocks);
         List<Segmento> trazos = new ArrayList<>();
         List<Segmento> dibujo = SectorDibujo.obtenerSectorDibujo().obtenerDibujo();
         trazos.add(new Segmento(new Posicion(0, 0), new Posicion(0, -1)));
         trazos.add(new Segmento(new Posicion(0, -1), new Posicion(1, -1)));
         algoBlocks.agregarLapizAbajo();
         BloqueInverso bloqueInverso = algoBlocks.agregarBloqueInverso();
-        AlgoBlocks algoritmoIterativo = bloqueInverso.agregarBloque();
-        algoritmoIterativo.agregarBloqueDerecha();
-        algoritmoIterativo.agregarBloqueAbajo();
+        bloqueInverso.agregarBloque(algoBlocks);
+        algoBlocks.agregarBloqueDerecha();
+        algoBlocks.agregarBloqueAbajo();
         algoritmo.ejecutar();
         assertTrue(this.compararDibujos(trazos, dibujo));
     }
@@ -425,7 +451,8 @@ public class AlgoBlocksTest {
     public void test25GuardarAlgoritmoPersonalizadoYCrearSuBloque(){
         Personaje personaje = new Personaje();
         Algoritmo algoritmo = new Algoritmo(personaje);
-        AlgoBlocks algoBlocks = new AlgoBlocks(algoritmo.obtenerRecorrido(), personaje);
+        AlgoBlocks algoBlocks = new AlgoBlocks();
+        algoritmo.agregarLista(algoBlocks);
         algoBlocks.agregarBloqueDerecha();
         algoBlocks.agregarBloqueArriba();
         algoBlocks.guardarAlgoritmo("nombre");

@@ -6,25 +6,30 @@ import java.util.List;
 
 public class Algoritmo {
 
-    private List<Bloque> recorrido;
+    private List<Bloque> algoritmo;
     private Personaje personaje;
 
     public Algoritmo(Personaje personaje){
-        this.recorrido = new ArrayList<>();
+        this.algoritmo = new ArrayList<Bloque>();
         this.personaje = personaje;
     }
 
     public void ejecutar(){
-        if(recorrido.size() < 1){
+        if(algoritmo.size() < 1){
             throw new CantidadInsuficienteDeBloquesError();
         }
-        for(Bloque bloque : this.recorrido){
+        for(Bloque bloque : this.algoritmo){
             bloque.ejecutar(this.personaje);
         }
     }
 
-    public List<Bloque> obtenerRecorrido(){
-        return this.recorrido;
+    public void agregarLista(AlgoBlocks algoBlocks){
+        algoBlocks.agregarLista(algoritmo);
     }
+
+    public List<Bloque> obtenerRecorrido(){
+        return this.algoritmo;
+    }
+
 
 }

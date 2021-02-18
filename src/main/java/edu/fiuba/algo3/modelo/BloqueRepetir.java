@@ -5,13 +5,14 @@ public class BloqueRepetir extends BloqueIterativo {
 
     private int repeticion;
 
-    public BloqueRepetir(int repeticion, Personaje personaje) {
+    public BloqueRepetir(int repeticion) {
         if(repeticion < 2){
             throw new NumeroDeRepeticionesInvalidoError();
         }
         this.repeticion = repeticion;
-        this.personaje = personaje;
+
     }
+
 
     public void ejecutar(Personaje personaje){
         int repetido = 0;

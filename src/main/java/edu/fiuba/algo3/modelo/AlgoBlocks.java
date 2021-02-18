@@ -7,18 +7,17 @@ import java.util.Map;
 
 public class AlgoBlocks {
 
-    private final Personaje personaje;
-    private final List<Bloque> algoritmo;
+
+    private List<Bloque> algoritmo;
     Map<String, BloquePersonalizado> bloquesPersonalizado = new HashMap<>();
 
-    public AlgoBlocks(List<Bloque> recorrido, Personaje personaje){
-        this.personaje = personaje;
-        this.algoritmo = recorrido;
+    public AlgoBlocks(){
+
+    }
+    public void agregarLista(List<Bloque> algoritmo){
+        this.algoritmo = algoritmo;
     }
 
-    public Personaje obtenerPersonaje(){
-        return this.personaje;
-    }
 
     public void agregarLapizArriba() {
         LapizArriba lapizArriba = new LapizArriba();
@@ -52,19 +51,19 @@ public class AlgoBlocks {
     }
 
     public BloqueRepetir agregarBloqueRepetirDosVeces(){
-        BloqueRepetir bloqueRepetir = new BloqueRepetir(2, this.personaje);
+        BloqueRepetir bloqueRepetir = new BloqueRepetir(2);
         this.algoritmo.add(bloqueRepetir);
         return bloqueRepetir;
     }
 
     public BloqueRepetir agregarBloqueRepetirTresVeces(){
-        BloqueRepetir bloqueRepetir = new BloqueRepetir(3, this.personaje);
+        BloqueRepetir bloqueRepetir = new BloqueRepetir(3);
         this.algoritmo.add(bloqueRepetir);
         return bloqueRepetir;
     }
 
     public BloqueInverso agregarBloqueInverso(){
-        BloqueInverso bloqueInverso = new BloqueInverso(this.personaje);
+        BloqueInverso bloqueInverso = new BloqueInverso();
         this.algoritmo.add(bloqueInverso);
         return bloqueInverso;
     }
@@ -76,13 +75,16 @@ public class AlgoBlocks {
         if(this.bloquesPersonalizado.containsKey(nombre)){
             throw new NombreInvalidoError();
         }
-        BloquePersonalizado bloquePersonalizado = new BloquePersonalizado(this.algoritmo);
-        this.bloquesPersonalizado.put(nombre, bloquePersonalizado);
+        BloquePersonalizado bloquePersonalizado = new BloquePersonalizado(algoritmo);
+        bloquesPersonalizado.put(nombre, bloquePersonalizado);
     }
 
     public void agregarAlgoritmoPersonalizado(String nombre){
-        BloquePersonalizado bloquePersonalizado = this.bloquesPersonalizado.get(nombre);
-        this.algoritmo.add(bloquePersonalizado);
+        BloquePersonalizado bloquePersonalizado = bloquesPersonalizado.get(nombre);
+        algoritmo.add(bloquePersonalizado);
     }
 
+    public void reiniciar() {
+        algoritmo.clear();
+    }
 }

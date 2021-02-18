@@ -17,11 +17,11 @@ public class Segmento {
         return segmento.obtenerInicio().esIgualA(this.inicio) && segmento.obtenerFin().esIgualA(this.fin);
     }
 
-    private Posicion obtenerInicio() {
+    public Posicion obtenerInicio() {
         return this.inicio;
     }
 
-    private Posicion obtenerFin(){
+    public Posicion obtenerFin(){
         return this.fin;
     }
 
