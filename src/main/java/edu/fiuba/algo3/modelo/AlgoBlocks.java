@@ -51,7 +51,7 @@ public class AlgoBlocks {
         this.algoritmo.add(bloqueArriba);
     }
 
-    protected BloqueRepetir agregarBloqueRepetirDosVeces(){
+    public BloqueRepetir agregarBloqueRepetirDosVeces(){
         BloqueRepetir bloqueRepetir = new BloqueRepetir(2, personaje);
         this.algoritmo.add(bloqueRepetir);
         return bloqueRepetir;
