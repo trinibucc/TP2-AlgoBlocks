@@ -69,6 +69,12 @@ public class AlgoBlocks {
     }
 
     public void guardarAlgoritmo(String nombre) {
+        if(this.algoritmo.size() < 1){
+            throw new CantidadInsuficienteDeBloquesError();
+        }
+        if(this.bloquesPersonalizado.containsKey(nombre)){
+            throw new NombreInvalidoError();
+        }
         BloquePersonalizado bloquePersonalizado = new BloquePersonalizado(algoritmo);
         bloquesPersonalizado.put(nombre, bloquePersonalizado);
     }
