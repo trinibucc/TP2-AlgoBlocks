@@ -10,6 +10,7 @@ public class BloqueInverso extends BloqueIterativo {
     }
 
     public void ejecutar(Personaje personaje){
+        //algoritmo.invertir()
         Collections.reverse(algoritmo);
         this.recorrer(personaje);
     }

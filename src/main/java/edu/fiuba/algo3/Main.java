@@ -37,11 +37,11 @@ public class Main extends Application {
         stage.setResizable(false);
 
 
-       /* Image imagen = new Image("fondo.jpg");
+        Image imagen = new Image("fondo.jpg");
         ImageView fondo = new ImageView(imagen);
         fondo.setImage(imagen);
         fondo.setFitHeight(600);
-        fondo.setFitWidth(750);*/
+        fondo.setFitWidth(750);
 
         Label titulo = new Label();
         titulo.setText("ALGOBLOCKS");
@@ -88,7 +88,7 @@ public class Main extends Application {
         VBox contenedorVertical = new VBox(contenedorSuperior, contenedorCentral);
 
         StackPane contenedorPrincipal = new StackPane();
-       // contenedorPrincipal.getChildren().add(fondo);
+        contenedorPrincipal.getChildren().add(fondo);
         contenedorPrincipal.getChildren().add(contenedorVertical);
         contenedorPrincipal.setAlignment(ejecutar, Pos.BOTTOM_CENTER);
         contenedorPrincipal.getChildren().add(ejecutar);
