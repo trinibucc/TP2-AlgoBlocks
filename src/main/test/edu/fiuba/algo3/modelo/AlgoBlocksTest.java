@@ -229,8 +229,8 @@ public class AlgoBlocksTest {
         algoBlocks.agregarBloqueDerecha();
         algoBlocks.agregarBloqueAbajo();
         List<Bloque> listaInvertida = new ArrayList<>();
-        listaInvertida.add(new BloqueAbajo());
-        listaInvertida.add(new BloqueDerecha());
+        listaInvertida.add(new BloqueAbajo().opuesto());
+        listaInvertida.add(new BloqueDerecha().opuesto());
         bloqueInverso.ejecutar(personaje);
         boolean esDiferente = false;
         if(listaInvertida.size() != bloqueInverso.obtenerLista().size())
@@ -436,8 +436,8 @@ public class AlgoBlocksTest {
         algoritmo.agregarLista(algoBlocks);
         List<Segmento> trazos = new ArrayList<>();
         List<Segmento> dibujo = SectorDibujo.obtenerSectorDibujo().obtenerDibujo();
-        trazos.add(new Segmento(new Posicion(0, 0), new Posicion(0, -1)));
-        trazos.add(new Segmento(new Posicion(0, -1), new Posicion(1, -1)));
+        trazos.add(new Segmento(new Posicion(0, 0), new Posicion(0, 1)));
+        trazos.add(new Segmento(new Posicion(0, 1), new Posicion(-1, 1)));
         algoBlocks.agregarLapizAbajo();
         BloqueInverso bloqueInverso = algoBlocks.agregarBloqueInverso();
         bloqueInverso.agregarBloque(algoBlocks);

@@ -8,4 +8,8 @@ public class BloqueAbajo implements Bloque {
         personaje.dibujar();
     }
 
+    public Bloque opuesto(){
+        return new BloqueArriba();
+    }
+
 }

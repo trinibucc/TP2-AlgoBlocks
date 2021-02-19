@@ -26,5 +26,9 @@ public class BloquePersonalizado implements Bloque{
         }
     }
 
+    public Bloque opuesto(){
+        return this;
+    }
+
 
 }

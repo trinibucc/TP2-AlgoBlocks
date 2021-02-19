@@ -99,8 +99,8 @@ public class BloqueTest {
         algoBlocks.agregarBloqueDerecha();
         bloqueInverso.ejecutar(personaje);
         List<Bloque> listaInvertida = new ArrayList<>();
-        listaInvertida.add(new BloqueDerecha());
-        listaInvertida.add(new BloqueArriba());
+        listaInvertida.add(new BloqueDerecha().opuesto());
+        listaInvertida.add(new BloqueArriba().opuesto());
         boolean sonDiferentes = false;
         if(listaInvertida.size() != bloqueInverso.obtenerLista().size())
             sonDiferentes = true;
