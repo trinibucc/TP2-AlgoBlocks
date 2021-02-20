@@ -5,5 +5,7 @@ interface Bloque {
 
     void ejecutar(Personaje personaje);
 
+    Bloque opuesto();
+
 
 }

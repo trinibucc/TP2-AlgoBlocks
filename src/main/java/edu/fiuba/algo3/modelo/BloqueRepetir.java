@@ -22,4 +22,8 @@ public class BloqueRepetir extends BloqueIterativo {
         }
     }
 
+    public Bloque opuesto(){
+        return this;
+    }
+
 }

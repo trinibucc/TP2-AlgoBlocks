@@ -10,12 +10,12 @@ public class Algoritmo {
     private Personaje personaje;
 
     public Algoritmo(Personaje personaje){
-        this.algoritmo = new ArrayList<Bloque>();
+        this.algoritmo = new ArrayList<>();
         this.personaje = personaje;
     }
 
     public void ejecutar(){
-        if(algoritmo.size() < 1){
+        if(this.algoritmo.size() < 1){
             throw new CantidadInsuficienteDeBloquesError();
         }
         for(Bloque bloque : this.algoritmo){
@@ -24,12 +24,7 @@ public class Algoritmo {
     }
 
     public void agregarLista(AlgoBlocks algoBlocks){
-        algoBlocks.agregarLista(algoritmo);
+        algoBlocks.agregarLista(this.algoritmo);
     }
-
-    public List<Bloque> obtenerRecorrido(){
-        return this.algoritmo;
-    }
-
 
 }

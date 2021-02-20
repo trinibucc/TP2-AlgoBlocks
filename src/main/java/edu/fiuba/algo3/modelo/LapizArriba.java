@@ -12,4 +12,8 @@ public class LapizArriba implements Lapiz, Bloque{
     public void trazar(Posicion posicionInicial, Posicion posicionFinal) {
     }
 
+    public Bloque opuesto(){
+        return new LapizAbajo();
+    }
+
 }

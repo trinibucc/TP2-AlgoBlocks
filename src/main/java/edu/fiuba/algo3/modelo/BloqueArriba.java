@@ -9,4 +9,8 @@ public class BloqueArriba implements Bloque {
         personaje.dibujar();
     }
 
+    @Override
+    public Bloque opuesto() {
+        return new BloqueAbajo();
+    }
 }

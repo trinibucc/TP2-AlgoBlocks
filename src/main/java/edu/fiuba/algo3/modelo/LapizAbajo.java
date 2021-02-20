@@ -14,4 +14,8 @@ public class LapizAbajo implements Lapiz, Bloque {
         SectorDibujo sectorDibujo = SectorDibujo.obtenerSectorDibujo();
         sectorDibujo.aplicarTrazo(posicionInicial, posicionFinal);
     }
+
+    public Bloque opuesto(){
+        return new LapizArriba();
+    }
 }

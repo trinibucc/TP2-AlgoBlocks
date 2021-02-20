@@ -10,8 +10,8 @@ public class BloqueDerecha implements Bloque {
         personaje.dibujar();
     }
 
-    /*public void invertir(){
-        posicion = posicion.invertir();
-    }*/
+   public Bloque opuesto(){
+        return new BloqueIzquierda();
+   }
 
 }
