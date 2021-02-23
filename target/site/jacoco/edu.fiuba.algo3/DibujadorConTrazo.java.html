@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>DibujadorConTrazo.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">tp2</a> &gt; <a href="index.source.html" class="el_package">edu.fiuba.algo3</a> &gt; <span class="el_source">DibujadorConTrazo.java</span></div><h1>DibujadorConTrazo.java</h1><pre class="source lang-java linenums">package edu.fiuba.algo3;
+
+import edu.fiuba.algo3.modelo.Posicion;
+import javafx.scene.image.Image;
+
+public class DibujadorConTrazo extends Dibujador {
+
+<span class="nc" id="L8">    Image lineaHorizontal = new Image(&quot;h.jpg&quot;);</span>
+<span class="nc" id="L9">    Image lineaVertical = new Image(&quot;vertical.jpg&quot;);</span>
+
+
+    public DibujadorConTrazo(Posicion pos, Tablero tablero){
+<span class="nc" id="L13">        super(pos, tablero);</span>
+<span class="nc" id="L14">    }</span>
+
+
+
+    protected void actualizar(){
+<span class="nc bnc" id="L19" title="All 2 branches missed.">        if(posicion.obtenerX() != inicio.obtenerX()){</span>
+<span class="nc" id="L20">            tablero.trazar(posicion);</span>
+        }
+<span class="nc bnc" id="L22" title="All 2 branches missed.">        else if (posicion.obtenerY() != inicio.obtenerY()){</span>
+<span class="nc" id="L23">            tablero.trazar(posicion);</span>
+<span class="nc" id="L24">            inicio = posicion;</span>
+        }
+<span class="nc" id="L26">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

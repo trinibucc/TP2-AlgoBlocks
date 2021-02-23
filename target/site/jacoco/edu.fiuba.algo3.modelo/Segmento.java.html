@@ -6,20 +6,23 @@ public class Segmento {
     private Posicion fin;
 
 <span class="fc" id="L8">    public Segmento(Posicion inicio, Posicion fin){</span>
-<span class="fc" id="L9">        this.inicio = new Posicion(inicio.obtenerX(), inicio.obtenerY());</span>
-<span class="fc" id="L10">        this.fin = new Posicion(fin.obtenerX(), fin.obtenerY());</span>
-<span class="fc" id="L11">    }</span>
+<span class="pc bpc" id="L9" title="1 of 2 branches missed.">        if(inicio.esIgualA(fin)){</span>
+<span class="nc" id="L10">            throw new SegmentoInvalidoError();</span>
+        }
+<span class="fc" id="L12">        this.inicio = new Posicion(inicio.obtenerX(), inicio.obtenerY());</span>
+<span class="fc" id="L13">        this.fin = new Posicion(fin.obtenerX(), fin.obtenerY());</span>
+<span class="fc" id="L14">    }</span>
 
-    public boolean esIgualA(Segmento trazo){
-<span class="nc bnc" id="L14" title="All 4 branches missed.">        return trazo.obtenerInicio().esIgualA(this.inicio) &amp;&amp; trazo.obtenerFin().esIgualA(this.fin);</span>
+    public boolean esIgualA(Segmento segmento){
+<span class="pc bpc" id="L17" title="2 of 4 branches missed.">        return segmento.obtenerInicio().esIgualA(this.inicio) &amp;&amp; segmento.obtenerFin().esIgualA(this.fin);</span>
     }
 
-    private Posicion obtenerInicio() {
-<span class="nc" id="L18">        return this.inicio;</span>
+    public Posicion obtenerInicio() {
+<span class="fc" id="L21">        return this.inicio;</span>
     }
 
-    private Posicion obtenerFin(){
-<span class="nc" id="L22">        return this.fin;</span>
+    public Posicion obtenerFin(){
+<span class="fc" id="L25">        return this.fin;</span>
     }
 
 }

@@ -3,24 +3,27 @@
 import java.util.ArrayList;
 import java.util.List;
 
-<span class="nc" id="L6">public abstract class BloqueIterativo implements Bloque{</span>
+<span class="fc" id="L6">public abstract class BloqueIterativo implements Bloque{</span>
 
-<span class="nc" id="L8">    protected List&lt;Bloque&gt; algoritmo = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L8">    protected List&lt;Bloque&gt; algoritmo = new ArrayList&lt;&gt;();</span>
     protected Personaje personaje;
 
     public void recorrer(Personaje personaje) {
-<span class="nc bnc" id="L12" title="All 2 branches missed.">        for (Bloque bloque : this.algoritmo) {</span>
-<span class="nc" id="L13">            bloque.ejecutar(personaje);</span>
-<span class="nc" id="L14">        }</span>
-<span class="nc" id="L15">    }</span>
+<span class="fc bfc" id="L12" title="All 2 branches covered.">        for (Bloque bloque: this.algoritmo) {</span>
+<span class="fc" id="L13">            bloque.ejecutar(personaje);</span>
+<span class="fc" id="L14">        }</span>
+<span class="fc" id="L15">    }</span>
 
-    public AlgoBlocks agregarBloque(){
-<span class="nc" id="L18">        return (new AlgoBlocks(this.algoritmo, personaje));</span>
-    }
+    public void agregarBloque(AlgoBlocks algoBlocks){
+<span class="fc" id="L18">        algoBlocks.agregarLista(this.algoritmo);</span>
+<span class="fc" id="L19">    }</span>
 
     public List&lt;Bloque&gt; obtenerLista(){
-<span class="nc" id="L22">        return algoritmo;</span>
+<span class="fc" id="L22">        return algoritmo;</span>
     }
 
+    public Bloque opuesto(){
+<span class="nc" id="L26">        return this;</span>
+    }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

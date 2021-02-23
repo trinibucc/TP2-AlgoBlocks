@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Ejecutar.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">tp2</a> &gt; <a href="index.source.html" class="el_package">edu.fiuba.algo3</a> &gt; <span class="el_source">Ejecutar.java</span></div><h1>Ejecutar.java</h1><pre class="source lang-java linenums">package edu.fiuba.algo3;
+
+
+import edu.fiuba.algo3.modelo.Algoritmo;
+import edu.fiuba.algo3.modelo.Posicion;
+import edu.fiuba.algo3.modelo.SectorDibujo;
+import edu.fiuba.algo3.modelo.Segmento;
+import javafx.event.ActionEvent;
+
+import javafx.event.EventHandler;
+import javafx.geometry.Pos;
+import javafx.scene.layout.GridPane;
+
+import javax.swing.text.html.ImageView;
+import java.awt.*;
+import java.util.List;
+
+
+public class Ejecutar implements EventHandler&lt;ActionEvent&gt; {
+
+    private Algoritmo algoritmo;
+    private Tablero tablero;
+
+
+
+        
+
+<span class="nc" id="L28">    public Ejecutar(Algoritmo algoritmo, Tablero tablero) {</span>
+<span class="nc" id="L29">        this.algoritmo = algoritmo;</span>
+<span class="nc" id="L30">        this.tablero = tablero;</span>
+
+<span class="nc" id="L32">    }</span>
+
+    @Override
+    public void handle(ActionEvent Event) {
+<span class="nc" id="L36">        algoritmo.ejecutar();</span>
+<span class="nc" id="L37">        List&lt;Segmento&gt; segmentos = SectorDibujo.obtenerSectorDibujo().obtenerDibujo();</span>
+<span class="nc bnc" id="L38" title="All 2 branches missed.">        for(Segmento segmento : segmentos) {</span>
+<span class="nc" id="L39">            Posicion inicio = segmento.obtenerInicio();</span>
+<span class="nc" id="L40">            Posicion fin = segmento.obtenerFin();</span>
+<span class="nc" id="L41">            tablero.inicializar(new DibujadorConTrazo(inicio, tablero));</span>
+<span class="nc" id="L42">            tablero.inicializar(new DibujadorConTrazo(fin, tablero));</span>
+<span class="nc" id="L43">        }</span>
+
+
+<span class="nc" id="L46">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>
