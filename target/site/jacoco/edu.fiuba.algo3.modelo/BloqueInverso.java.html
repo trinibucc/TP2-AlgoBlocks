@@ -2,18 +2,25 @@
 
 
 import java.util.Collections;
+import java.util.List;
 
-public class BloqueInverso extends BloqueIterativo {
-
-<span class="nc" id="L8">    public BloqueInverso(Personaje personaje) {</span>
-<span class="nc" id="L9">        this.personaje = personaje;</span>
-<span class="nc" id="L10">    }</span>
+<span class="fc" id="L7">public class BloqueInverso extends BloqueIterativo {</span>
 
     public void ejecutar(Personaje personaje){
-<span class="nc" id="L13">        Collections.reverse(algoritmo);</span>
-<span class="nc" id="L14">        this.recorrer(personaje);</span>
-<span class="nc" id="L15">    }</span>
+<span class="fc" id="L10">        this.invertir(this.algoritmo);</span>
+<span class="fc" id="L11">        Collections.reverse(this.algoritmo);</span>
+<span class="fc" id="L12">        this.recorrer(personaje);</span>
+<span class="fc" id="L13">    }</span>
 
+    public Bloque opuesto(){
+<span class="nc" id="L16">        return this;</span>
+    }
+
+    private void invertir(List&lt;Bloque&gt; algoritmo){
+<span class="fc bfc" id="L20" title="All 2 branches covered.">        for(int i = 0; i &lt; algoritmo.size(); i++){</span>
+<span class="fc" id="L21">            algoritmo.set(i, algoritmo.get(i).opuesto());</span>
+        }
+<span class="fc" id="L23">    }</span>
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>
