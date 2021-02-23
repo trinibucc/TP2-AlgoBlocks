@@ -2,9 +2,6 @@ package edu.fiuba.algo3.modelo;
 
 
 import org.junit.jupiter.api.Test;
-
-
-
 import static org.junit.jupiter.api.Assertions.*;
 
 public class PosicionTest {
@@ -41,6 +38,5 @@ public class PosicionTest {
         posicion.sumarse(otraPosicion);
         assertTrue(posicion.esIgualA(new Posicion(1,2)));
     }
-
 
 }

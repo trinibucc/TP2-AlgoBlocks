@@ -1,22 +1,31 @@
 package edu.fiuba.algo3.modelo;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 
 public class CantidadInsuficienteDeBloquesErrorTest {
 
-    @Test (expected = CantidadInsuficienteDeBloquesError.class)
+    @Test
     public void test01IntentarGuardarUnAlgoritmoSinBloquesLanzaCantidadInsuficienteDeBloquesError(){
         Personaje personaje = new Personaje();
         Algoritmo algoritmo = new Algoritmo(personaje);
         AlgoBlocks algoBlocks = new AlgoBlocks();
         algoritmo.agregarLista(algoBlocks);
-        algoBlocks.guardarAlgoritmo("ArribaAbajo");
+        assertThrows(CantidadInsuficienteDeBloquesError.class,
+                ()->{
+                    algoBlocks.guardarAlgoritmo("ArribaAbajo");
+                });
     }
 
-    @Test (expected = CantidadInsuficienteDeBloquesError.class)
+    @Test
     public void test02AlEjecutarUnAlgoritmoSinBloquesLanzaCantidadInsuficienteDeBloquesError(){
         Personaje personaje = new Personaje();
         Algoritmo algoritmo = new Algoritmo(personaje);
-        algoritmo.ejecutar();
+        assertThrows(CantidadInsuficienteDeBloquesError.class,
+                ()->{
+                    algoritmo.ejecutar();
+                });
+
     }
 }

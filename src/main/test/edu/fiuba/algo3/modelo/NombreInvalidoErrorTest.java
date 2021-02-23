@@ -1,11 +1,12 @@
 package edu.fiuba.algo3.modelo;
 
 import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 
 public class NombreInvalidoErrorTest {
 
-    @Test (expected = NombreInvalidoError.class)
+    @Test
     public void test01GuardarUnAlgoritmoConElBloquePersonalizadoiYNombreYaExistenteLanzaNombreInvalidoError(){
         Personaje personaje = new Personaje();
         Algoritmo algoritmo = new Algoritmo(personaje);
@@ -14,7 +15,10 @@ public class NombreInvalidoErrorTest {
         algoBlocks.agregarBloqueArriba();
         algoBlocks.agregarBloqueAbajo();
         algoBlocks.guardarAlgoritmo("ArribaAbajo");
-        algoBlocks.guardarAlgoritmo("ArribaAbajo");
+        assertThrows(NombreInvalidoError.class,
+                () -> {
+                    algoBlocks.guardarAlgoritmo("ArribaAbajo");
+                });
     }
 
 }
