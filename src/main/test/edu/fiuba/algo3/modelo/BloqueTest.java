@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class BloqueTest {
 
     @Test
-    public void testBloqueDerechaSeEjecutaYmueveAPersonaje(){
+    public void test01BloqueDerechaSeEjecutaYmueveAPersonaje(){
         Posicion posicion = new Posicion(1, 0);
         BloqueDerecha bloqueDerecha = new BloqueDerecha();
         Personaje personaje = new Personaje();
@@ -21,7 +21,7 @@ public class BloqueTest {
     }
 
     @Test
-    public void testBloqueIzquierdaSeEjecutaYmueveAPersonaje(){
+    public void test02BloqueIzquierdaSeEjecutaYmueveAPersonaje(){
         Posicion posicion = new Posicion(-1, 0);
         BloqueIzquierda bloqueIzquierda = new BloqueIzquierda();
         Personaje personaje = new Personaje();
@@ -30,7 +30,7 @@ public class BloqueTest {
     }
 
     @Test
-    public void testBloqueArribaSeEjecutaYmueveAPersonaje(){
+    public void test03BloqueArribaSeEjecutaYmueveAPersonaje(){
         Posicion posicion = new Posicion(0, 1);
         BloqueArriba bloqueArriba = new BloqueArriba();
         Personaje personaje = new Personaje();
@@ -39,7 +39,7 @@ public class BloqueTest {
     }
 
     @Test
-    public void testBloqueAbajoSeEjecutaYmueveAPersonaje(){
+    public void test04BloqueAbajoSeEjecutaYmueveAPersonaje(){
         Posicion posicion = new Posicion(0, -1);
         BloqueAbajo bloqueAbajo = new BloqueAbajo();
         Personaje personaje = new Personaje();
@@ -48,7 +48,7 @@ public class BloqueTest {
     }
 
     @Test
-    public void testLapizAbajoCambiaElLapizDelPersonaje(){
+    public void test05LapizAbajoCambiaElLapizDelPersonaje(){
         LapizAbajo lapizAbajo = new LapizAbajo();
         Personaje personaje = new Personaje();
         lapizAbajo.ejecutar(personaje);
@@ -56,7 +56,7 @@ public class BloqueTest {
     }
 
     @Test
-    public void testLapizArribaCambiaElLapizDelPersonaje(){
+    public void test06LapizArribaCambiaElLapizDelPersonaje(){
         LapizArriba lapizArriba = new LapizArriba();
         Personaje personaje = new Personaje();
         lapizArriba.ejecutar(personaje);
@@ -64,7 +64,7 @@ public class BloqueTest {
     }
 
     @Test
-    public void testBloqueRepetirRepiteDosVecesYmueveAlPersonaje(){
+    public void test07BloqueRepetirRepiteDosVecesYmueveAlPersonaje(){
         Personaje personaje = new Personaje();
         BloqueRepetir bloqueRepetir = new BloqueRepetir(2);
         AlgoBlocks algoBlocks = new AlgoBlocks();
@@ -78,7 +78,7 @@ public class BloqueTest {
     }
 
     @Test
-    public void testBloqueRepetirRepiteTresVecesYmueveAlPersonaje(){
+    public void test08BloqueRepetirRepiteTresVecesYmueveAlPersonaje(){
         Personaje personaje = new Personaje();
         BloqueRepetir bloqueRepetir = new BloqueRepetir(3);
         AlgoBlocks algoBlocks = new AlgoBlocks();
@@ -92,7 +92,7 @@ public class BloqueTest {
     }
 
     @Test
-    public void testBloqueInversoInvierteAlgoritmo(){
+    public void test09BloqueInversoInvierteAlgoritmo(){
         Personaje personaje = new Personaje();
         BloqueInverso bloqueInverso = new BloqueInverso();
         AlgoBlocks algoBlocks = new AlgoBlocks();
@@ -116,7 +116,7 @@ public class BloqueTest {
     }
 
     @Test
-    public void testBloqueRepetirTieneSuPropioAlogoBlocksQueAñadeAListaDeBloqueRepetir(){
+    public void test10BloqueRepetirTieneSuPropioAlogoBlocksQueAñadeAListaDeBloqueRepetir(){
         Personaje personaje = new Personaje();
         BloqueRepetir bloqueRepetir = new BloqueRepetir(2);
         AlgoBlocks algoBlocks = new AlgoBlocks();
@@ -138,7 +138,7 @@ public class BloqueTest {
 
 
     @Test
-    public void testBloqueAlgoritmoPersonalizado() {
+    public void test11BloqueAlgoritmoPersonalizado() {
         Personaje personaje = new Personaje();
         List<Bloque> bloques = new ArrayList<>();
         bloques.add(new BloqueArriba());
@@ -146,7 +146,6 @@ public class BloqueTest {
         BloquePersonalizado personalizado = new BloquePersonalizado(bloques);
         personalizado.ejecutar(personaje);
         Posicion posicion = new Posicion(-1,1);
-
         assertTrue(personaje.obtenerPosicion().esIgualA(posicion));
     }
 }

@@ -8,20 +8,20 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class PersonajeTest {
 
     @Test
-    public void testSeCreaPersonajeConElLapizArriba() {
+    public void test01SeCreaPersonajeConElLapizArriba() {
         Personaje personaje = new Personaje();
         assertTrue(personaje.obtenerLapiz() instanceof LapizArriba);
     }
 
     @Test
-    public void testBajarLapizDelPersonaje(){
+    public void test02BajarLapizDelPersonaje(){
         Personaje personaje = new Personaje();
         personaje.bajarLapiz();
         assertTrue(personaje.obtenerLapiz() instanceof  LapizAbajo);
     }
 
     @Test
-    public void testBajarLapizDelPersonajeYVolverASubirlo(){
+    public void test03BajarLapizDelPersonajeYVolverASubirlo(){
         Personaje personaje = new Personaje();
         personaje.bajarLapiz();
         personaje.subirLapiz();
@@ -29,14 +29,14 @@ public class PersonajeTest {
     }
 
     @Test
-    public void testPersonajeSeCreaEnLaPosicionDelOrigenCorrecta(){
+    public void test04PersonajeSeCreaEnLaPosicionDelOrigenCorrecta(){
         Posicion posicion = new Posicion(0, 0);
         Personaje personaje = new Personaje();
         assertTrue(personaje.obtenerPosicion().esIgualA(posicion));
     }
 
     @Test
-    public void testActualizarPosicionDelPersonajeLaPosicionInicialYFinalSonCorrectas(){
+    public void test05ActualizarPosicionDelPersonajeLaPosicionInicialYFinalSonCorrectas(){
         Personaje personaje = new Personaje();
         Algoritmo algoritmo = new Algoritmo(personaje);
         AlgoBlocks algoBlocks = new AlgoBlocks();

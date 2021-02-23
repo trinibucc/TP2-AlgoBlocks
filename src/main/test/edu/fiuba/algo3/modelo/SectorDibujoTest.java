@@ -7,12 +7,12 @@ import static org.junit.jupiter.api.Assertions.*;
 public class SectorDibujoTest {
 
     @Test
-    public void testSeCreaSectorDibujo(){
+    public void test01SeCreaSectorDibujo(){
         assertTrue(SectorDibujo.obtenerSectorDibujo() instanceof SectorDibujo);
     }
 
     @Test
-    public void testSectorDibujoSeCreaVacio(){
+    public void test02SectorDibujoSeCreaVacio(){
         SectorDibujo.obtenerSectorDibujo().resetear();
         SectorDibujo sectorDibujo = SectorDibujo.obtenerSectorDibujo();
         assertEquals(0, sectorDibujo.obtenerDibujo().size());

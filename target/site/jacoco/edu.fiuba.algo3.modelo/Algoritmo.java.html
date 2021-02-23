@@ -6,23 +6,26 @@ import java.util.List;
 
 public class Algoritmo {
 
-    private List&lt;Bloque&gt; recorrido;
+    private List&lt;Bloque&gt; algoritmo;
     private Personaje personaje;
 
 <span class="fc" id="L12">    public Algoritmo(Personaje personaje){</span>
-<span class="fc" id="L13">        this.recorrido = new ArrayList&lt;Bloque&gt;();</span>
+<span class="fc" id="L13">        this.algoritmo = new ArrayList&lt;&gt;();</span>
 <span class="fc" id="L14">        this.personaje = personaje;</span>
 <span class="fc" id="L15">    }</span>
 
     public void ejecutar(){
-<span class="fc bfc" id="L18" title="All 2 branches covered.">        for(Bloque bloque : this.recorrido){</span>
-<span class="fc" id="L19">            bloque.ejecutar(this.personaje);</span>
-<span class="fc" id="L20">        }</span>
-<span class="fc" id="L21">    }</span>
+<span class="fc bfc" id="L18" title="All 2 branches covered.">        if(this.algoritmo.size() &lt; 1){</span>
+<span class="fc" id="L19">            throw new CantidadInsuficienteDeBloquesError();</span>
+        }
+<span class="fc bfc" id="L21" title="All 2 branches covered.">        for(Bloque bloque : this.algoritmo){</span>
+<span class="fc" id="L22">            bloque.ejecutar(this.personaje);</span>
+<span class="fc" id="L23">        }</span>
+<span class="fc" id="L24">    }</span>
 
-    public List&lt;Bloque&gt; obtenerRecorrido(){
-<span class="fc" id="L24">        return this.recorrido;</span>
-    }
+    public void agregarLista(AlgoBlocks algoBlocks){
+<span class="fc" id="L27">        algoBlocks.agregarLista(this.algoritmo);</span>
+<span class="fc" id="L28">    }</span>
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

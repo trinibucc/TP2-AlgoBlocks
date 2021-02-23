@@ -1,23 +1,23 @@
 package edu.fiuba.algo3.modelo;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class NumeroDeRepeticionesInvalidoErrorTest {
 
     @Test
-    public void testLlamarAlConstructorRecorridoIterativoConRepeticionesNegativasLanzaNumeroDeRepeticionesInvalidoError(){
+    public void test01LlamarAlConstructorRecorridoIterativoConRepeticionesNegativasLanzaNumeroDeRepeticionesInvalidoError(){
         assertThrows(NumeroDeRepeticionesInvalidoError.class,
                 () -> {
-                    BloqueRepetir bloqueRepetir = new BloqueRepetir(-2);
+                    new BloqueRepetir(-2);
                 });
     }
 
     @Test
-    public void testLlamarAlConstructorRecorridoIterativoConRepeticionesPositivasMenorADosLanzaExcepcion(){
+    public void test02LlamarAlConstructorRecorridoIterativoConRepeticionesPositivasMenorADosLanzaExcepcion(){
         assertThrows(NumeroDeRepeticionesInvalidoError.class,
                 () -> {
-                    BloqueRepetir bloqueRepetir = new BloqueRepetir(1);
+                    new BloqueRepetir(1);
                 });
     }
 }
