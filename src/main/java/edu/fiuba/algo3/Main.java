@@ -2,9 +2,7 @@ package edu.fiuba.algo3;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.*;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 
@@ -23,15 +21,7 @@ public class Main extends Application {
         stage.setWidth(800);
 
         Juego juego = new Juego();
-        Image imagen = new Image("fondo.jpg");
-        ImageView imageView = new ImageView(imagen);
-        imageView.setFitHeight(700);
-        imageView.setFitWidth(800);
-
-        VBox vbox = juego.crearVentana();
-        StackPane stackPane = new StackPane();
-        stackPane.getChildren().add(imageView);
-        stackPane.getChildren().add(vbox);
+        StackPane stackPane = juego.crearVentanPrincipal();
 
 
         Scene scene = new Scene(stackPane, 800, 700);

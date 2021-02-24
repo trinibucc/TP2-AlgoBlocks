@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.Botones;
+package edu.fiuba.algo3.Botones.EventHandler;
 
 import edu.fiuba.algo3.modelo.AlgoBlocks;
 import edu.fiuba.algo3.modelo.Algoritmo;

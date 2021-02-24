@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.Botones;
 
+import edu.fiuba.algo3.Botones.EventHandler.Reiniciar;
 import edu.fiuba.algo3.modelo.AlgoBlocks;
 import edu.fiuba.algo3.modelo.Algoritmo;
 import javafx.scene.control.Button;

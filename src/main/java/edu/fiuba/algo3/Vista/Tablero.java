@@ -1,6 +1,5 @@
 package edu.fiuba.algo3.Vista;
 
-import edu.fiuba.algo3.modelo.Posicion;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 
