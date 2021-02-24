@@ -1,18 +1,16 @@
 package edu.fiuba.algo3.modelo;
 
-
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class BloqueTest {
 
     @Test
-    public void test01BloqueDerechaSeEjecutaYmueveAPersonaje(){
+    public void testBloqueDerechaSeEjecutaYmueveAPersonaje(){
         Posicion posicion = new Posicion(1, 0);
         BloqueDerecha bloqueDerecha = new BloqueDerecha();
         Personaje personaje = new Personaje();
@@ -21,7 +19,7 @@ public class BloqueTest {
     }
 
     @Test
-    public void test02BloqueIzquierdaSeEjecutaYmueveAPersonaje(){
+    public void testBloqueIzquierdaSeEjecutaYmueveAPersonaje(){
         Posicion posicion = new Posicion(-1, 0);
         BloqueIzquierda bloqueIzquierda = new BloqueIzquierda();
         Personaje personaje = new Personaje();
@@ -30,7 +28,7 @@ public class BloqueTest {
     }
 
     @Test
-    public void test03BloqueArribaSeEjecutaYmueveAPersonaje(){
+    public void testBloqueArribaSeEjecutaYmueveAPersonaje(){
         Posicion posicion = new Posicion(0, 1);
         BloqueArriba bloqueArriba = new BloqueArriba();
         Personaje personaje = new Personaje();
@@ -39,7 +37,7 @@ public class BloqueTest {
     }
 
     @Test
-    public void test04BloqueAbajoSeEjecutaYmueveAPersonaje(){
+    public void testBloqueAbajoSeEjecutaYmueveAPersonaje(){
         Posicion posicion = new Posicion(0, -1);
         BloqueAbajo bloqueAbajo = new BloqueAbajo();
         Personaje personaje = new Personaje();
@@ -48,7 +46,7 @@ public class BloqueTest {
     }
 
     @Test
-    public void test05LapizAbajoCambiaElLapizDelPersonaje(){
+    public void testLapizAbajoCambiaElLapizDelPersonaje(){
         LapizAbajo lapizAbajo = new LapizAbajo();
         Personaje personaje = new Personaje();
         lapizAbajo.ejecutar(personaje);
@@ -56,7 +54,7 @@ public class BloqueTest {
     }
 
     @Test
-    public void test06LapizArribaCambiaElLapizDelPersonaje(){
+    public void testLapizArribaCambiaElLapizDelPersonaje(){
         LapizArriba lapizArriba = new LapizArriba();
         Personaje personaje = new Personaje();
         lapizArriba.ejecutar(personaje);
@@ -64,7 +62,7 @@ public class BloqueTest {
     }
 
     @Test
-    public void test07BloqueRepetirRepiteDosVecesYmueveAlPersonaje(){
+    public void testBloqueRepetirRepiteDosVecesYmueveAlPersonaje(){
         Personaje personaje = new Personaje();
         BloqueRepetir bloqueRepetir = new BloqueRepetir(2);
         AlgoBlocks algoBlocks = new AlgoBlocks();
@@ -78,7 +76,7 @@ public class BloqueTest {
     }
 
     @Test
-    public void test08BloqueRepetirRepiteTresVecesYmueveAlPersonaje(){
+    public void testBloqueRepetirRepiteTresVecesYmueveAlPersonaje(){
         Personaje personaje = new Personaje();
         BloqueRepetir bloqueRepetir = new BloqueRepetir(3);
         AlgoBlocks algoBlocks = new AlgoBlocks();
@@ -92,7 +90,7 @@ public class BloqueTest {
     }
 
     @Test
-    public void test09BloqueInversoInvierteAlgoritmo(){
+    public void testBloqueInversoInvierteAlgoritmo(){
         Personaje personaje = new Personaje();
         BloqueInverso bloqueInverso = new BloqueInverso();
         AlgoBlocks algoBlocks = new AlgoBlocks();
@@ -116,7 +114,7 @@ public class BloqueTest {
     }
 
     @Test
-    public void test10BloqueRepetirTieneSuPropioAlogoBlocksQueAñadeAListaDeBloqueRepetir(){
+    public void testBloqueRepetirTieneSuPropioAlogoBlocksQueAñadeAListaDeBloqueRepetir(){
         Personaje personaje = new Personaje();
         BloqueRepetir bloqueRepetir = new BloqueRepetir(2);
         AlgoBlocks algoBlocks = new AlgoBlocks();
@@ -138,7 +136,7 @@ public class BloqueTest {
 
 
     @Test
-    public void test11BloqueAlgoritmoPersonalizado() {
+    public void testBloqueAlgoritmoPersonalizado() {
         Personaje personaje = new Personaje();
         List<Bloque> bloques = new ArrayList<>();
         bloques.add(new BloqueArriba());
@@ -146,6 +144,7 @@ public class BloqueTest {
         BloquePersonalizado personalizado = new BloquePersonalizado(bloques);
         personalizado.ejecutar(personaje);
         Posicion posicion = new Posicion(-1,1);
+
         assertTrue(personaje.obtenerPosicion().esIgualA(posicion));
     }
 }
