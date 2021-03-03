@@ -19,7 +19,6 @@ public class Dibujador {
 
     }
 
-
     public void actualizar() {
 
         tablero.setVisible(true);

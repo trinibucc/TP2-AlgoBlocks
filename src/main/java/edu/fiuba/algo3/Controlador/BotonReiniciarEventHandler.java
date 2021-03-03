@@ -1,16 +1,16 @@
-package edu.fiuba.algo3.Botones.EventHandler;
+package edu.fiuba.algo3.Controlador;
 
 import edu.fiuba.algo3.modelo.AlgoBlocks;
 import edu.fiuba.algo3.modelo.Algoritmo;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
-public class Reiniciar implements EventHandler<ActionEvent> {
+public class BotonReiniciarEventHandler implements EventHandler<ActionEvent> {
 
     private AlgoBlocks algoBlocks;
     private Algoritmo algoritmo;
 
-    public Reiniciar(AlgoBlocks algoBlocks, Algoritmo algoritmo){
+    public BotonReiniciarEventHandler(AlgoBlocks algoBlocks, Algoritmo algoritmo){
         this.algoBlocks = algoBlocks;
         this.algoritmo = algoritmo;
     }

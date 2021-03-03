@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.Botones.EventHandler;
+package edu.fiuba.algo3.Controlador;
 
 import edu.fiuba.algo3.modelo.AlgoBlocks;
 import edu.fiuba.algo3.modelo.BloqueRepetir;
@@ -6,11 +6,11 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
 
-public class RepetirDosVeces implements EventHandler<ActionEvent> {
+public class BotonRepetirDosVecesEventHandler implements EventHandler<ActionEvent> {
 
     private AlgoBlocks algoBlocks;
 
-    public RepetirDosVeces(AlgoBlocks algoBlocks){
+    public BotonRepetirDosVecesEventHandler(AlgoBlocks algoBlocks){
         this.algoBlocks = algoBlocks;
     }
 

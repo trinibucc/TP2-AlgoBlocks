@@ -8,12 +8,12 @@ import javafx.event.EventHandler;
 
 
 
-public class Ejecutar implements EventHandler<ActionEvent> {
+public class BotonEjecutarEventHandler implements EventHandler<ActionEvent> {
 
     private Algoritmo algoritmo;
     private Dibujador dibujadorConTrazo;
 
-    public Ejecutar(Algoritmo algoritmo, Dibujador dibujadorConTrazo) {
+    public BotonEjecutarEventHandler(Algoritmo algoritmo, Dibujador dibujadorConTrazo) {
         this.algoritmo = algoritmo;
         this.dibujadorConTrazo  = dibujadorConTrazo;
 

@@ -1,7 +1,7 @@
-package edu.fiuba.algo3;
+package edu.fiuba.algo3.Vista;
 
-import edu.fiuba.algo3.modeloGrafico.Contenedores.InicializadorModelo;
-import edu.fiuba.algo3.modeloGrafico.Contenedores.Titulo;
+import edu.fiuba.algo3.Contenedores.InicializadorModelo;
+import edu.fiuba.algo3.Contenedores.Titulo;
 import javafx.geometry.Insets;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;

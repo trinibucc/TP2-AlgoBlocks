@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.modeloGrafico.Contenedores;
+package edu.fiuba.algo3.Contenedores;
 
 
 import javafx.geometry.Insets;
