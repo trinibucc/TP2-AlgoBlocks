@@ -13,7 +13,7 @@ public class ContenedorVertical extends VBox {
         ContenedorCentral central = new ContenedorCentral(algoBlocks, algoritmo);
         CreadorSectorTablero sectorTablero = central.obtenerSectorTablero();
 
-        BotonEjecutar ejecutar = new BotonEjecutar(algoritmo,sectorTablero.obtenerDibujador().obtenerTablero(),
+        BotonEjecutar ejecutar = new BotonEjecutar(algoritmo,
                 sectorTablero.obtenerDibujador());
 
         this.getChildren().addAll(central, ejecutar);

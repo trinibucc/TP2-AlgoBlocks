@@ -1,11 +1,10 @@
 package edu.fiuba.algo3;
 
-import edu.fiuba.algo3.modeloGrafico.Contenedores.FondoVentana;
 import edu.fiuba.algo3.modeloGrafico.Contenedores.InicializadorModelo;
 import edu.fiuba.algo3.modeloGrafico.Contenedores.Titulo;
 import javafx.geometry.Insets;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.image.Image;
+import javafx.scene.layout.*;
 
 
 public class Juego {
@@ -13,15 +12,18 @@ public class Juego {
     public Juego(){
     }
 
-    public StackPane crearVentanPrincipal(){
-
-        FondoVentana fondo = new FondoVentana();
+    public GridPane crearVentanPrincipal(){
+//
+        //FondoVentana fondo = new FondoVentana();
+        Background fondo = new Background( new BackgroundImage(new Image("fondo.jpg"),
+                BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
+                new BackgroundSize(800, 700, false, false, false, false)));
         VBox componentes = crearVentana();
-        StackPane stackPane = new StackPane();
+        GridPane todo = new GridPane();
 
-        stackPane.getChildren().add(fondo);
-        stackPane.getChildren().add(componentes);
-        return stackPane;
+        todo.setBackground(fondo);
+        todo.getChildren().add(componentes);
+        return todo;
     }
 
     public VBox crearVentana(){
