@@ -21,15 +21,17 @@ public class Dibujador {
 
 
     public void actualizar() {
-        GraphicsContext graphicsContext = tablero.getGraphicsContext2D();
 
+        tablero.setVisible(true);
+        GraphicsContext graphicsContext = tablero.getGraphicsContext2D();
+        graphicsContext.clearRect(0,0,500,500);
+        graphicsContext.setLineWidth(20);
         List<Segmento> segmentos = SectorDibujo.obtenerSectorDibujo().obtenerDibujo();
         for (Segmento segmento : segmentos) {
             Posicion inicial = segmento.obtenerInicio();
             Posicion fin = segmento.obtenerFin();
-            graphicsContext.setFill(Color.RED);
-            graphicsContext.fillRect(inicial.obtenerX(), inicial.obtenerY(), fin.obtenerX(), fin.obtenerY());
-            graphicsContext.stroke();
+            graphicsContext.setStroke(Color.RED);
+            graphicsContext.strokeLine(inicial.obtenerX() +25 , inicial.obtenerY() +25, fin.obtenerX(), fin.obtenerY());
         }
 
     }
