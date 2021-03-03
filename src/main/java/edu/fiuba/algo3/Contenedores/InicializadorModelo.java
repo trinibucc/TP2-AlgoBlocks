@@ -6,6 +6,7 @@ import edu.fiuba.algo3.modelo.Algoritmo;
 import edu.fiuba.algo3.modelo.Personaje;
 import javafx.scene.layout.VBox;
 
+
 public class InicializadorModelo {
 
     Personaje personaje;

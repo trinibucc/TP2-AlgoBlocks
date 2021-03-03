@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.Controlador;
+package edu.fiuba.algo3.Controladores;
 
 import edu.fiuba.algo3.modelo.AlgoBlocks;
 import edu.fiuba.algo3.modelo.BloqueRepetir;

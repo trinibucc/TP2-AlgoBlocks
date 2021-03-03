@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.Botones;
 
-import edu.fiuba.algo3.Controlador.BotonRepetirTresVecesEventHandler;
+import edu.fiuba.algo3.Controladores.BotonRepetirTresVecesEventHandler;
 import edu.fiuba.algo3.modelo.AlgoBlocks;
 import javafx.scene.control.Button;
 

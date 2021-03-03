@@ -20,6 +20,7 @@ public class BotoneraMovimientos extends VBox {
         this.getChildren().addAll(botonDerecha, botonIzquierda, botonArriba, botonAbajo, repetirDosVeces,
                 repetirTresVeces, invertir, bajarLapiz, subirLapiz);
         this.setPadding(new Insets(20));
+        this.setSpacing(10);
 
     }
 

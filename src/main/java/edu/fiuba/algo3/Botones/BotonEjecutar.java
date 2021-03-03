@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.Botones;
 
-import edu.fiuba.algo3.Controlador.BotonEjecutarEventHandler;
+import edu.fiuba.algo3.Controladores.BotonEjecutarEventHandler;
 import edu.fiuba.algo3.Vista.Dibujador;
 import edu.fiuba.algo3.modelo.Algoritmo;
 import javafx.geometry.Insets;
