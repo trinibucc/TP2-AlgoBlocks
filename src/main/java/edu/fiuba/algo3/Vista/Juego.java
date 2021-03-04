@@ -31,7 +31,9 @@ public class Juego {
 
         VBox central = crearContenedorCentral();
 
-        VBox ventana = new VBox(titulo, central);
+        BarraMenu barraMenu = new BarraMenu();
+
+        VBox ventana = new VBox(barraMenu, titulo, central);
 
         ventana.setPadding(new Insets(20));
 
