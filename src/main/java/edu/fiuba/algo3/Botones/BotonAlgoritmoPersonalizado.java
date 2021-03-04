@@ -1,13 +1,20 @@
 package edu.fiuba.algo3.Botones;
 
 
-import javafx.scene.control.ChoiceBox;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 
-public class BotonAlgoritmoPersonalizado extends ChoiceBox {
+public class BotonAlgoritmoPersonalizado extends ComboBox {
+
+
 
     public BotonAlgoritmoPersonalizado(TextField nombre){
-        this.setId("Personalizados");
-        this.getItems().add(nombre.getText());
+
+        this.setPromptText("Personalizados");
+        ObservableList<String> items = FXCollections.observableArrayList();
+        items.addAll(nombre.getText());
     }
+
 }
