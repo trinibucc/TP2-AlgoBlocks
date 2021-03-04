@@ -14,14 +14,14 @@ public class Main extends Application {
 
 
         stage.setTitle("AlgoBlocks");
-        stage.setHeight(700);
-        stage.setWidth(800);
+        stage.setHeight(720);
+        stage.setWidth(1280);
 
         Juego juego = new Juego();
         GridPane stackPane = juego.crearVentanPrincipal();
 
 
-        Scene scene = new Scene(stackPane, 800, 700);
+        Scene scene = new Scene(stackPane, 1280, 720);
         stage.setScene(scene);
         stage.show();
     }

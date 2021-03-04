@@ -30,8 +30,9 @@ public class Juego {
         Titulo titulo = new Titulo();
 
         VBox central = crearContenedorCentral();
+
         VBox ventana = new VBox(titulo, central);
-        ventana.setSpacing(10);
+
         ventana.setPadding(new Insets(20));
 
         return ventana;

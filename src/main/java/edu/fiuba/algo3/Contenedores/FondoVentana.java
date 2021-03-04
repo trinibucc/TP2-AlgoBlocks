@@ -12,9 +12,9 @@ public class FondoVentana extends ImageView {
     }
 
     public Background crearFondo(){
-        this.fondo = new Background( new BackgroundImage(new Image("fondo.jpg"),
-                BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
-                new BackgroundSize(800, 700, false, false, false, false)));
+        this.fondo = new Background(new BackgroundImage(new Image("fondo.png"),
+                BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT,
+                BackgroundSize.DEFAULT));
         return fondo;
     }
 
