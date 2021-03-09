@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.Contenedores;
+package edu.fiuba.algo3.Vista.Contenedores;
 
 
 import edu.fiuba.algo3.modelo.AlgoBlocks;

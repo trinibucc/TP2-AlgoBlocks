@@ -7,22 +7,26 @@ import javafx.event.EventHandler;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
-public class BotonDerechaEventHandler implements EventHandler<ActionEvent> {
+public class BotonAlgoritmoPersonalizadoEventHandler implements EventHandler<ActionEvent> {
 
     private AlgoBlocks algoBlocks;
+    private String nombre;
     private ContenedorAlgoritmo contenedorAlgoritmo;
 
+    public BotonAlgoritmoPersonalizadoEventHandler(AlgoBlocks algoBlocks, String nombre, ContenedorAlgoritmo algoritmo) {
 
-    public BotonDerechaEventHandler(AlgoBlocks algoBlocks, ContenedorAlgoritmo contenedorAlgoritmo){
         this.algoBlocks = algoBlocks;
-        this.contenedorAlgoritmo = contenedorAlgoritmo;
+        this.nombre = nombre;
+        this.contenedorAlgoritmo = algoritmo;
 
     }
 
     @Override
     public void handle(ActionEvent actionEvent) {
-        algoBlocks.agregarBloqueDerecha();
-        ImageView imageView = new ImageView(new Image("flecha.png", 50, 50, true, true));
-        contenedorAlgoritmo.agregarImagen(imageView);
+
+        algoBlocks.agregarAlgoritmoPersonalizado(nombre);
+        contenedorAlgoritmo.agregarImagen(new ImageView(new Image("personalizado.png", 50, 50, true, true)));
+
+
     }
 }

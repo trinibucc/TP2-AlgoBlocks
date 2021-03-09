@@ -7,13 +7,13 @@ import javafx.event.EventHandler;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
-public class BotonDerechaEventHandler implements EventHandler<ActionEvent> {
+public class BotonSubirLapizEventHandler implements EventHandler<ActionEvent> {
 
     private AlgoBlocks algoBlocks;
     private ContenedorAlgoritmo contenedorAlgoritmo;
 
 
-    public BotonDerechaEventHandler(AlgoBlocks algoBlocks, ContenedorAlgoritmo contenedorAlgoritmo){
+    public BotonSubirLapizEventHandler(AlgoBlocks algoBlocks, ContenedorAlgoritmo contenedorAlgoritmo) {
         this.algoBlocks = algoBlocks;
         this.contenedorAlgoritmo = contenedorAlgoritmo;
 
@@ -21,8 +21,10 @@ public class BotonDerechaEventHandler implements EventHandler<ActionEvent> {
 
     @Override
     public void handle(ActionEvent actionEvent) {
-        algoBlocks.agregarBloqueDerecha();
-        ImageView imageView = new ImageView(new Image("flecha.png", 50, 50, true, true));
+        algoBlocks.agregarLapizArriba();
+        ImageView imageView = new ImageView(new Image("lapiz.png", 50, 50, true, true));
+        imageView.setRotate(-90);
         contenedorAlgoritmo.agregarImagen(imageView);
+
     }
 }

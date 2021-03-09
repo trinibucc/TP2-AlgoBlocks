@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.Contenedores;
+package edu.fiuba.algo3.Vista.Contenedores;
 
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;

@@ -14,6 +14,7 @@ public class BotonEjecutarEventHandler implements EventHandler<ActionEvent> {
     private Dibujador dibujadorConTrazo;
 
     public BotonEjecutarEventHandler(Algoritmo algoritmo, Dibujador dibujadorConTrazo) {
+
         this.algoritmo = algoritmo;
         this.dibujadorConTrazo  = dibujadorConTrazo;
 
@@ -21,9 +22,10 @@ public class BotonEjecutarEventHandler implements EventHandler<ActionEvent> {
 
     @Override
     public void handle(ActionEvent Event) {
+
         algoritmo.ejecutar();
         dibujadorConTrazo.actualizar();
-
-
+      //  algoritmo.reiniciar();
     }
+
 }

@@ -1,8 +1,8 @@
 package edu.fiuba.algo3.Vista;
 
-import edu.fiuba.algo3.Contenedores.FondoVentana;
-import edu.fiuba.algo3.Contenedores.InicializadorModelo;
-import edu.fiuba.algo3.Contenedores.Titulo;
+import edu.fiuba.algo3.Vista.Contenedores.FondoVentana;
+import edu.fiuba.algo3.Vista.Contenedores.InicializadorModelo;
+import edu.fiuba.algo3.Vista.Contenedores.Titulo;
 import javafx.geometry.Insets;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.GridPane;
@@ -34,7 +34,7 @@ public class Juego {
         BarraMenu barraMenu = new BarraMenu();
 
         VBox ventana = new VBox(barraMenu, titulo, central);
-
+        ventana.setSpacing(15);
         ventana.setPadding(new Insets(20));
 
         return ventana;

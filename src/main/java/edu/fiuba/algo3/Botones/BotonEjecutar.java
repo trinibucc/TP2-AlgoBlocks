@@ -16,6 +16,8 @@ public class BotonEjecutar extends Button {
         this.setLineSpacing(10);
         this.setPadding(new Insets(15));
         this.setFont(new Font("candara", 20));
+        this.setHeight(100);
+        this.setWidth(100);
 
     }
 }

@@ -1,23 +1,30 @@
-package edu.fiuba.algo3.Contenedores;
+package edu.fiuba.algo3.Vista.Contenedores;
 
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
+import javafx.scene.image.Image;
 
 
 public class ContenedorAlgoritmo extends GridPane {
 
     private final int tamñoAlgoritmo = 20;
+    private int posicion = 0;
+
 
     public ContenedorAlgoritmo(){
         this.establecerContenedor();
     }
 
     private void establecerContenedor(){
-        Image imagen = new Image("cuadrado-blanco.png", 50, 50, true, true);
+
         for(int i = 0; i < this.tamñoAlgoritmo; i++){
-            this.add(new ImageView(imagen), i, 0);
+            this.add(new ImageView(new Image("cuadrado-blanco.png", 50, 50, true, true)), i, 0);
         }
-        this.setGridLinesVisible(true);
+
+    }
+
+    public void agregarImagen(ImageView imagen){
+        this.add(imagen, posicion, 0);
+        posicion++;
     }
 }

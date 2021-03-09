@@ -13,16 +13,14 @@ public class BarraMenu extends MenuBar {
         Menu archivo = new Menu("Archivo");
 
         MenuItem salir = new MenuItem("Salir");
-        MenuItem acercaDe = new MenuItem("Acerca de...");
 
         SalirEventHandler salirEventHandler = new SalirEventHandler();
         salir.setOnAction(salirEventHandler);
 
 
 
-        archivo.getItems().addAll(salir, acercaDe);
+        archivo.getItems().addAll(salir);
 
         this.getMenus().add(archivo);
-
     }
 }

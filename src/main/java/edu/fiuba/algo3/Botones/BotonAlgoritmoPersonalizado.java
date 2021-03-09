@@ -1,23 +1,21 @@
 package edu.fiuba.algo3.Botones;
 
-
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextField;
+import edu.fiuba.algo3.Vista.Contenedores.ContenedorAlgoritmo;
+import edu.fiuba.algo3.Controladores.BotonAlgoritmoPersonalizadoEventHandler;
+import edu.fiuba.algo3.modelo.AlgoBlocks;
+import javafx.scene.control.Button;
 import javafx.scene.effect.InnerShadow;
 import javafx.scene.text.Font;
 
-public class BotonAlgoritmoPersonalizado extends ComboBox {
+public class BotonAlgoritmoPersonalizado extends Button {
 
+    public BotonAlgoritmoPersonalizado(AlgoBlocks algoBlocks, String nombre, ContenedorAlgoritmo algoritmo){
 
-    public BotonAlgoritmoPersonalizado(TextField nombre) {
-
-        this.setPromptText("Personalizados");
-        ObservableList<String> items = FXCollections.observableArrayList();
-        items.addAll(nombre.getText());
+        this.setText(nombre);
         this.setEffect(new InnerShadow());
         this.setStyle("-fx-background-color: lightcyan");
-        this.getEditor().setFont(new Font("helvetica", 16));
+        this.setFont(new Font("helvetica", 13));
+        this.setOnAction(new BotonAlgoritmoPersonalizadoEventHandler(algoBlocks, nombre, algoritmo));
+
     }
 }
