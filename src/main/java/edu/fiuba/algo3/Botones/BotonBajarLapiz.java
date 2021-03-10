@@ -12,6 +12,7 @@ public class BotonBajarLapiz extends Button {
 
     public BotonBajarLapiz(AlgoBlocks algoBlocks, ContenedorAlgoritmo contenedorAlgoritmo) {
         this.setText("Bajar lapiz");
+        this.setPrefSize(100, 30);
         this.setOnAction(new BotonBajarLapizEventHandler(algoBlocks, contenedorAlgoritmo));
         this.setEffect(new InnerShadow());
         this.setStyle("-fx-background-color: lightcyan");

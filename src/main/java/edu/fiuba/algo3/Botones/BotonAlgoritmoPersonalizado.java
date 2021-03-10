@@ -12,6 +12,7 @@ public class BotonAlgoritmoPersonalizado extends Button {
     public BotonAlgoritmoPersonalizado(AlgoBlocks algoBlocks, String nombre, ContenedorAlgoritmo algoritmo){
 
         this.setText(nombre);
+        this.setPrefSize(100, 30);
         this.setEffect(new InnerShadow());
         this.setStyle("-fx-background-color: lightcyan");
         this.setFont(new Font("helvetica", 13));
