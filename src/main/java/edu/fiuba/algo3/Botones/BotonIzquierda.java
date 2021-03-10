@@ -1,13 +1,19 @@
 package edu.fiuba.algo3.Botones;
 
-import edu.fiuba.algo3.Botones.EventHandler.MoverIzquieda;
+import edu.fiuba.algo3.Vista.Contenedores.ContenedorAlgoritmo;
+import edu.fiuba.algo3.Controladores.BotonIzquierdaEventHandler;
 import edu.fiuba.algo3.modelo.AlgoBlocks;
 import javafx.scene.control.Button;
+import javafx.scene.effect.InnerShadow;
+import javafx.scene.text.Font;
 
 public class BotonIzquierda extends Button {
 
-    public BotonIzquierda(AlgoBlocks algoBlocks){
+    public BotonIzquierda(AlgoBlocks algoBlocks, ContenedorAlgoritmo contenedorAlgoritmo){
         this.setText("Izquierda");
-        this.setOnAction(new MoverIzquieda(algoBlocks));
+        this.setOnAction(new BotonIzquierdaEventHandler(algoBlocks, contenedorAlgoritmo));
+        this.setEffect(new InnerShadow());
+        this.setStyle("-fx-background-color: lightcyan");
+        this.setFont(new Font("helvetica", 13));
     }
 }

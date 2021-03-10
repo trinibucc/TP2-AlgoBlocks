@@ -1,22 +1,23 @@
 package edu.fiuba.algo3.Vista;
 
+import edu.fiuba.algo3.Vista.Contenedores.ContenedorLapiz;
 import javafx.scene.Group;
-import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.canvas.Canvas;
 
 
 
 public class CreadorSectorTablero extends Group {
+
     private Dibujador dibujador;
+    private Canvas canvas;
 
-    public CreadorSectorTablero() {
+    public CreadorSectorTablero(ContenedorLapiz lapiz) {
 
-        this.dibujador = new DibujadorConTrazo(new Tablero(dibujador));
-        dibujador.setHeight(500);
-        dibujador.setWidth(500);
+        this.canvas = new Canvas(700,500);
+        this.dibujador = new Dibujador(canvas, lapiz);
 
-        GraphicsContext graphicsContext = dibujador.getGraphicsContext2D();
-        graphicsContext.strokeRect(0, 0, dibujador.getWidth(), dibujador.getHeight());
-        this.getChildren().add(dibujador);
+        canvas.getGraphicsContext2D().strokeRect(0, 0, canvas.getWidth(), canvas.getHeight());
+        this.getChildren().add(canvas);
     }
 
     public Dibujador obtenerDibujador() {

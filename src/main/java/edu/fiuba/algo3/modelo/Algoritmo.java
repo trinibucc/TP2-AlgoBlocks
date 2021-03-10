@@ -27,4 +27,8 @@ public class Algoritmo {
         algoBlocks.agregarLista(this.algoritmo);
     }
 
+    public void reiniciar(){
+        this.algoritmo.clear();
+    }
+
 }
