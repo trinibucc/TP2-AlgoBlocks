@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.Vista;
 
+import edu.fiuba.algo3.Vista.Contenedores.BarraMenu;
 import edu.fiuba.algo3.Vista.Contenedores.FondoVentana;
 import edu.fiuba.algo3.Vista.Contenedores.InicializadorModelo;
 import edu.fiuba.algo3.Vista.Contenedores.Titulo;

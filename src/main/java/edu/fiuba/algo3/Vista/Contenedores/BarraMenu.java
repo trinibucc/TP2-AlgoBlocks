@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.Vista;
+package edu.fiuba.algo3.Vista.Contenedores;
 
 
 import edu.fiuba.algo3.Controladores.SalirEventHandler;

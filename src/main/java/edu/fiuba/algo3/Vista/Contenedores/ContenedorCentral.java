@@ -3,7 +3,6 @@ package edu.fiuba.algo3.Vista.Contenedores;
 
 import edu.fiuba.algo3.Botones.BotonReiniciar;
 import edu.fiuba.algo3.Botones.BotoneraMovimientos;
-import edu.fiuba.algo3.Vista.CreadorSectorTablero;
 import edu.fiuba.algo3.modelo.AlgoBlocks;
 import edu.fiuba.algo3.modelo.Algoritmo;
 import javafx.scene.layout.HBox;

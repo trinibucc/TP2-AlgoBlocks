@@ -1,6 +1,6 @@
-package edu.fiuba.algo3.Vista;
+package edu.fiuba.algo3.Vista.Contenedores;
 
-import edu.fiuba.algo3.Vista.Contenedores.ContenedorLapiz;
+import edu.fiuba.algo3.Vista.Dibujador;
 import javafx.scene.Group;
 import javafx.scene.canvas.Canvas;
 

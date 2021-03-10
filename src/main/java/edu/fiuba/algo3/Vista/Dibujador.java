@@ -58,7 +58,7 @@ public class Dibujador {
             }
             xpartida = xllegada;
             ypartida = yllegada;
-           // graphicsContext.moveTo(xllegada,yllegada);
+            //lapiz.moverLapizA(xllegada, yllegada);
         }
 
     }
