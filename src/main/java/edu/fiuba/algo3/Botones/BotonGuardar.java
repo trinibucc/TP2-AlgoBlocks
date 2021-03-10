@@ -18,6 +18,7 @@ public class BotonGuardar extends Button {
                         ContenedorAlgoritmo contenedorAlgoritmo, BotoneraMovimientos botoneraMovimientos){
 
         this.setText("Guardar");
+        this.setPrefSize(100, 30);
         this.evento = new BotonGuardarEventHandler(algoBlocks, nombreIngresado, label,
                 contenedorAlgoritmo, botoneraMovimientos);
         this.setOnAction(evento);

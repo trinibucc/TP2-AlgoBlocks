@@ -11,6 +11,7 @@ public class BotonIzquierda extends Button {
 
     public BotonIzquierda(AlgoBlocks algoBlocks, ContenedorAlgoritmo contenedorAlgoritmo){
         this.setText("Izquierda");
+        this.setPrefSize(100, 30);
         this.setOnAction(new BotonIzquierdaEventHandler(algoBlocks, contenedorAlgoritmo));
         this.setEffect(new InnerShadow());
         this.setStyle("-fx-background-color: lightcyan");

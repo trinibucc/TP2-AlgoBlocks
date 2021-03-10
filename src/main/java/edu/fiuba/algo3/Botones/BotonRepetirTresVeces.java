@@ -11,6 +11,7 @@ public class BotonRepetirTresVeces extends Button {
 
     public BotonRepetirTresVeces(AlgoBlocks algoBlocks, ContenedorAlgoritmo contenedorAlgoritmo) {
         this.setText("Repetir X3");
+        this.setPrefSize(100, 30);
         this.setOnAction(new BotonRepetirTresVecesEventHandler(algoBlocks, contenedorAlgoritmo));
         this.setEffect(new InnerShadow());
         this.setStyle("-fx-background-color: lightcyan");

@@ -6,6 +6,7 @@ import edu.fiuba.algo3.Vista.Contenedores.ContenedorAlgoritmo;
 import edu.fiuba.algo3.modelo.AlgoBlocks;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
@@ -37,12 +38,20 @@ public class BotonGuardarEventHandler implements EventHandler<ActionEvent> {
 
         } else {
             this.label.setText("");
-            algoBlocks.guardarAlgoritmo(nombre.getText());
-            BotonAlgoritmoPersonalizado personalizado = new BotonAlgoritmoPersonalizado(algoBlocks, nombre.getText(),
-                    contenedorAlgoritmo);
-            botonera.agregarBoton(personalizado);
-            nombre.setText("");
-            nombre.requestFocus();
+            try {
+                algoBlocks.guardarAlgoritmo(nombre.getText());
+                BotonAlgoritmoPersonalizado personalizado = new BotonAlgoritmoPersonalizado(algoBlocks, nombre.getText(),
+                        contenedorAlgoritmo);
+                botonera.agregarBoton(personalizado);
+                nombre.setText("");
+                nombre.requestFocus();
+            }catch (Exception CantidadInsuficienteDeBloquesError){
+                Alert dialogoInfo = new Alert(Alert.AlertType.INFORMATION);
+                dialogoInfo.setTitle("AlgoBlocks");
+                dialogoInfo.setHeaderText("Cantidad insuficiente de bloques");
+                dialogoInfo.setContentText("No hay bloques para guardar");
+                dialogoInfo.showAndWait();
+            }
         }
 
     }

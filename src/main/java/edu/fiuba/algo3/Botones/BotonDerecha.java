@@ -11,6 +11,7 @@ public class BotonDerecha extends Button {
 
     public BotonDerecha(AlgoBlocks algoBlocks, ContenedorAlgoritmo contenedorAlgoritmo){
         this.setText("Derecha");
+        this.setPrefSize(100, 30);
         this.setOnAction(new BotonDerechaEventHandler(algoBlocks, contenedorAlgoritmo));
         this.setEffect(new InnerShadow());
         this.setStyle("-fx-background-color: lightcyan");

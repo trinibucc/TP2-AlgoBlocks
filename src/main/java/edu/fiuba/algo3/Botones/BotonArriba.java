@@ -12,6 +12,7 @@ public class BotonArriba extends Button {
     public BotonArriba(AlgoBlocks algoBlocks, ContenedorAlgoritmo contenedorAlgoritmo) {
 
         this.setText("Arriba");
+        this.setPrefSize(100, 30);
         this.setOnAction(new BotonArribaEventHandler(algoBlocks, contenedorAlgoritmo));
         this.setEffect(new InnerShadow());
         this.setStyle("-fx-background-color: lightcyan");

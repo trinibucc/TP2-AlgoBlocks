@@ -15,6 +15,7 @@ public class BotonAbajo extends Button {
     public BotonAbajo(AlgoBlocks algoBlocks, ContenedorAlgoritmo contenedorAlgoritmo) {
 
         this.setText("Abajo");
+        this.setPrefSize(100, 30);
         this.setEffect(new InnerShadow());
         this.setOnAction(new BotonAbajoEventHandler(algoBlocks, contenedorAlgoritmo));
         this.setStyle("-fx-background-color: lightcyan");

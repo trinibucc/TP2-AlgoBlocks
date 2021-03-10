@@ -11,6 +11,7 @@ public class BotonInvertir extends Button {
 
     public BotonInvertir(AlgoBlocks algoBlocks, ContenedorAlgoritmo contenedorAlgoritmo) {
         this.setText("Invertir");
+        this.setPrefSize(100, 30);
         this.setOnAction(new BotonInvertirEventHandler(algoBlocks, contenedorAlgoritmo));
         this.setEffect(new InnerShadow());
         this.setStyle("-fx-background-color: lightcyan");
