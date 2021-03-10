@@ -1,25 +1,24 @@
 @startuml
 
 interface Lapiz{
-    dibujar(int[2])
+    Trazar(Posicion, Posicion)
 }
+Lapiz ...> Posicion
+Lapiz ...> SectorDibujo
+
 class LapizAbajo implements Lapiz, Bloque{
 }
-LapizAbajo ...> SectorDibujo
 
 class LapizArriba implements Lapiz, Bloque{
-    - List<int[2]>
 }
 
 class SectorDibujo{
     - {static} SectorDibujo
-    - List<int[2]>
-    - SectorDibujo()
+    - List<Segmento>
     - {static} crearInstancia()
     + {static} obtenerSectorDibujo(): SectorDibujo
-    + agregarDibujo(int[2])
-    + obtenerDibujo(): int[2]
+    + resetear()
+    + aplicarTrazo()
+    + obtenerDibujo(): List<Segmento>
 }
-
-
 @enduml

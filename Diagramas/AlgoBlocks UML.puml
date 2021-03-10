@@ -1,45 +1,45 @@
 @startuml
 
 class AlgoBlocks{
-    + AlgoBlocks(List<Bloque>, Personaje)
-    + ejecutar()
-    + obtenerPersonaje(): Personaje
+    + agregarLista(List<Bloque>)
     + agregarLapizArriba()
     + agregarLapizAbajo()
     + agregarBloqueDerecha()
     + agregarBloqueAbajo()
     + agregarBloqueIzquierda()
     + agregarBloqueArriba()
-    # agregarBloqueRepetirDosVeces(): BloqueRepetir
+    + agregarBloqueRepetirDosVeces(): BloqueRepetir
     + agregarBloqueRepetirTresVeces(): BloqueRepetir
     + agregarBloqueInverso(): BloqueInverso
+    + guardarAlgoritmo(String)
+    + agregarAlgoritmoPersonalizado(String)
+    + reiniciar()
 }
-AlgoBlocks *--- Personaje
 AlgoBlocks *--- "*" Bloque
+AlgoBlocks ....> Lapiz
 
 interface Bloque{
     ejecutar(Personaje)
+    opuesto(): Bloque
 }
+
 Bloque ...> Personaje
 
 class Personaje{
-    - Lapiz
-    - int[2]
-    - sumarPosiciones(int[2])
-    + subirLapiz()
     + obtenerLapiz(): Lapiz
-    + bajarLapiz()
-    + obtenerPosicion(): int[2]
+    + subirLapiiz()
+    + actualizarPosicionFinal(Posicion)
+    + obtenerPosicion(): Posicion
     + dibujar()
 }
-Personaje *---> Lapiz
+Personaje *--- "2"Posicion
+Personaje *--- Lapiz
 
-class Recorrido{
-     + Recorrido(Personaje)
+class Algoritmo{
+     + Algoritmo(Personaje)
      + ejecutar()
-     + obtenerRecorrido(): List<Bloque>
-
+     + agregarLista(AlgoBlocks)
 }
-Recorrido *---> "*" Bloque
-Recorrido o--- Personaje
+Algoritmo *--- "*" Bloque
+Algoritmo o--- Personaje
 @enduml

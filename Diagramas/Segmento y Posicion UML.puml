@@ -1,0 +1,21 @@
+@startuml
+
+class Segmento{
+    + Segemento(Posicion, Posicion)
+    + esIgual(Segmento)
+    + obtenerInicio(): Posicion
+    + obtenerFin(): Posicion
+}
+Segmento *--- "2"Posicion
+
+class Posicion{
+    - int
+    - int
+    + Posicion(int, int)
+    + obtenerX(): int
+    + obtenerY(): int
+    + esIgual(Posicion): boolean
+    + sumarse(Posicion)
+    + copiarXY(Posicion)
+}
+@enduml

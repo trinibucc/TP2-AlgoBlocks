@@ -2,22 +2,26 @@
 
 interface Bloque{
     ejecutar(Personaje)
+    opuesto(): Bloque
+
 }
+
 class BloqueIterativo implements Bloque{
     # List<Bloque>
     + recorrer(Personaje)
-    + agregarBloque(): AlgoBlocks
+    + agregarBloque(AlgoBlocks)
+    + obtenerLista(): List<Bloque>
 }
-BloqueIterativo o---> Personaje
+BloqueIterativo o--- Personaje
 BloqueIterativo ...> AlgoBlocks
 
 class BloqueInverso extends BloqueIterativo{
-    + BloqueInverso(Personaje)
+    + invertir(List<Bloque>)
 }
 
 class BloqueRepetir extends BloqueIterativo{
     - int
-    + BloqueRepetir(int, Personaje)
+    + BloqueRepetir(int)
 }
 
 @enduml

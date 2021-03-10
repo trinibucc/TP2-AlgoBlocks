@@ -1,7 +1,7 @@
 @startuml
-
 interface Bloque{
-     ejecutar(Personaje)
+    ejecutar(Persoanje)
+    opuesto(): Bloque
 }
 
 class BloqueDerecha implements Bloque{
@@ -16,6 +16,14 @@ class BloqueIzquierda implements Bloque{
 class BloqueArriba implements Bloque{
 }
 
+class BloqueIterativo implements Bloque{
+    + agregarBloque(AlgoBlocks)
+}
+BloqueIterativo o--- "*"Bloque
 
+class BloquePersonalizado implements Bloque{
+    + BloquePersonalizado(List<Bloque>)
+}
+BloquePersonalizado o--- "*"Bloque
 
 @enduml

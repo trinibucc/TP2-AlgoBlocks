@@ -17,10 +17,10 @@ create BloqueRepetir
 AlgoBlocks -> BloqueRepetir: new BloqueRepetir(3, personaje)
 BloqueRepetir --> BloqueRepetir: repetir = 3\npersonaje = Personaje
 BloqueRepetir --> AlgoBlocks: algoritmo.add(BloqueRepetir)
-AlgoBlocks --> test13: bloqueRepetir = BloqueRepetir
+AlgoBlocks --> Test13: bloqueRepetir = BloqueRepetir
 Test13 -> BloqueRepetir: agregarBloque()
 BloqueRepetir -> AlgoBlocks: new AlgoBlocks(algoritmo, personaje)
-BloqueRepetir --> test13: algoritmoIterativo = AlgoBlocks
+BloqueRepetir --> Test13: algoritmoIterativo = AlgoBlocks
 Test13 -> AlgoBlocks: agregarBloqueDerecha()
 create Bloque
 AlgoBlocks -> Bloque: new Bloque()
@@ -29,7 +29,7 @@ Test13 -> AlgoBlocks: agregarBloqueAbajo()
 create Bloque
 AlgoBlocks -> Bloque: new Bloque()
 Bloque --> AlgoBlocks: algoritmo.add(Bloque)
-test13 -> AlgoBlocks: ejecutar()
+Test13 -> AlgoBlocks: ejecutar()
 loop algoritmo.size()
     AlgoBlocks -> Bloque: ejecutar()
     AlgoBlocks -> BloqueRepetir: ejecutar()

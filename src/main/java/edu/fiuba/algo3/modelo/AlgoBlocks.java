@@ -7,13 +7,9 @@ import java.util.Map;
 
 public class AlgoBlocks {
 
-
     private List<Bloque> algoritmo;
     Map<String, BloquePersonalizado> bloquesPersonalizado = new HashMap<>();
 
-    public AlgoBlocks(){
-
-    }
     public void agregarLista(List<Bloque> algoritmo){
         this.algoritmo = algoritmo;
     }
