@@ -1,8 +1,8 @@
 package edu.fiuba.algo3.Vista.Contenedores;
 
-import edu.fiuba.algo3.Botones.BotonGuardar;
-import edu.fiuba.algo3.Botones.BotoneraMovimientos;
-import edu.fiuba.algo3.Botones.IngresarNombre;
+import edu.fiuba.algo3.Vista.Botones.BotonGuardar;
+import edu.fiuba.algo3.Vista.Botones.BotoneraMovimientos;
+import edu.fiuba.algo3.Vista.Botones.IngresarNombre;
 import edu.fiuba.algo3.modelo.AlgoBlocks;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;

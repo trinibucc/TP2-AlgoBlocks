@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.Controladores;
 
-import edu.fiuba.algo3.Botones.BotonGuardar;
+import edu.fiuba.algo3.Vista.Botones.BotonGuardar;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.input.KeyCode;

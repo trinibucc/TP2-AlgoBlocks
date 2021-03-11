@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.Botones;
+package edu.fiuba.algo3.Vista.Botones;
 
 import edu.fiuba.algo3.Controladores.BotonReiniciarEventHandler;
 import edu.fiuba.algo3.modelo.AlgoBlocks;

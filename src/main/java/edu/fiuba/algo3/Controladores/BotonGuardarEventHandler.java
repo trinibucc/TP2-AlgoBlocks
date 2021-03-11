@@ -1,7 +1,7 @@
 package edu.fiuba.algo3.Controladores;
 
-import edu.fiuba.algo3.Botones.BotonAlgoritmoPersonalizado;
-import edu.fiuba.algo3.Botones.BotoneraMovimientos;
+import edu.fiuba.algo3.Vista.Botones.BotonAlgoritmoPersonalizado;
+import edu.fiuba.algo3.Vista.Botones.BotoneraMovimientos;
 import edu.fiuba.algo3.Vista.Contenedores.ContenedorAlgoritmo;
 import edu.fiuba.algo3.modelo.AlgoBlocks;
 import javafx.event.ActionEvent;

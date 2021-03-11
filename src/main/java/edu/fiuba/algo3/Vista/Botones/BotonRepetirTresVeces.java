@@ -1,18 +1,18 @@
-package edu.fiuba.algo3.Botones;
+package edu.fiuba.algo3.Vista.Botones;
 
 import edu.fiuba.algo3.Vista.Contenedores.ContenedorAlgoritmo;
-import edu.fiuba.algo3.Controladores.BotonInvertirEventHandler;
+import edu.fiuba.algo3.Controladores.BotonRepetirTresVecesEventHandler;
 import edu.fiuba.algo3.modelo.AlgoBlocks;
 import javafx.scene.control.Button;
 import javafx.scene.effect.InnerShadow;
 import javafx.scene.text.Font;
 
-public class BotonInvertir extends Button {
+public class BotonRepetirTresVeces extends Button {
 
-    public BotonInvertir(AlgoBlocks algoBlocks, ContenedorAlgoritmo contenedorAlgoritmo) {
-        this.setText("Invertir");
+    public BotonRepetirTresVeces(AlgoBlocks algoBlocks, ContenedorAlgoritmo contenedorAlgoritmo) {
+        this.setText("Repetir X3");
         this.setPrefSize(100, 30);
-        this.setOnAction(new BotonInvertirEventHandler(algoBlocks, contenedorAlgoritmo));
+        this.setOnAction(new BotonRepetirTresVecesEventHandler(algoBlocks, contenedorAlgoritmo));
         this.setEffect(new InnerShadow());
         this.setStyle("-fx-background-color: lightcyan");
         this.setFont(new Font("helvetica", 13));
