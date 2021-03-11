@@ -23,7 +23,7 @@ Java 11
 JUnit: Framework de pruebas unitarias para Java.
 Maven 3.6.0: El archivo "pom.xml" posee las dependencias necesarias
 Herramienta de integración continua utilizada: GitHub Actions
-...
+
 ```
 
 ## Ejecutando las pruebas
@@ -39,6 +39,11 @@ Este comando crea el reporte de cobertura para CI y el reporte HTML que pueden a
 ```
 
 ## Ejecutando la aplicación
+
+```
+Ejecutar Main
+
+```
 
 
 
