@@ -31,7 +31,7 @@ public class VistaTablero {
 
         tablero.setVisible(true);
         GraphicsContext graphicsContext = tablero.getGraphicsContext2D();
-        graphicsContext.clearRect(0,0,tablero.getWidth(),tablero.getHeight());
+        graphicsContext.clearRect(0, 0, tablero.getWidth(), tablero.getHeight());
         graphicsContext.setLineWidth(5);
         graphicsContext.setStroke(Color.RED);
         List<Segmento> segmentos = SectorDibujo.obtenerSectorDibujo().obtenerDibujo();
@@ -41,19 +41,35 @@ public class VistaTablero {
             graphicsContext.setStroke(Color.RED);
             if (inicial.obtenerX() < fin.obtenerX()) {
                 xllegada = xllegada + 50;
-                graphicsContext.strokeLine(xpartida,ypartida, xllegada,yllegada);
-            }
-            else if(inicial.obtenerX() > fin.obtenerX()){
+                graphicsContext.strokeLine(xpartida, ypartida, xllegada, yllegada);
+            } else if (inicial.obtenerX() > fin.obtenerX()) {
                 xllegada = xllegada - 50;
                 graphicsContext.strokeLine(xpartida, ypartida, xllegada, yllegada);
-            }
-            else if(inicial.obtenerY() > fin.obtenerY()){
+            } else if (inicial.obtenerY() > fin.obtenerY()) {
                 yllegada = yllegada + 50;
                 graphicsContext.strokeLine(xpartida, ypartida, xllegada, yllegada);
-            }
-            else{
+            } else {
                 yllegada = yllegada - 50;
                 graphicsContext.strokeLine(xpartida, ypartida, xllegada, yllegada);
+            }
+            xpartida = xllegada;
+            ypartida = yllegada;
+            lapiz.moverLapizA(xllegada, yllegada);
+        }
+
+        List<Segmento> noDibujado = SectorDibujo.obtenerSectorDibujo().obtenerSinTrazar();
+
+        for (Segmento segmentoNoDibujar : noDibujado) {
+            Posicion inicio = segmentoNoDibujar.obtenerInicio();
+            Posicion fin1 = segmentoNoDibujar.obtenerFin();
+            if (inicio.obtenerX() < fin1.obtenerX()) {
+                xllegada = xllegada + 50;
+            } else if (inicio.obtenerX() > fin1.obtenerX()) {
+                xllegada = xllegada - 50;
+            } else if (inicio.obtenerY() > fin1.obtenerY()) {
+                yllegada = yllegada + 50;
+            } else {
+                yllegada = yllegada - 50;
             }
             xpartida = xllegada;
             ypartida = yllegada;
@@ -63,3 +79,5 @@ public class VistaTablero {
     }
 
 }
+
+

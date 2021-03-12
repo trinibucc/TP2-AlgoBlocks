@@ -8,6 +8,7 @@ public class SectorDibujo {
 
     private static SectorDibujo instancia = null;
     private List<Segmento> trazos = new ArrayList<>();
+    private List<Segmento> sinTrazar = new ArrayList<>();
 
     private SectorDibujo(){ }
 
@@ -30,6 +31,14 @@ public class SectorDibujo {
 
     public void aplicarTrazo(Posicion posicionInicial, Posicion posicionFinal) {
         this.trazos.add(new Segmento(posicionInicial, posicionFinal));
+    }
+
+    public void noAplicarTrazo(Posicion posicionInicial, Posicion posicionFinal){
+        this.sinTrazar.add(new Segmento(posicionInicial, posicionFinal));
+    }
+
+    public List<Segmento> obtenerSinTrazar(){
+        return sinTrazar;
     }
 
     public List<Segmento> obtenerDibujo() {

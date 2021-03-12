@@ -12,6 +12,8 @@ public class LapizArriba implements Lapiz, Bloque{
 
     @Override
     public void trazar(Posicion posicionInicial, Posicion posicionFinal) {
+
+        SectorDibujo.obtenerSectorDibujo().noAplicarTrazo(posicionInicial, posicionFinal);
     }
 
     public Bloque opuesto(){
