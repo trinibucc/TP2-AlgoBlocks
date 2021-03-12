@@ -6,7 +6,7 @@ import javafx.scene.canvas.Canvas;
 
 
 
-public class CreadorSectorTablero extends Group {
+public class Tablero extends Group {
 
     static final int ALTURA = 500;
     static final int ANCHO = 700;
@@ -14,7 +14,7 @@ public class CreadorSectorTablero extends Group {
     private VistaTablero vistaTablero;
     private Canvas canvas;
 
-    public CreadorSectorTablero(ContenedorLapiz lapiz) {
+    public Tablero(ContenedorLapiz lapiz) {
 
         this.canvas = new Canvas(ANCHO, ALTURA);
         this.vistaTablero = new VistaTablero(canvas, lapiz);

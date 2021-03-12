@@ -20,7 +20,7 @@ public class ContenedorVertical extends VBox {
         scrollable.setMinSize(1000, 70);
 
         ContenedorCentral central = new ContenedorCentral(algoBlocks, algoritmo, contenedorAlgoritmo);
-        CreadorSectorTablero sectorTablero = central.obtenerSectorTablero();
+        Tablero sectorTablero = central.obtenerSectorTablero();
 
         BotonEjecutar ejecutar = new BotonEjecutar(algoritmo, sectorTablero.obtenerVistaTablero());
 

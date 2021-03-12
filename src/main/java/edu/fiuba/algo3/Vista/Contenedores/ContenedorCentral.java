@@ -12,13 +12,13 @@ import javafx.scene.layout.Pane;
 
 public class ContenedorCentral extends HBox {
 
-    private CreadorSectorTablero sectorTablero;
+    private Tablero sectorTablero;
 
     public ContenedorCentral(AlgoBlocks algoBlocks, Algoritmo algoritmo, ContenedorAlgoritmo contenedorAlgoritmo){
 
 
         ContenedorLapiz lapiz = new ContenedorLapiz();
-        sectorTablero = new CreadorSectorTablero(lapiz);
+        sectorTablero = new Tablero(lapiz);
 
         Pane contenedorTablero = new Pane(lapiz, sectorTablero);
         contenedorTablero.setStyle("-fx-background-color: white");
@@ -35,7 +35,7 @@ public class ContenedorCentral extends HBox {
 
     }
 
-    public CreadorSectorTablero obtenerSectorTablero(){
+    public Tablero obtenerSectorTablero(){
         return sectorTablero;
     }
 }
