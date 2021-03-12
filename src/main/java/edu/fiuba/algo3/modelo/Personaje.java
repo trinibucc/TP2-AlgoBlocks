@@ -41,8 +41,9 @@ public class Personaje {
 
     public void reiniciar(){
 
-        posicionFinal = new Posicion(0, 0);
-        posicionInicial = new Posicion(0,0);
+        this.posicionFinal = new Posicion(0, 0);
+        this.posicionInicial = new Posicion(0,0);
+        this.lapiz = new LapizArriba();
     }
 
 }

@@ -95,5 +95,5 @@ public class AlgoBlocks extends Observable{
         SectorDibujo.obtenerSectorDibujo().resetear();
         this.notifyObservers();
     }
-    
+
 }
