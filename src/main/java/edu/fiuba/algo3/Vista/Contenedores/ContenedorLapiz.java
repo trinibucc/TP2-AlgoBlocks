@@ -6,18 +6,25 @@ import javafx.scene.image.Image;
 
 public class ContenedorLapiz extends Canvas {
 
+    static final int TAMANIO = 50;
+    static final int ALTURA = 500;
+    static final int ANCHO = 700;
+
     private GraphicsContext gc;
     private Image image;
+
+    private int posicionInicial = 200;
+
 
 
     public ContenedorLapiz(){
 
-        this.image = new Image("lapizvista.png", 50, 50, true, true);
+        this.image = new Image("lapizvista.png", TAMANIO, TAMANIO, true, true);
 
-        this.setHeight(700);
-        this.setWidth(500);
+        this.setHeight(ALTURA);
+        this.setWidth(ANCHO);
         this.gc = this.getGraphicsContext2D();
-        gc.drawImage(image, 250, 250);
+        gc.drawImage(image, posicionInicial, posicionInicial);
 
     }
 

@@ -11,13 +11,10 @@ public class BarraMenu extends MenuBar {
     public BarraMenu(){
 
         Menu archivo = new Menu("Archivo");
-
         MenuItem salir = new MenuItem("Salir");
 
         SalirEventHandler salirEventHandler = new SalirEventHandler();
         salir.setOnAction(salirEventHandler);
-
-
 
         archivo.getItems().addAll(salir);
 

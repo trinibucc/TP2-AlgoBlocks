@@ -5,6 +5,7 @@ import edu.fiuba.algo3.Vista.Botones.BotonReiniciar;
 import edu.fiuba.algo3.Vista.Botones.BotoneraMovimientos;
 import edu.fiuba.algo3.modelo.AlgoBlocks;
 import edu.fiuba.algo3.modelo.Algoritmo;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 
@@ -16,20 +17,21 @@ public class ContenedorCentral extends HBox {
     public ContenedorCentral(AlgoBlocks algoBlocks, Algoritmo algoritmo, ContenedorAlgoritmo contenedorAlgoritmo){
 
 
-
         ContenedorLapiz lapiz = new ContenedorLapiz();
         sectorTablero = new CreadorSectorTablero(lapiz);
+
         Pane contenedorTablero = new Pane(lapiz, sectorTablero);
         contenedorTablero.setStyle("-fx-background-color: white");
-        Scrollable tableroScrollable = new Scrollable(contenedorTablero);
+
+        ScrollPane tableroScrollable = new ScrollPane(contenedorTablero);
 
         BotonReiniciar reiniciar = new BotonReiniciar(algoBlocks, algoritmo, sectorTablero.obtenerVistaTablero());
 
         BotoneraMovimientos botonera = new BotoneraMovimientos(algoBlocks, contenedorAlgoritmo, algoritmo);
-        Scrollable scrollable = new Scrollable(botonera);
+        ScrollPane scrollable = new ScrollPane(botonera);
+
         this.getChildren().addAll(scrollable, tableroScrollable, reiniciar);
         this.setSpacing(20);
-        //this.setPadding(new Insets(20));
 
     }
 

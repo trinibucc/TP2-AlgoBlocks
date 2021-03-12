@@ -8,12 +8,15 @@ import javafx.scene.canvas.Canvas;
 
 public class CreadorSectorTablero extends Group {
 
+    static final int ALTURA = 500;
+    static final int ANCHO = 700;
+
     private VistaTablero vistaTablero;
     private Canvas canvas;
 
     public CreadorSectorTablero(ContenedorLapiz lapiz) {
 
-        this.canvas = new Canvas(700,500);
+        this.canvas = new Canvas(ANCHO, ALTURA);
         this.vistaTablero = new VistaTablero(canvas, lapiz);
 
         canvas.getGraphicsContext2D().strokeRect(0, 0, canvas.getWidth(), canvas.getHeight());

@@ -7,9 +7,6 @@ import javafx.scene.layout.*;
 public class FondoVentana extends ImageView {
 
     Background fondo;
-    public FondoVentana(){
-
-    }
 
     public Background crearFondo(){
         this.fondo = new Background(new BackgroundImage(new Image("fondo.png"),
@@ -17,7 +14,6 @@ public class FondoVentana extends ImageView {
                 BackgroundSize.DEFAULT));
         return fondo;
     }
-
 
 
 }

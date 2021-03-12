@@ -9,12 +9,13 @@ import java.util.List;
 
 public class VistaAlgoritmo implements Observer {
 
+    static final int TAMANIO = 50;
+
     private AlgoBlocks algoBlocks;
     private ContenedorAlgoritmo contenedorAlgoritmo;
     private Algoritmo algoritmo;
     private List<Bloque> bloques;
-    private int posicion = 0;
-    private int tamanio =  50;
+
 
     public VistaAlgoritmo(ContenedorAlgoritmo contenedorAlgoritmo, AlgoBlocks algoBlocks, Algoritmo algoritmo){
 
@@ -29,7 +30,9 @@ public class VistaAlgoritmo implements Observer {
     public void update() {
 
         this.contenedorAlgoritmo.getChildren().clear();
+
         this.bloques = this.algoritmo.obtenerAlgoritmo();
+
         for (Bloque bloque : bloques) {
             this.updateContenedorAlgoritmo(bloque);
             if (bloque instanceof BloqueIterativo) {
@@ -44,7 +47,7 @@ public class VistaAlgoritmo implements Observer {
 
     private void updateContenedorAlgoritmo(Bloque bloque){
 
-        ImageView imageView = new ImageView(new Image(bloque.obtenerNombre() + ".png", tamanio, tamanio, true, true));
+        ImageView imageView = new ImageView(new Image(bloque.obtenerNombre() + ".png", TAMANIO, TAMANIO, true, true));
         this.contenedorAlgoritmo.agregarImagen(imageView);
     }
 

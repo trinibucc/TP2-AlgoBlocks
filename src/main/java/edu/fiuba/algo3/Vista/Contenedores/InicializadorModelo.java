@@ -14,6 +14,7 @@ public class InicializadorModelo {
     AlgoBlocks algoBlocks;
 
     public InicializadorModelo(){
+
         this.personaje = new Personaje();
 
         this.algoritmo = new Algoritmo(personaje);

@@ -8,6 +8,7 @@ import javafx.scene.image.Image;
 public class ContenedorAlgoritmo extends GridPane {
 
     private final int tamñoAlgoritmo = 20;
+    static final int TAMANIO_IMAGEN = 50;
     private int posicion = 0;
 
 
@@ -18,7 +19,7 @@ public class ContenedorAlgoritmo extends GridPane {
     private void establecerContenedor(){
 
         for(int i = 0; i < this.tamñoAlgoritmo; i++){
-            this.add(new ImageView(new Image("cuadrado-blanco.png", 50, 50, true, true)), i, 0);
+            this.add(new ImageView(new Image("cuadrado-blanco.png", TAMANIO_IMAGEN, TAMANIO_IMAGEN, true, true)), i, 0);
         }
 
     }
