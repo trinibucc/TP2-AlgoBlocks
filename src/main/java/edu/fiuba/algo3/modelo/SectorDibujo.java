@@ -25,7 +25,7 @@ public class SectorDibujo {
         return instancia;
     }
 
-    public void resetear(){
+    public void reiniciar(){
         this.trazos = new ArrayList<>();
     }
 

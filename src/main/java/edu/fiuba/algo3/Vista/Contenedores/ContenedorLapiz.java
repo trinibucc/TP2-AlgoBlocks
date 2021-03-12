@@ -25,6 +25,7 @@ public class ContenedorLapiz extends Canvas {
         this.setWidth(ANCHO);
         this.gc = this.getGraphicsContext2D();
         gc.drawImage(image, posicionInicial, posicionInicial);
+        this.setRotate(180);
 
     }
 
@@ -34,10 +35,7 @@ public class ContenedorLapiz extends Canvas {
         gc.drawImage(image, x, y);
     }
 
-    public void subirLapiz(){
 
-        this.setRotate(180);
-    }
 
 
 }

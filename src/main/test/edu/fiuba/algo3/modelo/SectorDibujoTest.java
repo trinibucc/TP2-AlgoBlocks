@@ -13,7 +13,7 @@ public class SectorDibujoTest {
 
     @Test
     public void test02SectorDibujoSeCreaVacio(){
-        SectorDibujo.obtenerSectorDibujo().resetear();
+        SectorDibujo.obtenerSectorDibujo().reiniciar();
         SectorDibujo sectorDibujo = SectorDibujo.obtenerSectorDibujo();
         assertEquals(0, sectorDibujo.obtenerDibujo().size());
     }

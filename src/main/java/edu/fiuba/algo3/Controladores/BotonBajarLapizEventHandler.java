@@ -10,17 +10,14 @@ public class BotonBajarLapizEventHandler implements EventHandler<ActionEvent> {
     private AlgoBlocks algoBlocks;
 
 
-
     public BotonBajarLapizEventHandler(AlgoBlocks algoBlocks){
 
         this.algoBlocks = algoBlocks;
-
     }
 
     @Override
     public void handle(ActionEvent actionEvent) {
 
         algoBlocks.agregarLapizAbajo();
-
     }
 }

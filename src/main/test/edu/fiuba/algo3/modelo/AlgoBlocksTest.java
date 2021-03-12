@@ -246,7 +246,7 @@ public class AlgoBlocksTest {
 
     @Test
     public void test16TrazarVariasVecesSinLevantarElLapiz(){
-        SectorDibujo.obtenerSectorDibujo().resetear();
+        SectorDibujo.obtenerSectorDibujo().reiniciar();
         Personaje personaje = new Personaje();
         Algoritmo algoritmo = new Algoritmo(personaje);
         AlgoBlocks algoBlocks = new AlgoBlocks();
@@ -266,7 +266,7 @@ public class AlgoBlocksTest {
 
     @Test
     public void test17TrazarLevantadoElLapizAlFinal(){
-        SectorDibujo.obtenerSectorDibujo().resetear();
+        SectorDibujo.obtenerSectorDibujo().reiniciar();
         Personaje personaje = new Personaje();
         Algoritmo algoritmo = new Algoritmo(personaje);
         AlgoBlocks algoBlocks = new AlgoBlocks();
@@ -287,7 +287,7 @@ public class AlgoBlocksTest {
 
     @Test
     public void test18TrazarLevantarElLapizBajarloYVolverATrazar(){
-        SectorDibujo.obtenerSectorDibujo().resetear();
+        SectorDibujo.obtenerSectorDibujo().reiniciar();
         Personaje personaje = new Personaje();
         Algoritmo algoritmo = new Algoritmo(personaje);
         AlgoBlocks algoBlocks = new AlgoBlocks();
@@ -313,7 +313,7 @@ public class AlgoBlocksTest {
 
     @Test
     public void test19TrazarLevantarElLapizMoverBajarLapzizSeTrazoDosVeces(){
-        SectorDibujo.obtenerSectorDibujo().resetear();
+        SectorDibujo.obtenerSectorDibujo().reiniciar();
         Personaje personaje = new Personaje();
         Algoritmo algoritmo = new Algoritmo(personaje);
         AlgoBlocks algoBlocks = new AlgoBlocks();
@@ -339,7 +339,7 @@ public class AlgoBlocksTest {
 
     @Test
     public void test20LevantarYBajarElLapizMuchasVecesEnDiferenteOrdenYTrazarConLapizBajo(){
-        SectorDibujo.obtenerSectorDibujo().resetear();
+        SectorDibujo.obtenerSectorDibujo().reiniciar();
         Personaje personaje = new Personaje();
         Algoritmo algoritmo = new Algoritmo(personaje);
         AlgoBlocks algoBlocks = new AlgoBlocks();
@@ -363,7 +363,7 @@ public class AlgoBlocksTest {
 
     @Test
     public void test21AgregarBloquesDeMovimientoSinBajarLapizDespuesBajarloYAgregarMas(){
-        SectorDibujo.obtenerSectorDibujo().resetear();
+        SectorDibujo.obtenerSectorDibujo().reiniciar();
         Personaje personaje = new Personaje();
         Algoritmo algoritmo = new Algoritmo(personaje);
         AlgoBlocks algoBlocks = new AlgoBlocks();
@@ -383,7 +383,7 @@ public class AlgoBlocksTest {
     }
     @Test
     public void test22AgregarLapizAbajoYRepetirDosVecesElTrazoConBloquesDeMovimiento(){
-        SectorDibujo.obtenerSectorDibujo().resetear();
+        SectorDibujo.obtenerSectorDibujo().reiniciar();
         Personaje personaje = new Personaje();
         Algoritmo algoritmo = new Algoritmo(personaje);
         AlgoBlocks algoBlocks = new AlgoBlocks();
@@ -405,7 +405,7 @@ public class AlgoBlocksTest {
 
     @Test
     public void test23AgregarLapizAbajoYRepetirTresVecesElTrazoConBloquesDeMovimiento(){
-        SectorDibujo.obtenerSectorDibujo().resetear();
+        SectorDibujo.obtenerSectorDibujo().reiniciar();
         Personaje personaje = new Personaje();
         Algoritmo algoritmo = new Algoritmo(personaje);
         AlgoBlocks algoBlocks = new AlgoBlocks();
@@ -429,7 +429,7 @@ public class AlgoBlocksTest {
 
     @Test
     public void test24AgregarLapizAbajoAgregarBloqueInversoElOrdenDelTrarzoEsElCorrecto(){
-        SectorDibujo.obtenerSectorDibujo().resetear();
+        SectorDibujo.obtenerSectorDibujo().reiniciar();
         Personaje personaje = new Personaje();
         Algoritmo algoritmo = new Algoritmo(personaje);
         AlgoBlocks algoBlocks = new AlgoBlocks();

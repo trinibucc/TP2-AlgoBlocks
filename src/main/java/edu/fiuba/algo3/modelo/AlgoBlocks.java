@@ -92,7 +92,7 @@ public class AlgoBlocks extends Observable{
 
     public void reiniciar() {
 
-        SectorDibujo.obtenerSectorDibujo().resetear();
+        SectorDibujo.obtenerSectorDibujo().reiniciar();
         this.notifyObservers();
     }
 
