@@ -9,7 +9,7 @@ public class NumeroDeRepeticionesInvalidoErrorTest {
     public void test01LlamarAlConstructorRecorridoIterativoConRepeticionesNegativasLanzaNumeroDeRepeticionesInvalidoError(){
         assertThrows(NumeroDeRepeticionesInvalidoError.class,
                 () -> {
-                    new BloqueRepetir(-2);
+                    new BloqueRepetir(-2, "");
                 });
     }
 
@@ -17,7 +17,7 @@ public class NumeroDeRepeticionesInvalidoErrorTest {
     public void test02LlamarAlConstructorRecorridoIterativoConRepeticionesPositivasMenorADosLanzaExcepcion(){
         assertThrows(NumeroDeRepeticionesInvalidoError.class,
                 () -> {
-                    new BloqueRepetir(1);
+                    new BloqueRepetir(1, "");
                 });
     }
 }

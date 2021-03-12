@@ -1,11 +1,12 @@
 package edu.fiuba.algo3.modelo;
 
 
-interface Bloque {
+public interface Bloque {
 
     void ejecutar(Personaje personaje);
 
     Bloque opuesto();
 
+    String obtenerNombre();
 
 }

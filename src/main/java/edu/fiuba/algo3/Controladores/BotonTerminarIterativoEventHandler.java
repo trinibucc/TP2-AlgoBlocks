@@ -5,12 +5,12 @@ import edu.fiuba.algo3.modelo.Algoritmo;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
-public class BotonTerminarRepeticionEventHandler implements EventHandler<ActionEvent> {
+public class BotonTerminarIterativoEventHandler implements EventHandler<ActionEvent> {
 
     private Algoritmo algoritmo;
     private AlgoBlocks algoBlocks;
 
-    public BotonTerminarRepeticionEventHandler(AlgoBlocks algoBlocks, Algoritmo algoritmo){
+    public BotonTerminarIterativoEventHandler(AlgoBlocks algoBlocks, Algoritmo algoritmo){
         this.algoBlocks = algoBlocks;
         this.algoritmo = algoritmo;
 

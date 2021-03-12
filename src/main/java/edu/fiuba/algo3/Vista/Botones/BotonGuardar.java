@@ -1,6 +1,5 @@
 package edu.fiuba.algo3.Vista.Botones;
 
-import edu.fiuba.algo3.Vista.Contenedores.ContenedorAlgoritmo;
 import edu.fiuba.algo3.Controladores.BotonGuardarEventHandler;
 import edu.fiuba.algo3.modelo.AlgoBlocks;
 import javafx.event.EventHandler;
@@ -14,13 +13,11 @@ public class BotonGuardar extends Button {
 
     private EventHandler evento;
 
-    public BotonGuardar(AlgoBlocks algoBlocks, TextField nombreIngresado, Label label,
-                        ContenedorAlgoritmo contenedorAlgoritmo, BotoneraMovimientos botoneraMovimientos){
+    public BotonGuardar(AlgoBlocks algoBlocks, TextField nombreIngresado, Label label, BotoneraMovimientos botoneraMovimientos){
 
         this.setText("Guardar");
         this.setPrefSize(100, 30);
-        this.evento = new BotonGuardarEventHandler(algoBlocks, nombreIngresado, label,
-                contenedorAlgoritmo, botoneraMovimientos);
+        this.evento = new BotonGuardarEventHandler(algoBlocks, nombreIngresado, label, botoneraMovimientos);
         this.setOnAction(evento);
         this.setLineSpacing(5);
         this.setTextFill(Color.DARKCYAN);

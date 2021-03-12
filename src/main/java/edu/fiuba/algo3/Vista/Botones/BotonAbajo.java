@@ -1,6 +1,5 @@
 package edu.fiuba.algo3.Vista.Botones;
 
-import edu.fiuba.algo3.Vista.Contenedores.ContenedorAlgoritmo;
 import edu.fiuba.algo3.Controladores.BotonAbajoEventHandler;
 import edu.fiuba.algo3.modelo.AlgoBlocks;
 import javafx.scene.control.Button;
@@ -12,12 +11,12 @@ public class BotonAbajo extends Button {
 
 
 
-    public BotonAbajo(AlgoBlocks algoBlocks, ContenedorAlgoritmo contenedorAlgoritmo) {
+    public BotonAbajo(AlgoBlocks algoBlocks) {
 
         this.setText("Abajo");
         this.setPrefSize(100, 30);
         this.setEffect(new InnerShadow());
-        this.setOnAction(new BotonAbajoEventHandler(algoBlocks, contenedorAlgoritmo));
+        this.setOnAction(new BotonAbajoEventHandler(algoBlocks));
         this.setStyle("-fx-background-color: lightcyan");
         this.setFont(new Font("helvetica", 13));
 

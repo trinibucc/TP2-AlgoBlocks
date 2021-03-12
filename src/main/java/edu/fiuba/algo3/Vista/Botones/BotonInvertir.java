@@ -1,6 +1,5 @@
 package edu.fiuba.algo3.Vista.Botones;
 
-import edu.fiuba.algo3.Vista.Contenedores.ContenedorAlgoritmo;
 import edu.fiuba.algo3.Controladores.BotonInvertirEventHandler;
 import edu.fiuba.algo3.modelo.AlgoBlocks;
 import javafx.scene.control.Button;
@@ -9,10 +8,10 @@ import javafx.scene.text.Font;
 
 public class BotonInvertir extends Button {
 
-    public BotonInvertir(AlgoBlocks algoBlocks, ContenedorAlgoritmo contenedorAlgoritmo) {
+    public BotonInvertir(AlgoBlocks algoBlocks) {
         this.setText("Invertir");
         this.setPrefSize(100, 30);
-        this.setOnAction(new BotonInvertirEventHandler(algoBlocks, contenedorAlgoritmo));
+        this.setOnAction(new BotonInvertirEventHandler(algoBlocks));
         this.setEffect(new InnerShadow());
         this.setStyle("-fx-background-color: lightcyan");
         this.setFont(new Font("helvetica", 13));

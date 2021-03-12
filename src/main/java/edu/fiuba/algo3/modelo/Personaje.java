@@ -39,4 +39,11 @@ public class Personaje {
         lapiz.trazar(this.posicionInicial, this.posicionFinal);
     }
 
+    public void reiniciar(){
+
+        this.posicionFinal = new Posicion(0, 0);
+        this.posicionInicial = new Posicion(0,0);
+        this.lapiz = new LapizArriba();
+    }
+
 }

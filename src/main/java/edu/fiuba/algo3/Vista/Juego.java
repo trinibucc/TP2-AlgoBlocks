@@ -17,7 +17,7 @@ public class Juego {
 
         Background fondo = (new FondoVentana()).crearFondo();
 
-        VBox componentes = crearVentana();
+        VBox componentes = this.crearVentana();
         GridPane ventanaCompleta = new GridPane();
 
         ventanaCompleta.setBackground(fondo);
@@ -28,11 +28,9 @@ public class Juego {
 
     public VBox crearVentana(){
 
-        Titulo titulo = new Titulo();
-
-        VBox central = crearContenedorCentral();
-
         BarraMenu barraMenu = new BarraMenu();
+        Titulo titulo = new Titulo();
+        VBox central = this.crearContenedorCentral();
 
         VBox ventana = new VBox(barraMenu, titulo, central);
         ventana.setSpacing(15);

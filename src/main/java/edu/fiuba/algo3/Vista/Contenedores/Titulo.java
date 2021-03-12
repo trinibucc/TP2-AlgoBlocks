@@ -12,6 +12,7 @@ import javafx.scene.text.Font;
 public class Titulo extends Label {
 
     public Titulo(){
+
         this.setText("ALGOBLOCKS");
         this.setPadding(new Insets(10));
         this.setBackground(new Background(new BackgroundFill(Color.web("#C0C0C0"), CornerRadii.EMPTY, Insets.EMPTY)));
