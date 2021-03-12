@@ -15,14 +15,14 @@ public class ContenedorGuardar extends HBox {
     private Label label;
     private BotonGuardar guardar;
 
-    public ContenedorGuardar(AlgoBlocks algoBlocks, ContenedorAlgoritmo contenedorAlgoritmo, BotoneraMovimientos botonera){
+    public ContenedorGuardar(AlgoBlocks algoBlocks, BotoneraMovimientos botonera){
 
         this.nombreIngresado = new IngresarNombre(guardar);
         VBox contenedorLabel = new VBox();
         this.label = new Label();
         contenedorLabel.getChildren().addAll(nombreIngresado, label);
         this.algoBlocks = algoBlocks;
-        this.guardar = new BotonGuardar(algoBlocks, nombreIngresado, label, contenedorAlgoritmo, botonera);
+        this.guardar = new BotonGuardar(algoBlocks, nombreIngresado, label, botonera);
         this.getChildren().addAll(guardar, contenedorLabel);
         this.setSpacing(20);
 

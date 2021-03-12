@@ -3,6 +3,8 @@ package edu.fiuba.algo3.modelo;
 
 public class LapizAbajo implements Lapiz, Bloque {
 
+    private String nombre = "lapizAbajo";
+
     @Override
     public void ejecutar(Personaje personaje){
         personaje.bajarLapiz();
@@ -17,5 +19,10 @@ public class LapizAbajo implements Lapiz, Bloque {
 
     public Bloque opuesto(){
         return new LapizArriba();
+    }
+
+    @Override
+    public String obtenerNombre() {
+        return nombre;
     }
 }

@@ -64,7 +64,7 @@ public class BloqueTest {
     @Test
     public void testBloqueRepetirRepiteDosVecesYmueveAlPersonaje(){
         Personaje personaje = new Personaje();
-        BloqueRepetir bloqueRepetir = new BloqueRepetir(2);
+        BloqueRepetir bloqueRepetir = new BloqueRepetir(2, "repetir2");
         AlgoBlocks algoBlocks = new AlgoBlocks();
         bloqueRepetir.agregarBloque(algoBlocks);
         algoBlocks.agregarBloqueIzquierda();
@@ -78,7 +78,7 @@ public class BloqueTest {
     @Test
     public void testBloqueRepetirRepiteTresVecesYmueveAlPersonaje(){
         Personaje personaje = new Personaje();
-        BloqueRepetir bloqueRepetir = new BloqueRepetir(3);
+        BloqueRepetir bloqueRepetir = new BloqueRepetir(3, "repetir3");
         AlgoBlocks algoBlocks = new AlgoBlocks();
         bloqueRepetir.agregarBloque(algoBlocks);
         algoBlocks.agregarBloqueIzquierda();
@@ -116,7 +116,7 @@ public class BloqueTest {
     @Test
     public void testBloqueRepetirTieneSuPropioAlogoBlocksQueAñadeAListaDeBloqueRepetir(){
         Personaje personaje = new Personaje();
-        BloqueRepetir bloqueRepetir = new BloqueRepetir(2);
+        BloqueRepetir bloqueRepetir = new BloqueRepetir(2, "repetir2");
         AlgoBlocks algoBlocks = new AlgoBlocks();
         bloqueRepetir.agregarBloque(algoBlocks);
         algoBlocks.agregarBloqueDerecha();

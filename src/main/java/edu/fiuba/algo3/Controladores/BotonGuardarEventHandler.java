@@ -19,8 +19,7 @@ public class BotonGuardarEventHandler implements EventHandler<ActionEvent> {
     private ContenedorAlgoritmo contenedorAlgoritmo;
     private BotoneraMovimientos botonera;
 
-    public BotonGuardarEventHandler(AlgoBlocks algoBlocks, TextField nombreIngresado, Label label,
-                                    ContenedorAlgoritmo contenedorAlgoritmo, BotoneraMovimientos botonera){
+    public BotonGuardarEventHandler(AlgoBlocks algoBlocks, TextField nombreIngresado, Label label, BotoneraMovimientos botonera){
 
         this.algoBlocks = algoBlocks;
         this.nombre = nombreIngresado;
@@ -40,8 +39,7 @@ public class BotonGuardarEventHandler implements EventHandler<ActionEvent> {
             this.label.setText("");
             try {
                 algoBlocks.guardarAlgoritmo(nombre.getText());
-                BotonAlgoritmoPersonalizado personalizado = new BotonAlgoritmoPersonalizado(algoBlocks, nombre.getText(),
-                        contenedorAlgoritmo);
+                BotonAlgoritmoPersonalizado personalizado = new BotonAlgoritmoPersonalizado(algoBlocks, nombre.getText());
                 botonera.agregarBoton(personalizado);
                 nombre.setText("");
                 nombre.requestFocus();

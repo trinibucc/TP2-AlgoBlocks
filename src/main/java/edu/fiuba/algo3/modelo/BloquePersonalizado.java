@@ -5,7 +5,9 @@ import java.util.List;
 
 public class BloquePersonalizado implements Bloque{
 
-    List<Bloque> algoritmo = new ArrayList<>();
+    private List<Bloque> algoritmo = new ArrayList<>();
+    private String nombre = "personalizado";
+
 
 
     public BloquePersonalizado(List<Bloque> algoritmo){
@@ -28,6 +30,11 @@ public class BloquePersonalizado implements Bloque{
 
     public Bloque opuesto(){
         return this;
+    }
+
+    @Override
+    public String obtenerNombre() {
+        return nombre;
     }
 
 

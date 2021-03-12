@@ -1,7 +1,7 @@
 package edu.fiuba.algo3.Controladores;
 
 
-import edu.fiuba.algo3.Vista.Dibujador;
+import edu.fiuba.algo3.Vista.VistaTablero;
 import edu.fiuba.algo3.modelo.Algoritmo;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -11,18 +11,18 @@ import javafx.scene.control.Alert;
 public class BotonEjecutarEventHandler implements EventHandler<ActionEvent> {
 
     private Algoritmo algoritmo;
-    private Dibujador dibujadorConTrazo;
+    private VistaTablero vistaTableroConTrazo;
 
-    public BotonEjecutarEventHandler(Algoritmo algoritmo, Dibujador dibujadorConTrazo) {
+    public BotonEjecutarEventHandler(Algoritmo algoritmo, VistaTablero vistaTableroConTrazo) {
         this.algoritmo = algoritmo;
-        this.dibujadorConTrazo  = dibujadorConTrazo;
+        this.vistaTableroConTrazo = vistaTableroConTrazo;
     }
 
     @Override
     public void handle(ActionEvent Event) {
         try {
             algoritmo.ejecutar();
-            dibujadorConTrazo.actualizar();
+            vistaTableroConTrazo.actualizar();
             //  algoritmo.reiniciar();
         }catch(Exception CantidadInsuficienteDeBloquesError){
             Alert dialogoInfo = new Alert(Alert.AlertType.INFORMATION);

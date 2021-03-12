@@ -6,22 +6,22 @@ import edu.fiuba.algo3.modelo.SectorDibujo;
 import edu.fiuba.algo3.modelo.Segmento;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 
 import java.util.List;
 
-public class Dibujador {
+public class VistaTablero {
 
     private Canvas tablero;
-    private double xpartida = 150;
-    private double ypartida = 150;
-    private double xllegada = 150;
-    private double yllegada = 150;
+    private double xpartida = 250;
+    private double ypartida = 250;
+    private double xllegada = 250;
+    private double yllegada = 250;
     private ContenedorLapiz lapiz;
 
 
-    public Dibujador(Canvas canvas, ContenedorLapiz lapiz) {
+    public VistaTablero(Canvas canvas, ContenedorLapiz lapiz) {
+
         this.tablero = canvas;
         this.lapiz = lapiz;
 
@@ -31,17 +31,16 @@ public class Dibujador {
 
         tablero.setVisible(true);
         GraphicsContext graphicsContext = tablero.getGraphicsContext2D();
-        graphicsContext.clearRect(0,0,500,500);
+        graphicsContext.clearRect(0,0,tablero.getWidth(),tablero.getHeight());
         graphicsContext.setLineWidth(5);
         graphicsContext.setStroke(Color.RED);
-        Image imagen = new Image("lapizvista.png", 50, 50, true, true);
         List<Segmento> segmentos = SectorDibujo.obtenerSectorDibujo().obtenerDibujo();
         for (Segmento segmento : segmentos) {
             Posicion inicial = segmento.obtenerInicio();
             Posicion fin = segmento.obtenerFin();
             graphicsContext.setStroke(Color.RED);
             if (inicial.obtenerX() < fin.obtenerX()) {
-                xpartida = xpartida - 50;
+                xllegada = xllegada + 50;
                 graphicsContext.strokeLine(xpartida,ypartida, xllegada,yllegada);
             }
             else if(inicial.obtenerX() > fin.obtenerX()){
@@ -58,7 +57,7 @@ public class Dibujador {
             }
             xpartida = xllegada;
             ypartida = yllegada;
-            //lapiz.moverLapizA(xllegada, yllegada);
+            lapiz.moverLapizA(xllegada, yllegada);
         }
 
     }

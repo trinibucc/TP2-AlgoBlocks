@@ -28,7 +28,13 @@ public class Algoritmo {
     }
 
     public void reiniciar(){
+
         this.algoritmo.clear();
+        this.personaje.reiniciar();
+    }
+
+    public List<Bloque> obtenerAlgoritmo(){
+        return algoritmo;
     }
 
 }

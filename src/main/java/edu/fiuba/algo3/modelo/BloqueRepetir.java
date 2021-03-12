@@ -4,12 +4,14 @@ package edu.fiuba.algo3.modelo;
 public class BloqueRepetir extends BloqueIterativo {
 
     private int repeticion;
+    private String nombre;
 
-    public BloqueRepetir(int repeticion) {
+    public BloqueRepetir(int repeticion, String nombre) {
         if(repeticion < 2){
             throw new NumeroDeRepeticionesInvalidoError();
         }
         this.repeticion = repeticion;
+        this.nombre = nombre;
 
     }
 
@@ -24,6 +26,11 @@ public class BloqueRepetir extends BloqueIterativo {
 
     public Bloque opuesto(){
         return this;
+    }
+
+    @Override
+    public String obtenerNombre() {
+        return nombre;
     }
 
 }

@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.Vista.Contenedores;
 
 import edu.fiuba.algo3.Vista.Botones.BotonEjecutar;
+import edu.fiuba.algo3.Vista.VistaAlgoritmo;
 import edu.fiuba.algo3.modelo.AlgoBlocks;
 import edu.fiuba.algo3.modelo.Algoritmo;
 import javafx.scene.layout.HBox;
@@ -13,6 +14,8 @@ public class ContenedorVertical extends VBox {
 
         ContenedorAlgoritmo contenedorAlgoritmo = new ContenedorAlgoritmo();
 
+        VistaAlgoritmo vistaAlgoritmo = new VistaAlgoritmo(contenedorAlgoritmo, algoBlocks, algoritmo);
+
         Scrollable scrollable = new Scrollable(contenedorAlgoritmo);
         scrollable.setMaxSize(1000, 70);
         scrollable.setMinSize(1000, 70);
@@ -21,7 +24,7 @@ public class ContenedorVertical extends VBox {
         CreadorSectorTablero sectorTablero = central.obtenerSectorTablero();
 
         BotonEjecutar ejecutar = new BotonEjecutar(algoritmo,
-                sectorTablero.obtenerDibujador());
+                sectorTablero.obtenerVistaTablero());
 
         HBox hbox = new HBox(ejecutar, scrollable);
         hbox.setSpacing(20);

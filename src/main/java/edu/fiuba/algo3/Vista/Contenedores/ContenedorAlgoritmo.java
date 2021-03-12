@@ -27,4 +27,6 @@ public class ContenedorAlgoritmo extends GridPane {
         this.add(imagen, posicion, 0);
         posicion++;
     }
+
+
 }

@@ -23,9 +23,9 @@ public class ContenedorCentral extends HBox {
         contenedorTablero.setStyle("-fx-background-color: white");
         Scrollable tableroScrollable = new Scrollable(contenedorTablero);
 
-        BotonReiniciar reiniciar = new BotonReiniciar(algoBlocks, algoritmo);
+        BotonReiniciar reiniciar = new BotonReiniciar(algoBlocks, algoritmo, sectorTablero.obtenerVistaTablero());
 
-        BotoneraMovimientos botonera = new BotoneraMovimientos(algoBlocks, contenedorAlgoritmo);
+        BotoneraMovimientos botonera = new BotoneraMovimientos(algoBlocks, contenedorAlgoritmo, algoritmo);
         Scrollable scrollable = new Scrollable(botonera);
         this.getChildren().addAll(scrollable, tableroScrollable, reiniciar);
         this.setSpacing(20);
