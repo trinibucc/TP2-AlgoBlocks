@@ -95,8 +95,5 @@ public class AlgoBlocks extends Observable{
         SectorDibujo.obtenerSectorDibujo().resetear();
         this.notifyObservers();
     }
-
-    public List<Bloque> obtenerLista() {
-        return algoritmo;
-    }
+    
 }
