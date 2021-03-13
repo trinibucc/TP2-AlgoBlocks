@@ -13,8 +13,7 @@ public class ContenedorLapiz extends Canvas {
     private GraphicsContext gc;
     private Image image;
 
-    private int posicionInicial = 200;
-
+    private int posicionInicial = 200;|
 
 
     public ContenedorLapiz(){
@@ -28,14 +27,6 @@ public class ContenedorLapiz extends Canvas {
         this.setRotate(180);
 
     }
-
-    public void moverLapizA(double x, double y){
-
-        gc.clearRect(0, 0, this.getWidth(), this.getHeight());
-        gc.drawImage(image, x, y);
-    }
-
-
 
 
 }

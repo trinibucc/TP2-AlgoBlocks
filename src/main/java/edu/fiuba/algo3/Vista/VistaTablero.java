@@ -13,14 +13,14 @@ import java.util.List;
 
 public class VistaTablero {
 
-    static final int MOVIMIENTO = 50;
+    static final int MOVIMIENTO = 25;
     static final int TAMANIO = 50;
 
     private Canvas tablero;
-    private double xpartida = 250;
-    private double ypartida = 250;
-    private double xllegada = 250;
-    private double yllegada = 250;
+    private double xpartida = 200;
+    private double ypartida = 200;
+    private double xllegada = 200;
+    private double yllegada = 200;
     private ContenedorLapiz lapiz;
 
 
@@ -78,7 +78,7 @@ public class VistaTablero {
         } else if (inicio.obtenerY() > fin.obtenerY()) {
             yllegada = yllegada + MOVIMIENTO;
             graphicsContext.strokeLine(xpartida, ypartida, xllegada, yllegada);
-        } else {
+        } else if (inicio.obtenerY() < fin.obtenerY()){
             yllegada = yllegada - MOVIMIENTO;
             graphicsContext.strokeLine(xpartida, ypartida, xllegada, yllegada);
         }
@@ -93,7 +93,7 @@ public class VistaTablero {
             xllegada = xllegada - MOVIMIENTO;
         } else if (inicio.obtenerY() > fin.obtenerY()) {
             yllegada = yllegada + MOVIMIENTO;
-        } else {
+        } else if (inicio.obtenerY() < fin.obtenerY()) {
             yllegada = yllegada - MOVIMIENTO;
         }
 
@@ -107,6 +107,13 @@ public class VistaTablero {
 
     }
 
+    public void reiniciar() {
+        xpartida = 250;
+        ypartida = 250;
+        xllegada = 250;
+        yllegada = 250;
+        this.actualizar();
+    }
 }
 
 
