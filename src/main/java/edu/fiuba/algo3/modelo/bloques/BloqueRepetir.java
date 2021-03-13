@@ -1,8 +1,8 @@
 package edu.fiuba.algo3.modelo.bloques;
 
-
 import edu.fiuba.algo3.modelo.Personaje;
 import edu.fiuba.algo3.modelo.excepciones.NumeroDeRepeticionesInvalidoError;
+
 
 public class BloqueRepetir extends BloqueIterativo {
 

@@ -1,0 +1,40 @@
+@startuml
+
+header page header
+title test05MoverIzquierdaConBloqueMoverIzquierdaPersonajeSeMueveIzquierda
+actor test05
+
+test05 -> AlgoBlocks: agregarBloqueIzquierda()
+activate AlgoBlocks
+create BloqueIzquierda
+AlgoBlocks -> BloqueIzquierda: new BloqueIzquierda()
+activate BloqueIzquierda
+BloqueIzquierda -> BloqueIzquierda: nombre = "bloqueIzquierda"
+BloqueIzquierda --> AlgoBlocks: algoritmo.add(BloqueIzquierda)
+deactivate BloqueIzquierda
+test05 -> Algoritmo: ejecutar()
+activate Algoritmo
+Algoritmo -> BloqueIzquierda: ejecutar(personaje)
+activate BloqueIzquierda
+BloqueIzquierda -> Personaje: actualizarPosicion(-1, 0)
+Personaje -> Posicion: posicionInicial.copiarXY(posicionFinal)
+activate Posicion
+deactivate Posicion
+Personaje -> Posicion: posicionFinal.sumarse(posicion)
+activate Posicion
+deactivate Posicion
+BloqueIzquierda -> Personaje: dibujar()
+activate Personaje
+Personaje -> LapizArriba: trazar(posicionInicial, posicionFinal)
+activate LapizArriba
+create SectorDibujo
+LapizArriba -> SectorDibujo: noAplicarTrazo(posicionInicial, posicionFinal)
+activate SectorDibujo
+SectorDibujo -> SectorDibujo: sinTrazar.add(Segmento)
+deactivate SectorDibujo
+deactivate LapizArriba
+deactivate AlgoBlocks
+
+
+
+@enduml
