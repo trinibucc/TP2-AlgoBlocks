@@ -1,0 +1,41 @@
+@startuml
+
+header page header
+title test15UsarBloqueInversoYPersonajeRealizaMovimientosAlReves
+actor Test15
+
+activate AlgoBlocks
+Test15 -> AlgoBlocks: agregarBloqueInverso()
+create BloqueInverso
+activate BloqueInverso
+AlgoBlocks -> BloqueInverso: new BloqueInverso()
+BloqueInverso --> AlgoBlocks: algoritmo.add(BloqueInverso)
+deactivate BloqueInverso
+AlgoBlocks --> Test15: BloqueInverso = BloqueInverso
+deactivate AlgoBlocks
+activate BloqueInverso
+Test15 -> BloqueInverso: agregarBloque(AlgoBlocks)
+deactivate BloqueInverso
+activate AlgoBlocks
+BloqueInverso -> AlgoBlocks: agregarLista(algoritmo)
+deactivate AlgoBlocks
+activate BloqueInverso
+Test15 -> BloqueInverso: agregarBloque(AlgoBlocks)
+deactivate BloqueInverso
+activate AlgoBlocks
+BloqueInverso -> AlgoBlocks: agregarLista(algoritmo)
+deactivate AlgoBlocks
+activate BloqueInverso
+Test15 -> BloqueInverso: ejecutar(persoanje)
+BloqueInverso -> BloqueInverso: invertir(algoritmo)
+loop algoritmo.size()
+    BloqueInverso -> BloqueInverso: algoritmo.opuesto()
+end
+BloqueInverso -> BloqueInverso: algoritmo. reverse()
+BloqueInverso -> BloqueInverso: recorrer(persoanje)
+loop algoritmo.size()
+    BloqueInverso -> Bloque: ejecutar(persoanje)
+end
+deactivate BloqueInverso
+
+@enduml

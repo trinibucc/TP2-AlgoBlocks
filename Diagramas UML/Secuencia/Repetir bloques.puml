@@ -1,0 +1,46 @@
+@startuml
+
+header page header
+title test13UsarBloqueRepetirTresVecesYPersonajeSeMueveCorrectamente
+actor Test13
+
+Test13 -> AlgoBlocks: agregarBloqueRepetirTresVeces()
+activate AlgoBlocks
+create BloqueRepetir
+AlgoBlocks -> BloqueRepetir: new BloqueRepetir(3, "repetir3")
+activate BloqueRepetir
+BloqueRepetir -> BloqueRepetir: repeticion = 3\nnombre = "repetir3"
+BloqueRepetir --> AlgoBlocks: algoritmo.add(BloqueRepetir)
+deactivate BloqueRepetir
+AlgoBlocks --> Test13: agregarBloqueRepetirTresVeces = BloqueRepetir
+deactivate AlgoBlocks
+activate BloqueRepetir
+Test13 -> BloqueRepetir: agregarBloque(AlgoBlocks)
+activate AlgoBlocks
+BloqueRepetir -> AlgoBlocks: agregarLista(algoritmo)
+AlgoBlocks -> AlgoBlocks: algoritmo = algoritmo
+deactivate AlgoBlocks
+deactivate BloqueRepetir
+Test13 -> AlgoBlocks: agregarBloque()
+activate AlgoBlocks
+deactivate AlgoBlocks
+Test13 -> AlgoBlocks: agregarBloque()
+activate AlgoBlocks
+deactivate AlgoBlocks
+activate Algoritmo
+Test13 -> Algoritmo: ejecutar()
+loop 3
+    activate BloqueRepetir
+    BloqueRepetir -> BloqueRepetir: recorrer(personaje)
+    loop algoritmo.size()
+        Algoritmo -> Bloque: ejecutar(personaje))
+        deactivate Algoritmo
+    end
+    deactivate BloqueRepetir
+end
+
+
+
+
+
+@enduml

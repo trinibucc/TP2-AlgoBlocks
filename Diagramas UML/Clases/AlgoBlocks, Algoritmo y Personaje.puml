@@ -1,0 +1,59 @@
+@startuml
+abstract class Observable{
+    - ArrayList<Observer>
+    + addObserver(Observer)
+    + notifyObservers(Observer)
+}
+Observable *--- "*" Observer
+
+interface Observer{
+    update()
+}
+
+class AlgoBlocks extends Observable{
+    + agregarLista(List<Bloque>)
+    + agregarLapizArriba()
+    + agregarLapizAbajo()
+    + agregarBloqueDerecha()
+    + agregarBloqueAbajo()
+    + agregarBloqueIzquierda()
+    + agregarBloqueArriba()
+    + agregarBloqueRepetirDosVeces(): BloqueRepetir
+    + agregarBloqueRepetirTresVeces(): BloqueRepetir
+    + agregarBloqueInverso(): BloqueInverso
+    + guardarAlgoritmo(String)
+    + agregarAlgoritmoPersonalizado(String)
+    + reiniciar()
+}
+AlgoBlocks o--- "*" Bloque
+AlgoBlocks o--- "*" BloquePersonalizado
+AlgoBlocks ...> Lapiz
+AlgoBlocks ...> SectorDibujo
+AlgoBlocks ...> BloqueRepetir
+AlgoBlocks ...> BloqueInverso
+
+interface Bloque{
+    ejecutar(Personaje)
+    opuesto(): Bloque
+}
+
+Bloque ...> Personaje
+
+class Personaje{
+    + obtenerLapiz(): Lapiz
+    + subirLapiiz()
+    + actualizarPosicionFinal(Posicion)
+    + obtenerPosicion(): Posicion
+    + dibujar()
+}
+Personaje *--- "2"Posicion
+Personaje *--- Lapiz
+
+class Algoritmo{
+     + Algoritmo(Personaje)
+     + ejecutar()
+     + agregarLista(AlgoBlocks)
+}
+Algoritmo *--- "*" Bloque
+Algoritmo o--- Personaje
+@enduml

@@ -1,0 +1,30 @@
+@startuml
+
+package controladores{}
+controladores ...> modelo
+controladores <...> botones
+controladores ...> vista
+
+package modelo{
+    package bloques{}
+    package dibujo{}
+    package excepciones{}
+}
+bloques ...> excepciones
+bloques ...> dibujo
+bloques <...> modelo
+dibujo ...> excepciones
+modelo ...> excepciones
+
+package vista{
+    package botones{}
+    package contenedores{}
+}
+botones ...> modelo
+botones ...> vista
+contenedores ...> botones
+contenedores ...> modelo
+contenedores ...> controladores
+contenedores <...> vista
+
+@enduml

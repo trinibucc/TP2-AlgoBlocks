@@ -1,6 +1,10 @@
 package edu.fiuba.algo3.modelo;
 
 
+import edu.fiuba.algo3.modelo.bloques.*;
+import edu.fiuba.algo3.modelo.dibujo.Posicion;
+import edu.fiuba.algo3.modelo.dibujo.SectorDibujo;
+import edu.fiuba.algo3.modelo.dibujo.Segmento;
 import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class AlgoBlocksTest {
 
-    private boolean compararDibujos(List< Segmento> dibujoEsperado, List<Segmento> dibujoSectorDibujo){
+    private boolean compararDibujos(List<Segmento> dibujoEsperado, List<Segmento> dibujoSectorDibujo){
         for(int i = 0; i < dibujoEsperado.size(); i++)
             if (!dibujoEsperado.get(i).esIgualA(dibujoSectorDibujo.get(i))) {
                 return false;

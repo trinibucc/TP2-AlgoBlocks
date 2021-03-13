@@ -1,0 +1,35 @@
+@startuml
+header page header
+title Creacion de Personaje, Algoritmo y AlgoBlocks
+actor Usuario
+
+create Personaje
+Usuario -> Personaje: new Personaje()
+activate Personaje
+create Posicion
+Personaje -> Posicion: new Posicion(0, 0)
+activate Posicion
+Posicion --> Personaje: posicionInicial =  Posicion\nposicionFinal = Posicion
+deactivate Posicion
+create LapizArriba
+Personaje -> LapizArriba: new LapizArriba()
+activate LapizArriba
+LapizArriba --> Personaje: lapiz = LapizArriba
+deactivate LapizArriba
+Personaje --> Usuario: personaje = Personaje
+deactivate Personaje
+create Algoritmo
+activate Algoritmo
+Usuario -> Algoritmo: new Algoritmo(personaje)
+Algoritmo -> Algoritmo: personaje = Personaje
+Algoritmo --> Usuario: algoritmo = Algoritmo
+deactivate Algoritmo
+create AlgoBlocks
+Usuario -> AlgoBlocks: new AlgoBlocks()
+activate AlgoBlocks
+AlgoBlocks --> Usuario: algoBlocks =  AlgoBlocks
+deactivate AlgoBlocks
+Usuario -> Algoritmo: agregarLista(algoBlocks)
+activate Algoritmo
+
+@enduml

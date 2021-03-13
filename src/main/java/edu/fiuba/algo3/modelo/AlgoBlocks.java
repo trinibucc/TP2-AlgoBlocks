@@ -1,5 +1,10 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.modelo.bloques.*;
+import edu.fiuba.algo3.modelo.dibujo.SectorDibujo;
+import edu.fiuba.algo3.modelo.excepciones.CantidadInsuficienteDeBloquesError;
+import edu.fiuba.algo3.modelo.excepciones.NombreInvalidoError;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -80,18 +85,17 @@ public class AlgoBlocks extends Observable{
         if(this.bloquesPersonalizado.containsKey(nombre)){
             throw new NombreInvalidoError();
         }
-        BloquePersonalizado bloquePersonalizado = new BloquePersonalizado(algoritmo);
-        bloquesPersonalizado.put(nombre, bloquePersonalizado);
+        BloquePersonalizado bloquePersonalizado = new BloquePersonalizado(this.algoritmo);
+        this.bloquesPersonalizado.put(nombre, bloquePersonalizado);
     }
 
     public void agregarAlgoritmoPersonalizado(String nombre){
-        BloquePersonalizado bloquePersonalizado = bloquesPersonalizado.get(nombre);
-        algoritmo.add(bloquePersonalizado);
+        BloquePersonalizado bloquePersonalizado = this.bloquesPersonalizado.get(nombre);
+        this.algoritmo.add(bloquePersonalizado);
         this.notifyObservers();
     }
 
     public void reiniciar() {
-
         SectorDibujo.obtenerSectorDibujo().reiniciar();
         this.notifyObservers();
     }

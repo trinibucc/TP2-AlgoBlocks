@@ -1,5 +1,8 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.modelo.dibujo.Posicion;
+import edu.fiuba.algo3.modelo.dibujo.Segmento;
+import edu.fiuba.algo3.modelo.excepciones.SegmentoInvalidoError;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
