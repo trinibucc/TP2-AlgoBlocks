@@ -5,25 +5,42 @@ interface Bloque{
 }
 
 class BloqueDerecha implements Bloque{
+    - String
+    - Posicion
 }
 
 class BloqueAbajo implements Bloque{
+    - String
+    - Posicion
 }
 
 class BloqueIzquierda implements Bloque{
+    - String
+    - Posicion
 }
 
 class BloqueArriba implements Bloque{
+    - String
+    - Posicion
 }
 
 class BloqueIterativo implements Bloque{
     + agregarBloque(AlgoBlocks)
+    + recorrer(Persoanje)
 }
 BloqueIterativo o--- "*"Bloque
+BloqueIterativo o--- Persoanje
+
+class BloqueRepetir extends BloqueIterativo{
+    - int
+    - String
+    + BloqueRepetir(int, String)
+}
 
 class BloquePersonalizado implements Bloque{
+    - String
     + BloquePersonalizado(List<Bloque>)
 }
-BloquePersonalizado o--- "*"Bloque
+BloquePersonalizado o--- "*" Bloque
 
 @enduml

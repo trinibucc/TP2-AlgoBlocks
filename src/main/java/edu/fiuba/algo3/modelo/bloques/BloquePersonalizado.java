@@ -1,8 +1,6 @@
 package edu.fiuba.algo3.modelo.bloques;
 
 import edu.fiuba.algo3.modelo.Personaje;
-import edu.fiuba.algo3.modelo.bloques.Bloque;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,17 +9,10 @@ public class BloquePersonalizado implements Bloque {
     private List<Bloque> algoritmo = new ArrayList<>();
     private String nombre = "personalizado";
 
-
-
     public BloquePersonalizado(List<Bloque> algoritmo){
         for(Bloque bloque : algoritmo){
             this.algoritmo.add(bloque);
         }
-
-    }
-
-    public List<Bloque> obtenerAlgoritmo(){
-        return this.algoritmo;
     }
 
     @Override
@@ -39,6 +30,5 @@ public class BloquePersonalizado implements Bloque {
     public String obtenerNombre() {
         return nombre;
     }
-
 
 }

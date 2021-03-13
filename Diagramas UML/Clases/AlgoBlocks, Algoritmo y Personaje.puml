@@ -1,6 +1,16 @@
 @startuml
+abstract class Observable{
+    - ArrayList<Observer>
+    + addObserver(Observer)
+    + notifyObservers(Observer)
+}
+Observable *--- "*" Observer
 
-class AlgoBlocks{
+interface Observer{
+    update()
+}
+
+class AlgoBlocks extends Observable{
     + agregarLista(List<Bloque>)
     + agregarLapizArriba()
     + agregarLapizAbajo()
@@ -15,8 +25,12 @@ class AlgoBlocks{
     + agregarAlgoritmoPersonalizado(String)
     + reiniciar()
 }
-AlgoBlocks *--- "*" Bloque
-AlgoBlocks ....> Lapiz
+AlgoBlocks o--- "*" Bloque
+AlgoBlocks o--- "*" BloquePersonalizado
+AlgoBlocks ...> Lapiz
+AlgoBlocks ...> SectorDibujo
+AlgoBlocks ...> BloqueRepetir
+AlgoBlocks ...> BloqueInverso
 
 interface Bloque{
     ejecutar(Personaje)

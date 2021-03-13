@@ -7,18 +7,23 @@ Lapiz ...> Posicion
 Lapiz ...> SectorDibujo
 
 class LapizAbajo implements Lapiz, Bloque{
+    - String
 }
 
 class LapizArriba implements Lapiz, Bloque{
+    - String
 }
 
 class SectorDibujo{
     - {static} SectorDibujo
     - List<Segmento>
+    - List<Segmento>
     - {static} crearInstancia()
     + {static} obtenerSectorDibujo(): SectorDibujo
-    + resetear()
+    + reiniciar()
     + aplicarTrazo()
+    + noAplicarTrazo()
+    + obtenerSinTrazar(): List<Segmento>
     + obtenerDibujo(): List<Segmento>
 }
 @enduml

@@ -85,18 +85,17 @@ public class AlgoBlocks extends Observable{
         if(this.bloquesPersonalizado.containsKey(nombre)){
             throw new NombreInvalidoError();
         }
-        BloquePersonalizado bloquePersonalizado = new BloquePersonalizado(algoritmo);
-        bloquesPersonalizado.put(nombre, bloquePersonalizado);
+        BloquePersonalizado bloquePersonalizado = new BloquePersonalizado(this.algoritmo);
+        this.bloquesPersonalizado.put(nombre, bloquePersonalizado);
     }
 
     public void agregarAlgoritmoPersonalizado(String nombre){
-        BloquePersonalizado bloquePersonalizado = bloquesPersonalizado.get(nombre);
-        algoritmo.add(bloquePersonalizado);
+        BloquePersonalizado bloquePersonalizado = this.bloquesPersonalizado.get(nombre);
+        this.algoritmo.add(bloquePersonalizado);
         this.notifyObservers();
     }
 
     public void reiniciar() {
-
         SectorDibujo.obtenerSectorDibujo().reiniciar();
         this.notifyObservers();
     }
