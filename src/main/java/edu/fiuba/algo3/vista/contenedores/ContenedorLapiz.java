@@ -20,8 +20,8 @@ public class ContenedorLapiz extends Canvas {
 
         this.image = new Image("lapizvista.png", TAMANIO, TAMANIO, true, true);
 
-        this.setHeight(ALTURA);
-        this.setWidth(ANCHO);
+
+
         this.gc = this.getGraphicsContext2D();
         gc.drawImage(image, posicionInicial, posicionInicial);
         this.setRotate(180);

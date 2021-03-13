@@ -27,7 +27,8 @@ public class VistaTablero implements Observer {
 
 
 
-    public VistaTablero(Canvas canvas, ContenedorLapiz lapiz) {
+
+    public VistaTablero(Canvas canvas, ContenedorLapiz lapiz ) {
 
         this.tablero = canvas;
         this.lapiz = lapiz;
@@ -65,8 +66,9 @@ public class VistaTablero implements Observer {
             }
             xpartida = xllegada;
             ypartida = yllegada;
-            this.updateLapiz();
+
         }
+        this.updateLapiz();
     }
 
     private void trazarMovimiento(Posicion inicio, Posicion fin, GraphicsContext graphicsContext){
@@ -110,10 +112,10 @@ public class VistaTablero implements Observer {
     }
 
     public void reiniciar() {
-        xpartida = 250;
-        ypartida = 250;
-        xllegada = 250;
-        yllegada = 250;
+        xpartida = 200;
+        ypartida = 200;
+        xllegada = 200;
+        yllegada = 200;
         this.update();
     }
 }
