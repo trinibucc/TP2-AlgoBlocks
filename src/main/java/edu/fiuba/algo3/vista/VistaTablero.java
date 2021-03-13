@@ -50,6 +50,12 @@ public class VistaTablero implements Observer {
                 this.recorrerSegmentos(segmentosDibujados, graphicsContext, true);
             }
         }
+        else if(segmentosDibujados.isEmpty() == true && noDibujados.isEmpty() == false){
+            this.recorrerSegmentos(noDibujados, graphicsContext, false);
+        }
+        else{
+            this.recorrerSegmentos(segmentosDibujados, graphicsContext, true);
+        }
     }
 
 
