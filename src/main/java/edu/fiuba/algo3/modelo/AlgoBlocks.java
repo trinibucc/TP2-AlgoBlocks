@@ -1,5 +1,10 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.modelo.bloques.*;
+import edu.fiuba.algo3.modelo.dibujo.SectorDibujo;
+import edu.fiuba.algo3.modelo.excepciones.CantidadInsuficienteDeBloquesError;
+import edu.fiuba.algo3.modelo.excepciones.NombreInvalidoError;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;

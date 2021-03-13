@@ -1,6 +1,11 @@
 package edu.fiuba.algo3.modelo;
 
 
+import edu.fiuba.algo3.modelo.bloques.Lapiz;
+import edu.fiuba.algo3.modelo.bloques.LapizAbajo;
+import edu.fiuba.algo3.modelo.bloques.LapizArriba;
+import edu.fiuba.algo3.modelo.dibujo.Posicion;
+
 public class Personaje {
 
     private Posicion posicionInicial;

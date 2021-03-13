@@ -1,0 +1,19 @@
+@startuml
+package controladores{
+    class BotonAbajoEventHandler
+    class BotonAlgoritmoEventHandler
+    class BotonBajarLapizEventHandler
+    class BotonDerechaEventHandler
+    class BotonEjecutarEventHandler
+    class BotonGuardarEventHandler
+    class BotonInvertirEventHandler
+    class BotonIzquierdaEventHandler
+    class BotonRepetirDosVecesEventHandler
+    class BotonRepetirTresVecesEventHandler
+    class BotonSubirLapizEventHandler
+    class BotonReiniciarEventHandler
+    class BotonTermnarRepeticionEventHandler
+    class IngresarNombreEventHandler
+    class SalirEventHandler
+}
+@enduml

@@ -1,6 +1,9 @@
 package edu.fiuba.algo3.modelo;
 
 
+import edu.fiuba.algo3.modelo.bloques.LapizAbajo;
+import edu.fiuba.algo3.modelo.bloques.LapizArriba;
+import edu.fiuba.algo3.modelo.dibujo.Posicion;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -17,7 +20,7 @@ public class PersonajeTest {
     public void test02BajarLapizDelPersonaje(){
         Personaje personaje = new Personaje();
         personaje.bajarLapiz();
-        assertTrue(personaje.obtenerLapiz() instanceof  LapizAbajo);
+        assertTrue(personaje.obtenerLapiz() instanceof LapizAbajo);
     }
 
     @Test

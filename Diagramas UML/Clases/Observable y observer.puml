@@ -1,0 +1,14 @@
+@startuml
+
+abstract class Observable{
+    - ArrayList<Observer>
+    + addObserver(Observer)
+    + notifyObservers(Observer)
+}
+Observable *--- "*" Observer
+
+interface Observer{
+    update()
+}
+
+@enduml

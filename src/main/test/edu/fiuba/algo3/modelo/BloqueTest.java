@@ -1,5 +1,7 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.modelo.bloques.*;
+import edu.fiuba.algo3.modelo.dibujo.Posicion;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
