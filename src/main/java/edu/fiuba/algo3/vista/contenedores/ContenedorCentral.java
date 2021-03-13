@@ -5,9 +5,9 @@ import edu.fiuba.algo3.modelo.AlgoBlocks;
 import edu.fiuba.algo3.modelo.Algoritmo;
 import edu.fiuba.algo3.vista.botones.BotonReiniciar;
 import edu.fiuba.algo3.vista.botones.BotoneraMovimientos;
-import javafx.scene.Group;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
 
 
 public class ContenedorCentral extends HBox {
@@ -17,10 +17,9 @@ public class ContenedorCentral extends HBox {
     public ContenedorCentral(AlgoBlocks algoBlocks, Algoritmo algoritmo, ContenedorAlgoritmo contenedorAlgoritmo){
 
 
-        ContenedorLapiz lapiz = new ContenedorLapiz();
-        tablero = new Tablero(lapiz);
+        tablero = new Tablero();
 
-        Group contenedorTablero = new Group(tablero, lapiz);
+        StackPane contenedorTablero = new StackPane(tablero);
         contenedorTablero.setStyle("-fx-background-color: white");
 
         ScrollPane tableroScrollable = new ScrollPane(contenedorTablero);
