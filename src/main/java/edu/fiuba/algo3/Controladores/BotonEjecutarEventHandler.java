@@ -22,7 +22,7 @@ public class BotonEjecutarEventHandler implements EventHandler<ActionEvent> {
     public void handle(ActionEvent Event) {
         try {
             algoritmo.ejecutar();
-            vistaTableroConTrazo.actualizar();
+            vistaTableroConTrazo.update();
         }catch(Exception CantidadInsuficienteDeBloquesError){
             Alert dialogoInfo = new Alert(Alert.AlertType.INFORMATION);
             dialogoInfo.setTitle("AlgoBlocks");

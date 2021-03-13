@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.Vista;
 
 import edu.fiuba.algo3.Vista.Contenedores.ContenedorLapiz;
+import edu.fiuba.algo3.modelo.Observer;
 import edu.fiuba.algo3.modelo.Posicion;
 import edu.fiuba.algo3.modelo.SectorDibujo;
 import edu.fiuba.algo3.modelo.Segmento;
@@ -11,7 +12,7 @@ import javafx.scene.paint.Color;
 
 import java.util.List;
 
-public class VistaTablero {
+public class VistaTablero implements Observer {
 
     static final int MOVIMIENTO = 25;
     static final int TAMANIO = 50;
@@ -32,7 +33,7 @@ public class VistaTablero {
 
     }
 
-    public void actualizar() {
+    public void update() {
 
         tablero.setVisible(true);
         GraphicsContext graphicsContext = tablero.getGraphicsContext2D();
@@ -112,7 +113,7 @@ public class VistaTablero {
         ypartida = 250;
         xllegada = 250;
         yllegada = 250;
-        this.actualizar();
+        this.update();
     }
 }
 
