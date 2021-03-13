@@ -25,6 +25,6 @@ public class BotonReiniciarEventHandler implements EventHandler<ActionEvent> {
         algoritmo.agregarLista(algoBlocks);
         algoritmo.reiniciar();
         algoBlocks.reiniciar();
-        vistaTablero.actualizar();
+        vistaTablero.reiniciar();
     }
 }
