@@ -1,14 +1,17 @@
-package edu.fiuba.algo3.Vista;
+package edu.fiuba.algo3.vista;
 
-import edu.fiuba.algo3.Vista.Contenedores.ContenedorLapiz;
-import edu.fiuba.algo3.modelo.Posicion;
-import edu.fiuba.algo3.modelo.SectorDibujo;
-import edu.fiuba.algo3.modelo.Segmento;
+import edu.fiuba.algo3.vista.contenedores.ContenedorLapiz;
+import edu.fiuba.algo3.modelo.Observer;
+import edu.fiuba.algo3.modelo.dibujo.Posicion;
+import edu.fiuba.algo3.modelo.dibujo.SectorDibujo;
+import edu.fiuba.algo3.modelo.dibujo.Segmento;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 
 import java.util.List;
+
 
 public class VistaTablero implements Observer {
 
