@@ -9,7 +9,7 @@ public class ContenedorAlgoritmo extends GridPane {
 
     private final int tamñoAlgoritmo = 20;
     static final int TAMANIO_IMAGEN = 50;
-    private int posicion = 0;
+
 
 
     public ContenedorAlgoritmo(){
@@ -24,10 +24,7 @@ public class ContenedorAlgoritmo extends GridPane {
 
     }
 
-    public void agregarImagen(ImageView imagen){
-        this.add(imagen, posicion, 0);
-        posicion++;
-    }
+
 
 
 }

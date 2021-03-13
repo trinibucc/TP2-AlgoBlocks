@@ -15,6 +15,7 @@ public class VistaAlgoritmo implements Observer {
     private ContenedorAlgoritmo contenedorAlgoritmo;
     private Algoritmo algoritmo;
     private List<Bloque> bloques;
+    private int posicion = 0;
 
 
     public VistaAlgoritmo(ContenedorAlgoritmo contenedorAlgoritmo, AlgoBlocks algoBlocks, Algoritmo algoritmo){
@@ -47,8 +48,11 @@ public class VistaAlgoritmo implements Observer {
 
     private void updateContenedorAlgoritmo(Bloque bloque){
 
-        ImageView imageView = new ImageView(new Image(bloque.obtenerNombre() + ".png", TAMANIO, TAMANIO, true, true));
-        this.contenedorAlgoritmo.agregarImagen(imageView);
+        ImageView imageView = new ImageView(new Image(bloque.obtenerNombre() + ".png", TAMANIO, TAMANIO, true,
+                true));
+        this.contenedorAlgoritmo.add(imageView, posicion, 0);
+            posicion++;
+
     }
 
 
