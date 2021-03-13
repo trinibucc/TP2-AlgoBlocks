@@ -13,7 +13,7 @@ public class ContenedorLapiz extends Canvas {
     private GraphicsContext gc;
     private Image image;
 
-    private int posicionInicial = 200;|
+    private int posicionInicial = 200;
 
 
     public ContenedorLapiz(){
