@@ -27,6 +27,7 @@ public class SectorDibujo {
 
     public void reiniciar(){
         this.trazos = new ArrayList<>();
+        this.sinTrazar = new ArrayList<>();
     }
 
     public void aplicarTrazo(Posicion posicionInicial, Posicion posicionFinal) {

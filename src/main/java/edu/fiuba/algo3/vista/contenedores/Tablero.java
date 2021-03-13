@@ -5,7 +5,6 @@ import javafx.scene.Group;
 import javafx.scene.canvas.Canvas;
 
 
-
 public class Tablero extends Group {
 
     static final int ALTURA = 500;
@@ -14,13 +13,13 @@ public class Tablero extends Group {
     private VistaTablero vistaTablero;
     private Canvas canvas;
 
-    public Tablero(ContenedorLapiz lapiz) {
+    public Tablero() {
 
         this.canvas = new Canvas(ANCHO, ALTURA);
-        this.vistaTablero = new VistaTablero(canvas, lapiz);
+        this.vistaTablero = new VistaTablero(canvas);
 
-        canvas.getGraphicsContext2D().strokeRect(0, 0, canvas.getWidth(), canvas.getHeight());
         this.getChildren().add(canvas);
+
     }
 
     public VistaTablero obtenerVistaTablero() {

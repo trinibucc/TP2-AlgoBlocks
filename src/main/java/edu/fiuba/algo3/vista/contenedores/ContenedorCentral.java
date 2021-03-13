@@ -1,31 +1,33 @@
 package edu.fiuba.algo3.vista.contenedores;
 
 
-import edu.fiuba.algo3.vista.botones.BotonReiniciar;
-import edu.fiuba.algo3.vista.botones.BotoneraMovimientos;
 import edu.fiuba.algo3.modelo.AlgoBlocks;
 import edu.fiuba.algo3.modelo.Algoritmo;
+import edu.fiuba.algo3.vista.botones.BotonReiniciar;
+import edu.fiuba.algo3.vista.botones.BotoneraMovimientos;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 
 
 public class ContenedorCentral extends HBox {
 
-    private Tablero sectorTablero;
+    private Tablero tablero;
 
     public ContenedorCentral(AlgoBlocks algoBlocks, Algoritmo algoritmo, ContenedorAlgoritmo contenedorAlgoritmo){
 
 
-        ContenedorLapiz lapiz = new ContenedorLapiz();
-        sectorTablero = new Tablero(lapiz);
+        tablero = new Tablero();
 
-        Pane contenedorTablero = new Pane(lapiz, sectorTablero);
+        StackPane contenedorTablero = new StackPane(tablero);
         contenedorTablero.setStyle("-fx-background-color: white");
 
         ScrollPane tableroScrollable = new ScrollPane(contenedorTablero);
+        tableroScrollable.setMaxSize(700, 400);
+        tableroScrollable.setMinSize(700, 400);
 
-        BotonReiniciar reiniciar = new BotonReiniciar(algoBlocks, algoritmo, sectorTablero.obtenerVistaTablero());
+
+        BotonReiniciar reiniciar = new BotonReiniciar(algoBlocks, algoritmo, tablero.obtenerVistaTablero());
 
         BotoneraMovimientos botonera = new BotoneraMovimientos(algoBlocks, contenedorAlgoritmo, algoritmo);
         ScrollPane scrollable = new ScrollPane(botonera);
@@ -36,6 +38,6 @@ public class ContenedorCentral extends HBox {
     }
 
     public Tablero obtenerSectorTablero(){
-        return sectorTablero;
+        return tablero;
     }
 }
