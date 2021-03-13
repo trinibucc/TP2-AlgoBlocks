@@ -69,7 +69,7 @@ public class VistaTablero implements Observer {
                 this.trazarMovimiento(inicio, fin, gc);
             }
             else{
-                gc.setStroke(Color.LIGHTGRAY);
+                gc.setStroke(Color.web("#F2F2F2"));
                 this.trazarMovimiento(inicio, fin, gc);
             }
             xpartida = xllegada;
