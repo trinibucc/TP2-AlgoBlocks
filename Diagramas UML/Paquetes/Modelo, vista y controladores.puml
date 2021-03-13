@@ -1,0 +1,52 @@
+@startuml
+package modelo{
+    package bloques{}
+    package dibujo{}
+    package excepciones{}
+    class Personaje
+    class AlgoBlocks
+    class Algoritmo
+}
+bloques <...> Personaje
+bloques ...> dibujo
+bloques <...> AlgoBlocks
+bloques ...> excepciones
+dibujo ...> excepciones
+AlgoBlocks ...> dibujo
+AlgoBlocks ...> excepciones
+Algoritmo ...> bloques
+Algoritmo ...> excepciones
+Personaje ...> dibujo
+
+
+package vista{
+    package botones{}
+    package contenedores{}
+    class VistaTablero
+    class VistaAlgoritmo
+    class Juego
+}
+botones <...> controladores
+botones ...> AlgoBlocks
+botones ...> VistaTablero
+botones ...> Algoritmo
+botones <...> contenedores
+contenedores ...> controladores
+contenedores ...> AlgoBlocks
+contenedores ...> Algoritmo
+contenedores <...> VistaAlgoritmo
+contenedores ...> Personaje
+contenedores <...> VistaTablero
+Juego ...> contenedores
+VistaAlgoritmo ...> bloques
+VistaAlgoritmo ...> modelo
+VistaTablero ...> dibujo
+
+package controladores{}
+controladores ...> AlgoBlocks
+controladores ...> VistaTablero
+controladores ...> Algoritmo
+controladores ...> bloques
+
+
+@enduml

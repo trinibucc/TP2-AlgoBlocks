@@ -10,27 +10,27 @@ create BloqueIzquierda
 AlgoBlocks -> BloqueIzquierda: new BloqueIzquierda()
 activate BloqueIzquierda
 BloqueIzquierda -> BloqueIzquierda: nombre = "bloqueIzquierda"
-BloqueIzquierda --> AlgoBlocks: algoritmo.add(BloqueIzquierda)
+BloqueIzquierda --> AlgoBlocks: add(BloqueIzquierda)
 deactivate BloqueIzquierda
 test05 -> Algoritmo: ejecutar()
 activate Algoritmo
 Algoritmo -> BloqueIzquierda: ejecutar(personaje)
 activate BloqueIzquierda
 BloqueIzquierda -> Personaje: actualizarPosicion(-1, 0)
-Personaje -> Posicion: posicionInicial.copiarXY(posicionFinal)
+Personaje -> Posicion: copiarXY(final)
 activate Posicion
 deactivate Posicion
-Personaje -> Posicion: posicionFinal.sumarse(posicion)
+Personaje -> Posicion: sumarse(posicion)
 activate Posicion
 deactivate Posicion
 BloqueIzquierda -> Personaje: dibujar()
 activate Personaje
-Personaje -> LapizArriba: trazar(posicionInicial, posicionFinal)
+Personaje -> LapizArriba: trazar(inicial, final)
 activate LapizArriba
 create SectorDibujo
-LapizArriba -> SectorDibujo: noAplicarTrazo(posicionInicial, posicionFinal)
+LapizArriba -> SectorDibujo: noAplicarTrazo(inicial, final)
 activate SectorDibujo
-SectorDibujo -> SectorDibujo: sinTrazar.add(Segmento)
+SectorDibujo -> SectorDibujo: add(Segmento)
 deactivate SectorDibujo
 deactivate LapizArriba
 deactivate AlgoBlocks

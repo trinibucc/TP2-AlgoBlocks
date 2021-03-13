@@ -2,7 +2,6 @@ package edu.fiuba.algo3.controladores;
 
 import edu.fiuba.algo3.vista.botones.BotonAlgoritmoPersonalizado;
 import edu.fiuba.algo3.vista.botones.BotoneraMovimientos;
-import edu.fiuba.algo3.vista.contenedores.ContenedorAlgoritmo;
 import edu.fiuba.algo3.modelo.AlgoBlocks;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -16,7 +15,6 @@ public class BotonGuardarEventHandler implements EventHandler<ActionEvent> {
     private AlgoBlocks algoBlocks;
     private TextField nombre;
     private Label label;
-    private ContenedorAlgoritmo contenedorAlgoritmo;
     private BotoneraMovimientos botonera;
 
     public BotonGuardarEventHandler(AlgoBlocks algoBlocks, TextField nombreIngresado, Label label, BotoneraMovimientos botonera){
@@ -24,7 +22,6 @@ public class BotonGuardarEventHandler implements EventHandler<ActionEvent> {
         this.algoBlocks = algoBlocks;
         this.nombre = nombreIngresado;
         this.label = label;
-        this.contenedorAlgoritmo = contenedorAlgoritmo;
         this.botonera = botonera;
 
     }
